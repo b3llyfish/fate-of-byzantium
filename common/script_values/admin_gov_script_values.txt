@@ -1,0 +1,21 @@
+additional_succession_claims_total = {
+	value = 1 # succession list starts at 1
+	if = {
+		limit = {
+			has_game_rule = admin_gov_succession_claims_one
+		}
+		add = 1
+	}
+	else_if = {
+		limit = {
+			has_game_rule = admin_gov_succession_claims_two
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			has_game_rule = admin_gov_succession_claims_three
+		}
+		add = 3
+	}
+}

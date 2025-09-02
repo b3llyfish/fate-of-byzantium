@@ -1,0 +1,39 @@
+# optimism
+catalyst_byz_control_struggle_region_over_time = {}
+catalyst_byz_major_control_struggle_region_over_time = {}
+catalyst_byz_wins_war = {}
+catalyst_orthodox_holy_site_gained = {}
+
+# stagnation
+catalyst_emperor_anointed = {}
+catalyst_emperor_title_lost = {}
+catalyst_challenge_status_scheme = {}
+catalyst_promote_scheme = {}
+catalyst_slander_scheme = {}
+catalyst_damage_legitimacy_scheme = {}
+catalyst_foster_legitimacy_scheme = {}
+catalyst_raid_estate_scheme = {}
+catalyst_dispute_border_scheme = {}
+catalyst_subsume_governorship_scheme = {}
+catalyst_ingratiate_family_scheme = {}
+catalyst_depose_scheme = {}
+catalyst_political_scheme_against_emperor = {}
+catalyst_expand_power_base_scheme = {}
+catalyst_influence_candidate_interaction = {}
+catalyst_request_appointment_interaction = {}
+catalyst_request_council_interaction = {}
+catalyst_boost_efficiency_interaction = {}
+catalyst_damage_efficiency_interaction = {}
+catalyst_governor_removal_interaction = {}
+catalyst_force_governor_removal_interaction = {}
+catalyst_force_retirement_interaction = {}
+
+# decline
+catalyst_byz_loss_control_greek_region_over_time = {}
+catalyst_byz_major_loss_control_greek_region_over_time = {}
+catalyst_byz_doesnt_hold_constantinople_over_time = {}
+catalyst_siege_constantinople = {}
+catalyst_byz_loses_war = {}
+catalyst_no_byz_emperor = {}
+catalyst_byz_emperor_assassinated = {}
+catalyst_orthodox_holy_site_lost = {}

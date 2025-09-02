@@ -1,0 +1,124 @@
+involved_in_byz_struggle = {
+	any_character_struggle = {
+		involvement = involved
+		is_struggle_type = fate_of_byzantium
+	}
+}
+
+# requires scheme scope
+should_activate_political_scheme_catalyst = {
+	scheme_owner = {
+		involved_in_byz_struggle = yes
+	}
+	scheme_target_character = {
+		involved_in_byz_struggle = yes
+	}
+	struggle:fate_of_byzantium ?= {
+		OR = {
+			phase_has_catalyst = catalyst_challenge_status_scheme
+			phase_has_catalyst = catalyst_promote_scheme
+			phase_has_catalyst = catalyst_slander_scheme
+			phase_has_catalyst = catalyst_damage_legitimacy_scheme
+			phase_has_catalyst = catalyst_foster_legitimacy_scheme
+			phase_has_catalyst = catalyst_raid_estate_scheme
+			phase_has_catalyst = catalyst_dispute_border_scheme
+			phase_has_catalyst = catalyst_subsume_governorship_scheme
+			phase_has_catalyst = catalyst_ingratiate_family_scheme
+			phase_has_catalyst = catalyst_depose_scheme
+			phase_has_catalyst = catalyst_political_scheme_against_emperor
+		}
+	}
+}
+
+should_activate_catalyst_challenge_status_scheme = {
+	NOT = { exists = scope:suppress_next_event }
+	scheme_owner = { involved_in_byz_struggle = yes }
+	struggle:fate_of_byzantium ?= {
+		phase_has_catalyst = catalyst_challenge_status_scheme
+	}
+}
+
+should_activate_catalyst_promote_scheme = {
+	NOT = { exists = scope:suppress_next_event }
+	scheme_owner = { involved_in_byz_struggle = yes }
+	struggle:fate_of_byzantium ?= {
+		phase_has_catalyst = catalyst_promote_scheme
+	}
+}
+
+should_activate_catalyst_slander_scheme = {
+	NOT = { exists = scope:suppress_next_event }
+	scheme_owner = { involved_in_byz_struggle = yes }
+	struggle:fate_of_byzantium ?= {
+		phase_has_catalyst = catalyst_slander_scheme
+	}
+}
+
+should_activate_catalyst_damage_legitimacy_scheme = {
+	NOT = { exists = scope:suppress_next_event }
+	scheme_owner = { involved_in_byz_struggle = yes }
+	struggle:fate_of_byzantium ?= {
+		phase_has_catalyst = catalyst_damage_legitimacy_scheme
+	}
+}
+
+should_activate_catalyst_foster_legitimacy_scheme = {
+	NOT = { exists = scope:suppress_next_event }
+	scheme_owner = { involved_in_byz_struggle = yes }
+	struggle:fate_of_byzantium ?= {
+		phase_has_catalyst = catalyst_foster_legitimacy_scheme
+	}
+}
+
+should_activate_catalyst_raid_estate_scheme = {
+	NOT = { exists = scope:suppress_next_event }
+	scheme_owner = { involved_in_byz_struggle = yes }
+	struggle:fate_of_byzantium ?= {
+		phase_has_catalyst = catalyst_raid_estate_scheme
+	}
+}
+
+should_activate_catalyst_dispute_border_scheme = {
+	NOT = { exists = scope:suppress_next_event }
+	scheme_owner = { involved_in_byz_struggle = yes }
+	struggle:fate_of_byzantium ?= {
+		phase_has_catalyst = catalyst_dispute_border_scheme
+	}
+}
+
+should_activate_catalyst_subsume_governorship_scheme = {
+	NOT = { exists = scope:suppress_next_event }
+	scheme_owner = { involved_in_byz_struggle = yes }
+	struggle:fate_of_byzantium ?= {
+		phase_has_catalyst = catalyst_subsume_governorship_scheme
+	}
+}
+
+should_activate_catalyst_ingratiate_family_scheme = {
+	NOT = { exists = scope:suppress_next_event }
+	scheme_owner = { involved_in_byz_struggle = yes }
+	struggle:fate_of_byzantium ?= {
+		phase_has_catalyst = catalyst_ingratiate_family_scheme
+	}
+}
+
+should_activate_catalyst_depose_scheme = {
+	NOT = { exists = scope:suppress_next_event }
+	scheme_owner = { involved_in_byz_struggle = yes }
+	struggle:fate_of_byzantium ?= {
+		phase_has_catalyst = catalyst_depose_scheme
+	}
+}
+
+should_activate_catalyst_political_scheme_against_emperor = {
+	NOT = { exists = scope:suppress_next_event }
+	scheme_owner = { involved_in_byz_struggle = yes }
+	struggle:fate_of_byzantium ?= {
+		phase_has_catalyst = catalyst_political_scheme_against_emperor
+	}
+}
+
+should_activate_catalyst_political_scheme = {
+	NOT = { exists = scope:suppress_next_event }
+	scheme_owner = { involved_in_byz_struggle = yes }
+}

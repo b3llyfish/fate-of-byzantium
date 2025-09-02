@@ -1,0 +1,65 @@
+struggle_fall_of_byzantium_decision = {
+	ai_goal = yes
+	is_invisible = yes
+	
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	extra_picture = "gfx/interface/illustrations/struggle_decision_buttons/fate_byzantium_decline.dds"
+	
+	decision_group_type = major
+	
+	is_shown = {
+		is_landless_adventurer = no
+		has_ep3_dlc_trigger = yes
+	}
+	
+	is_valid = {
+		custom_tooltip = {
+			text = struggle_byzantium_must_be_decline
+			any_character_struggle = {
+				is_struggle_type = fate_of_byzantium
+				is_struggle_phase = struggle_fate_of_byzantium_phase_decline
+			}
+		}
+		custom_tooltip = {
+			text = struggle_byzantium_must_be_interloper
+			any_character_struggle = {
+				involvement = interloper
+				is_struggle_type = fate_of_byzantium
+			}
+		}
+		is_independent_ruler = yes
+		custom_tooltip ={
+			text = struggle_byzantium_decline_ending_county_total_text
+			struggle_byzantium_emperor_struggle_region_county_count <= struggle_byzantium_decline_ending_county_total
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+	
+	}
+	
+	effect = {
+		split_eastern_byzantium_de_jure_effect = yes
+		split_western_byzantium_de_jure_effect = yes
+		split_southern_italy_de_jure_effect = yes
+		custom_tooltip = {
+			text = struggle_fall_of_byzantium_release_vassal_tooltip
+			release_byzantium_vassals_effect = yes
+		}
+		struggle:fate_of_byzantium = { end_struggle = yes }
+	}
+	
+	cost = {
+		# no cost
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+	
+	ai_will_do = {
+		base = 100
+	}
+}

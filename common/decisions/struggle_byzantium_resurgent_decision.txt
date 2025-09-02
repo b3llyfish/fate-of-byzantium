@@ -1,0 +1,77 @@
+struggle_byzantium_resurgent_decision = {
+	ai_goal = yes
+	is_invisible = yes
+	
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	extra_picture = "gfx/interface/illustrations/struggle_decision_buttons/fp2_decision_hostility.dds"
+	
+	decision_group_type = major
+	
+	is_shown = {
+		is_landless_adventurer = no
+		has_ep3_dlc_trigger = yes
+	}
+	
+	is_valid = {
+		custom_tooltip = {
+			text = struggle_byzantium_must_be_optimism
+			any_character_struggle = {
+				involvement = involved
+				is_struggle_type = fate_of_byzantium
+				is_struggle_phase = struggle_fate_of_byzantium_phase_optimism
+			}
+		}
+		completely_controls_region = region_struggle_fate_of_byzantium_greek_kingdoms
+		OR = {
+			completely_controls_region = region_struggle_fate_of_byzantium_balkan_kingdoms
+			completely_controls_region = region_struggle_fate_of_byzantium_southern_italy
+		}
+		has_primary_title = title:e_byzantium
+		prestige_level >= very_high_prestige_level
+		custom_tooltip = {
+			text = struggle_byzantium_optimism_ending_county_total_text
+			struggle_byzantium_emperor_struggle_region_county_count >= struggle_byzantium_optimism_ending_county_total
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+
+	}
+	
+	effect = {
+		if = {
+			limit = { has_dlc_feature = legends }
+			legend_seed_struggle_ending_effect = {
+				ENDER = root
+				STRUGGLE = fate_of_byzantium
+			}
+		}
+		add_prestige = massive_prestige_value
+		dynasty = { add_dynasty_prestige = massive_dynasty_prestige_value }
+		custom_tooltip =  {
+			text = struggle_byzantium_resurgent_ending_modifier_text
+			every_county_in_region  = {
+				region = region_struggle_fate_of_byzantium
+				add_county_modifier = {
+					modifier = byzantium_resurgent_modifier
+					years = 25
+				}
+			}
+		}
+		struggle:fate_of_byzantium = { end_struggle = yes }
+	}
+	
+	cost = {
+		# no cost
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+	
+	ai_will_do = {
+		base = 100
+	}
+}

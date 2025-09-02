@@ -1,0 +1,21 @@
+namespace = byz_struggle
+
+byz_struggle.0001 = {
+	hidden = yes
+	scope = struggle
+	
+	trigger = { # Should not need this, but, redundancy check!
+		exists = struggle:fate_of_byzantium
+		struggle:fate_of_byzantium = { any_involved_ruler = { count > 0 } } # For when the conflict is ongoing but nobody is left to fight it
+	}
+	
+	immediate = {
+		byz_struggle_yearly_effect = yes
+		
+		# queue next years check
+		trigger_event = {
+			id = byz_struggle.0001
+			years = 1
+		}
+	}
+}

@@ -1,0 +1,21 @@
+on_title_destroyed = {
+	on_actions = {
+		byz_title_destroyed
+	}
+}
+
+byz_title_destroyed = {
+	effect = {
+		if = {
+			limit = {
+				struggle:fate_of_byzantium ?= {
+					phase_has_catalyst = catalyst_no_byz_emperor
+				}
+				scope:landed_title = title:e_byzantium
+			}
+			struggle:fate_of_byzantium ?= {
+				activate_struggle_catalyst = catalyst_no_byz_emperor
+			}
+		}
+	}
+}

@@ -1,0 +1,4 @@
+fate_of_byzantium_struggle = {}
+struggle_phase_byzantium_optimism = {}
+struggle_phase_byzantium_stagnation = {}
+struggle_phase_byzantium_decline = {}

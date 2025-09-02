@@ -1,0 +1,98 @@
+region_struggle_fate_of_byzantium = {
+	kingdoms = {
+		# greece
+		k_epirus
+		k_hellas
+		k_thessalonika
+		k_nikaea
+		k_pontus
+		k_anatolia
+		k_krete
+		k_cyprus
+		k_rum
+		# balkans
+		k_bulgaria
+		k_serbia
+		k_croatia
+	}
+	duchies = {
+		# anatolia syria border
+		d_antioch
+		d_edessa
+		d_mesopotamia
+		# southern italy
+		d_apulia
+		d_calabria
+		d_salerno
+		d_capua
+		d_benevento
+		d_sicily
+	}
+	counties = {
+		# theodoro
+		c_kerch
+		# belgrade
+		c_szerem
+	}
+}
+
+region_struggle_fate_of_byzantium_greek_kingdoms = {
+	kingdoms = {
+		k_hellas
+		k_thessalonika
+		k_nikaea
+		k_pontus
+		k_anatolia
+		k_krete
+		k_cyprus
+		k_rum
+	}
+	duchies = {
+		d_epirus
+		d_cephalonia
+	}
+}
+
+region_struggle_fate_of_byzantium_balkan_kingdoms = {
+	kingdoms = {
+		k_croatia
+		k_serbia
+		k_bulgaria
+	}
+	duchies = {
+		d_dyrrachion
+	}
+}
+
+region_struggle_fate_of_byzantium_southern_italy = {
+	duchies = {
+		d_apulia
+		d_calabria
+		d_salerno
+		d_capua
+		d_benevento
+		d_sicily
+	}
+}
+
+region_struggle_fate_of_byzantium_anatolia = {
+	kingdoms = {
+		k_nikaea
+		k_pontus
+		k_anatolia
+		k_rum
+	}
+}
+
+region_struggle_fate_of_byzantium_fallen = {
+	kingdoms = {
+		# greece
+		k_epirus
+		k_hellas
+		k_thessalonika
+		k_krete
+		k_cyprus
+		# balkans
+		k_bulgaria
+	}
+}

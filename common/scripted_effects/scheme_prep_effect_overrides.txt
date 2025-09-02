@@ -1,0 +1,71 @@
+slander_scheme_prep_effect_override = {
+	save_scope_as = scheme
+	save_scope_value_as = {
+		name = follow_up_event
+		value = event_id:fate_of_byzantium_scheme_override.0001
+	}
+	scheme_owner = { trigger_event = scheme_critical_moments.0002 }
+}
+
+challenge_status_scheme_prep_effect_override = {
+	save_scope_as = scheme
+	save_scope_value_as = {
+		name = follow_up_event
+		value = event_id:fate_of_byzantium_scheme_override.0002
+	}
+	scheme_owner = { trigger_event = scheme_critical_moments.0002 }
+}
+
+depose_scheme_prep_effect_override = {
+	save_scope_as = scheme
+	save_scope_value_as = {
+		name = follow_up_event
+		value = event_id:fate_of_byzantium_scheme_override.0003
+	}
+	scheme_owner = { trigger_event = scheme_critical_moments.0002 }
+}
+
+dispute_border_scheme_prep_effect_override = {
+	save_scope_as = scheme
+	save_scope_value_as = {
+		name = follow_up_event
+		value = event_id:fate_of_byzantium_scheme_override.0004
+	}
+	scheme_owner = { trigger_event = scheme_critical_moments.0002 }
+}
+
+raid_estate_scheme_prep_effect_override = {
+	save_scope_as = scheme
+	save_scope_value_as = {
+		name = follow_up_event
+		value = event_id:fate_of_byzantium_scheme_override.0005
+	}
+	scheme_owner = { trigger_event = scheme_critical_moments.0002 }
+}
+
+raid_estate_scheme_prep_effect_override = {
+	save_scope_as = scheme
+	save_scope_value_as = {
+		name = follow_up_event
+		value = event_id:fate_of_byzantium_scheme_override.0006
+	}
+	scheme_owner = { trigger_event = scheme_critical_moments.0002 }
+}
+
+expand_power_base_scheme_prep_effect_override = {
+	save_scope_as = scheme
+	save_scope_value_as = {
+		name = follow_up_event
+		value = event_id:fate_of_byzantium_scheme_override.0007
+	}
+	scheme_owner = { trigger_event = scheme_critical_moments.0002 }
+}
+
+promote_scheme_prep_effect_override = {
+	save_scope_as = scheme
+	save_scope_value_as = {
+		name = follow_up_event
+		value = event_id:fate_of_byzantium_scheme_override.0008
+	}
+	scheme_owner = { trigger_event = scheme_critical_moments.0002 }
+}

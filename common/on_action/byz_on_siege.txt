@@ -1,0 +1,21 @@
+on_siege_completion = {
+	on_actions = {
+		emperor_lost_constantinople
+	}
+}
+
+emperor_lost_constantinople = {
+	effect = {
+		struggle:fate_of_byzantium ?= {
+			if = {
+				limit = {
+					phase_has_catalyst = catalyst_siege_constantinople
+					scope:barony = title:b_constantinople
+					title:b_constantinople.holder = title:e_byzantium.holder
+					title:e_byzantium.holder = { involved_in_byz_struggle = yes }
+				}
+				activate_struggle_catalyst = catalyst_siege_constantinople
+			}
+		}
+	}
+}

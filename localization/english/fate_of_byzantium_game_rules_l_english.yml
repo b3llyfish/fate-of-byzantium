@@ -1,0 +1,32 @@
+﻿l_english:
+ game_rule_category_fate_of_byzantium: "Fate of Byzantium"
+ 
+ rule_fate_of_byzantium_struggle_enable: "Fate of Byzantium: Struggle"
+ setting_fate_of_byzantium_struggle_enabled: "Enabled"
+ setting_fate_of_byzantium_struggle_enabled_desc: "The struggle mechanic will be enabled"
+ setting_fate_of_byzantium_struggle_disabled: "Disabled"
+ setting_fate_of_byzantium_struggle_disabled_desc: "The struggle mechanic will be disabled"
+ 
+ rule_admin_gov_succession_claims: "Fate of Byzantium: Emperor Additional Succession Claims"
+ setting_admin_gov_succession_claims_none: "None"
+ setting_admin_gov_succession_claims_none_desc: "There will be no additional succession claims"
+ setting_admin_gov_succession_claims_one: "One"
+ setting_admin_gov_succession_claims_one_desc: "Successions in Empire tiered admin titles will give an unpressed claim to the person in #Z second#! place"
+ setting_admin_gov_succession_claims_two: "Two"
+ setting_admin_gov_succession_claims_two_desc: "Successions in Empire tiered admin titles will give an unpressed claim to the person in #Z second#! and #Z third#! place"
+ setting_admin_gov_succession_claims_three: "Three"
+ setting_admin_gov_succession_claims_three_desc: "Successions in Empire tiered admin titles will give an unpressed claim to the person in #Z second#!, #Z third#! and #Z fourth#! place"
+
+ rule_seljuk_invasion_byzantium: "Fate of Byzantium: Invasion of Rum"
+ setting_random_seljuk_invasion_byzantium: "Random"
+ setting_random_seljuk_invasion_byzantium_desc: "The invasion will occur randomly at some point after game year 1077"
+ setting_fixed_seljuk_invasion_byzantium: "Fixed"
+ setting_fixed_seljuk_invasion_byzantium_desc: "The invasion will be guaranteed to happen shortly after game year 1077"
+ setting_disable_seljuk_invasion_byzantium: "Disabled"
+ setting_disable_seljuk_invasion_byzantium_desc: "The invasion will not happen"
+ 
+ rule_seljuk_invasion_byzantium_invader_culture: "Fate of Byzantium: Invader of Rum Culture"
+ setting_invader_turkmen_culture: "Turkmen"
+ setting_invader_turkmen_culture_desc: "The invader of Rum will have Turkmen culture"
+ setting_emperor_persia_culture: "Persian Emperor"
+ setting_emperor_persia_culture_desc: "The invader of Rum will have the same culture as the Emperor of Perisa (or Seljuk if they don't exist)"

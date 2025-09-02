@@ -1,0 +1,75 @@
+struggle_byzantium_emperor_struggle_region_county_count = {
+	value = 0
+	title:e_byzantium.holder ?= {
+		every_sub_realm_county = {
+			limit = {
+				title_province = { geographical_region = region_struggle_fate_of_byzantium }
+			}
+			add = 1
+		}
+	}
+}
+
+struggle_byzantium_struggle_region_county_count = {
+	value = 0
+	every_county_in_region  = {
+		region = region_struggle_fate_of_byzantium
+		add = 1
+	}
+}
+
+struggle_byzantium_optimism_ending_county_total = {
+	value = struggle_byzantium_struggle_region_county_count
+	multiply = 0.75
+	ceiling = yes
+}
+
+struggle_byzantium_decline_ending_county_total = {
+	value = struggle_byzantium_struggle_region_county_count
+	multiply = 0.45
+	ceiling = yes
+}
+
+struggle_byzantium_emperor_greek_county_count = {
+	value = 0
+	title:e_byzantium.holder ?= {
+		every_sub_realm_county = {
+			limit = {
+				title_province = { geographical_region = region_struggle_fate_of_byzantium_greek_kingdoms }
+			}
+			add = 1
+		}
+	}
+}
+
+struggle_byzantium_region_greek_county_count = {
+	value = 0
+	every_county_in_region  = {
+		region = region_struggle_fate_of_byzantium_greek_kingdoms
+		add = 1
+	}
+}
+
+struggle_byzantium_region_greek_county_count_high = {
+	value = struggle_byzantium_region_greek_county_count
+	multiply = 0.75
+	ceiling = yes
+}
+
+struggle_byzantium_region_greek_county_count_low = {
+	value = struggle_byzantium_region_greek_county_count
+	multiply = 0.5
+	ceiling = yes
+}
+
+struggle_byzantium_region_count_high = {
+	value = struggle_byzantium_struggle_region_county_count
+	multiply = 0.9
+	ceiling = yes
+}
+
+struggle_byzantium_region_count_low = {
+	value = struggle_byzantium_struggle_region_county_count
+	multiply = 0.75
+	ceiling = yes
+}

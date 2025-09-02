@@ -1,0 +1,115 @@
+split_eastern_byzantium_de_jure_effect = {
+	title:e_anatolia = {
+		save_scope_as = new_empire
+	}
+	title:k_nikaea = { set_de_jure_liege_title = scope:new_empire }
+	title:k_pontus = { set_de_jure_liege_title = scope:new_empire }
+	title:k_anatolia = { set_de_jure_liege_title = scope:new_empire }
+	hidden_effect = {
+		# move 2 counties to stop border gore
+		title:c_abydos = { set_de_jure_liege_title =  title:d_opsikion }
+		title:c_chios = { set_de_jure_liege_title =  title:d_ephese }
+	}
+	if = {
+		limit = {
+			title:k_rum = {
+				any_de_jure_county = {
+					count > 0
+				}
+			}
+		}
+		title:k_rum = { set_de_jure_liege_title = scope:new_empire }
+	}
+	else = {
+		hidden_effect = {
+			title:k_rum = { set_de_jure_liege_title = scope:new_empire }
+		}
+	}
+	if = {
+		limit = {
+			title:k_georgia = { target_is_de_jure_liege_or_above = title:e_byzantium }
+		}
+		title:k_georgia = { set_de_jure_liege_title = scope:new_empire }
+	}
+	if = {
+		limit = {
+			title:k_armenia = { target_is_de_jure_liege_or_above = title:e_byzantium }
+		}
+		title:k_armenia = { set_de_jure_liege_title = scope:new_empire }
+	}
+}
+
+split_western_byzantium_de_jure_effect = {
+	title:e_carpathia = {
+		save_scope_as = new_empire
+	}
+	if = {
+		limit = {
+			title:k_croatia = { target_is_de_jure_liege_or_above = title:e_byzantium }
+		}
+		title:k_croatia = { set_de_jure_liege_title = scope:new_empire }
+	}
+	if = {
+		limit = {
+			title:k_serbia = { target_is_de_jure_liege_or_above = title:e_byzantium }
+		}
+		title:k_serbia = { set_de_jure_liege_title = scope:new_empire }
+	}
+}
+
+split_southern_italy_de_jure_effect = {
+	title:e_italy = {
+		save_scope_as = new_empire
+	}
+	if = {
+		limit = {
+			title:k_sardinia = { target_is_de_jure_liege_or_above = title:e_byzantium }
+		}
+		title:k_sardinia = { set_de_jure_liege_title = scope:new_empire }
+	}
+	if = {
+		limit = {
+			title:k_sicily = { target_is_de_jure_liege_or_above = title:e_byzantium }
+		}
+		title:k_sicily = { set_de_jure_liege_title = scope:new_empire }
+	}
+	if = {
+		limit = {
+			title:k_venice = { target_is_de_jure_liege_or_above = title:e_byzantium }
+		}
+		title:k_venice = { set_de_jure_liege_title = scope:new_empire }
+	}
+}
+
+release_byzantium_vassals_effect = {
+	title:e_byzantium.holder = {
+		every_vassal = {
+			if = {
+				limit = {
+					capital_province = {
+						NOT = { geographical_region = region_struggle_fate_of_byzantium_fallen }
+					}
+				}
+				add_to_list = vassals_to_release
+			}
+		}
+	}
+	every_in_list = {
+		list = vassals_to_release
+		create_title_and_vassal_change = {
+			type = independency
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		change_liege_or_become_independent = {
+			CHANGE = scope:change
+			VASSAL = this
+		}
+		resolve_title_and_vassal_change = scope:change
+		add_truce_both_ways = {
+			character = title:e_byzantium.holder
+			years = 15
+			name = struggle_fall_of_byzantium_truce_tooltip
+		}
+	}
+}

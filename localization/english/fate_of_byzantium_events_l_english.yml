@@ -1,0 +1,12 @@
+﻿l_english:
+ seljuk_invasion_byzantium.desc: "For a while now rumours that an ambitious [seljuk_byzantium_invader.GetDynastyHouseNameNoTooltip] warlord is gathering an army somewhere on the borders of the Byzantine Empire.\n\nOusted from their clan after a bitter succession dispute they have aligned themselves with Turkish Nomads. [seljuk_byzantium_invader.GetSheHe|U] now seeks to establish a Kingdom within the heart of Anatolia.\n\nThis warlord has now revealed themselves to be [seljuk_byzantium_invader.GetShortUIName|U] and they now ride to strike the Byzantium Empire!"
+
+ seljuk_invasion_byzantium.0002.title: "$invade_rum_war_name$"
+ seljuk_invasion_byzantium.0002.desc: "$seljuk_invasion_byzantium.desc$"
+ seljuk_invasion_byzantium.0002.a: "Defend the Empire!"
+
+ seljuk_invasion_byzantium.0003.title: "$invade_rum_war_name$"
+ seljuk_invasion_byzantium.0003.desc: "$seljuk_invasion_byzantium.desc$"
+ seljuk_invasion_byzantium.0003.a: "I will lend them my support"
+ seljuk_invasion_byzantium.0003.a.tooltip: "You form an alliance with [seljuk_byzantium_invader.GetShortUIName|U]"
+ seljuk_invasion_byzantium.0003.b: "Pfft, ignore this upstart"

@@ -1,0 +1,673 @@
+gov_efficiency_terrible_multiplier = 1.3
+gov_efficiency_poor_multiplier = 1.5
+gov_efficiency_average_multiplier = 1.7
+gov_efficiency_good_multiplier = 1.9
+gov_efficiency_excellent_multiplier = 2.1
+
+# Governor efficiency used in code
+# root - charater that is evaluated for the governorship
+# End result should be a multiplier, but we add larger values to present it better in the breakdown. E.g. we add 10, but divide it with 100 to make it 0.1.
+governor_efficiency = {
+	value = {
+		# Everyone will calculate their Efficiency according to the following:
+		# Skills
+		add = {
+			add = {
+				desc = diplomacy_concept
+				add = gov_efficiency_diplomacy_value
+				round = yes
+			}
+			add = {
+				desc = martial_concept
+				add = gov_efficiency_martial_value
+				round = yes
+			}
+			add = {
+				desc = stewardship_concept
+				add = gov_efficiency_stewardship_value
+				round = yes
+			}
+			add = {
+				desc = intrigue_concept
+				add = gov_efficiency_intrigue_value
+				round = yes
+			}
+			add = {
+				desc = learning_concept
+				add = gov_efficiency_learning_value
+				round = yes
+			}
+			divide = 100
+		}
+		
+		# Rank 4 or 5 education trait
+		if = {
+			limit = {
+				OR = {
+					has_trait = education_diplomacy_5
+					has_trait = education_martial_5
+					has_trait = education_stewardship_5
+					has_trait = education_intrigue_5
+					has_trait = education_learning_5
+				}
+			}
+			add = {
+				add = {
+					value = 4
+					desc = has_rank_5_education_desc
+				}
+				divide = 100
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_trait = education_diplomacy_4
+					has_trait = education_martial_4
+					has_trait = education_stewardship_4
+					has_trait = education_intrigue_4
+					has_trait = education_learning_4
+				}
+			}
+			add = {
+				add = {
+					value = 2
+					desc = has_rank_4_education_desc
+				}
+				divide = 100
+			}
+		}
+		
+		# Governor trait
+		if = { # You only get a small bonus since the trait also provides skills that will increase Efficiency further
+			limit = {
+				has_trait = governor
+				has_trait_xp = {
+					trait = governor
+					value >= 25
+				}
+			}
+			add = {
+				add = {
+					value = 0
+					if = {
+						limit = {
+							has_trait_xp = {
+								trait = governor
+								value >= 100
+							}
+						}
+						add = 12
+					}
+					else_if = {
+						limit = {
+							has_trait_xp = {
+								trait = governor
+								value >= 75
+							}
+						}
+						add = 9
+					}
+					else_if = {
+						limit = {
+							has_trait_xp = {
+								trait = governor
+								value >= 50
+							}
+						}
+						add = 6
+					}
+					else_if = {
+						limit = {
+							has_trait_xp = {
+								trait = governor
+								value >= 25
+							}
+						}
+						add = 3
+					}
+					desc = governor_trait_short_desc
+				}
+				divide = 100
+			}
+		}
+		
+		# Estate
+		if = {
+			limit = { domicile ?= { has_domicile_parameter = estate_governor_efficiency_bonus } }
+			add = {
+				add = {
+					value = estate_governor_efficiency_bonus_value
+					multiply = 100
+					desc = "[estate_buildings|E]"
+				}
+				divide = 100
+			}
+		}
+		else_if = {
+			limit = {
+				house ?= {
+					house_head ?= {
+						domicile ?= { has_domicile_parameter = estate_governor_efficiency_bonus_for_house_members }
+					}
+				}
+			}
+			add = {
+				add = {
+					value = estate_governor_efficiency_house_bonus_value
+					multiply = 100
+					desc = "[estate_buildings|E]"
+				}
+				divide = 100
+			}
+		}
+		
+		# Bonuses from active Governorship Obligation/Administration
+		if = {
+			limit = { vassal_contract_has_flag = admin_martial_obligation_bonus }
+			add = {
+				add = {
+					value = martial
+					multiply = efficiency_skill_increase_value
+					desc = admin_martial_obligation_bonus_desc
+				}
+				divide = 100
+			}
+		}
+		if = {
+			limit = { vassal_contract_has_flag = admin_stewardship_obligation_bonus }
+			add = {
+				add = {
+					value = stewardship
+					multiply = efficiency_skill_increase_value
+					desc = admin_stewardship_obligation_bonus_desc
+				}
+				divide = 100
+			}
+		}
+		if = {
+			limit = { vassal_contract_has_flag = admin_prowess_obligation_bonus }
+			add = {
+				add = {
+					value = prowess
+					multiply = efficiency_skill_increase_value
+					desc = admin_prowess_obligation_bonus_desc
+				}
+				divide = 100
+			}
+		}
+		if = {
+			limit = { vassal_contract_has_flag = admin_prestige_obligation_bonus }
+			add = {
+				add = {
+					value = prestige_level
+					multiply = efficiency_currency_level_increase_value
+					desc = admin_prestige_obligation_bonus_desc
+				}
+				divide = 100
+			}
+		}
+		if = {
+			limit = { vassal_contract_has_flag = admin_tradeport_obligation_bonus }
+			add = {
+				add = {
+					every_sub_realm_barony = {
+						limit = {
+							title_province = { has_building_or_higher = common_tradeport_01 }
+						}
+						add = efficiency_building_increase_value
+					}
+					desc = admin_tradeport_obligation_bonus_desc
+				}
+				divide = 100
+			}
+		}
+		
+		# Dynasty Legacy Perk
+		if = {
+			limit = {
+				dynasty ?= { ep3_administrative_legacy_track_perks >= 1 }
+			}
+			add = {
+				add = {
+					value = 5
+					desc = "[GetDynastyPerk('ep3_administrative_legacy_1').GetName]"
+				}
+				divide = 100
+			}
+		}
+		
+		# Lifestyle Perks
+		# Positions of Power Stewardship Perk
+		if = {
+			limit = { has_perk = positions_of_power_perk }
+			add = {
+				add = {
+					value = 5
+					desc = "[GetPerk('positions_of_power_perk').GetName(GetPlayer)]"
+				}
+				divide = 100
+			}
+		}
+		# Strict Organization Martial Perk
+		if = {
+			limit = { has_perk = strict_organization_perk }
+			add = {
+				add = {
+					value = 5
+					desc = "[GetPerk('strict_organization_perk').GetName(GetPlayer)]"
+				}
+				divide = 100
+			}
+		}
+		
+		# Eparch court position
+		if = {
+			limit = {
+				employs_court_position = eparch_court_position
+			}
+			add = {
+				add = {
+					value = 1
+					court_position:eparch_court_position ?= {
+						add = aptitude:eparch_court_position
+					}
+					multiply = 2
+					desc = eparch_increase_efficiency_desc
+				}
+				divide = 100
+			}
+		}
+		else_if = {
+			limit = {
+				top_liege ?= {
+					employs_court_position = eparch_court_position
+				}
+				NOT = { has_court_position = eparch_court_position }
+				domicile ?= {
+					domicile_location = {
+						this = county.holder.top_liege.capital_province
+					}
+				}
+			}
+			add = {
+				add = {
+					value = 1
+					top_liege ?= {
+						court_position:eparch_court_position ?= {
+							add = aptitude:eparch_court_position
+						}
+					}
+					desc = eparch_increase_efficiency_vassal_desc
+				}
+				divide = 100
+			}
+		}
+		
+		# Events
+		add = {
+			add = {
+				desc = gov_efficiency_events_desc
+				if = {	#ep3_emperor_yearly.2150
+					limit = { has_character_flag = ep3_2150_found_truth }
+					add = 10
+				}
+				if = {	#ep3_governor_yearly.3070
+					limit = {
+						has_character_modifier = contented_governing_countrymen_modifier
+						exists = capital_county
+						culture = capital_county.culture
+					}
+					add = 10
+				}
+				if = {	#ep3_emperor_yearly.2160
+					limit = { has_character_flag = ep3_2160_success }
+					add = 5
+				}
+				if = {	#ep3_emperor_yearly.2160
+					limit = { has_character_flag = ep3_2160_failure }
+					add = -5
+				}
+				if = {	#ep3_governor_yearly.3100
+					limit = { has_character_modifier = ep3_ignoring_realm_decline_modifier }
+					add = -5
+				}
+				if = {	#ep3_governor_yearly.3080
+					limit = { has_character_flag = ep3_governor_ignored_isolation }
+					add = -5
+				}
+				if = {	#ep3_governor_yearly.3080
+					limit = { has_character_modifier = ep3_anxious_for_new_assignment_modifier }
+					add = -5
+				}
+				if = {	#ep3_emperor_yearly.2170
+					limit = { has_character_flag = ep3_2170_success }
+					add = 5
+				}
+				if = {
+					limit = { has_character_modifier = restored_greek_theme_modifier }
+					add = 10
+				}
+				if = {	#ep3_emperor_yearly.2190
+					limit = { has_character_flag = ep3_2190_honest }
+					add = 10
+				}
+				if = {	#ep3_emperor_yearly.2200
+					limit = { has_character_flag = ep3_embezzling_governor }
+					add = -5
+				}
+				if = {
+					limit = { has_character_modifier = ep3_bolstered_governor_treasury_modifier }
+					add = 5
+				}
+				if = {
+					limit = { has_character_modifier = ep3_governor_yearly_8050_imperial_recruiter_modifier }
+					add = 5
+				}
+				if = {
+					limit = { has_character_flag = ep3_8060_efficiency_drop }
+					add = -5
+				}
+				if = {
+					limit = { has_character_modifier = ep3_governor_yearly_8050_imperial_resources_modifier }
+					add = -5
+				}
+				if = {
+					limit = { has_character_modifier = ep3_governor_yearly_8120_relief_rejected_modifier }
+					add = -5
+				}
+				if = {
+					limit = { has_character_modifier = ep3_governor_yearly_8130_raised_taxes_modifier }
+					add = -5
+				}
+				if = {
+					limit = { has_character_modifier = ep3_governor_yearly_8130_raised_almonage_modifier }
+					add = 5
+				}
+				if = {
+					limit = { has_character_modifier = noble_administrators_modifier }
+					add = 5
+				}
+				if = {
+					limit = { has_character_flag = ep3_governor_yearly_3050_neglect_duties }
+					add = -5
+				}
+				if = {
+					limit = { has_character_flag = ep3_governor_yearly_3002_landlord_fight }
+					add = -5
+				}
+				if = {
+					limit = { has_character_flag = ep3_governor_yearly_3002_landlord_wins }
+					add = -10
+				}
+				if = {
+					limit = { has_character_flag = ep3_governor_yearly_3002_landlord_dominates }
+					add = -15
+				}
+				if = {
+					limit = { has_character_modifier = ep3_governor_yearly_8040_domicile_development_modifier }
+					add = -10
+				}
+			}
+			divide = 100
+		}
+		
+		# Interactions
+		add = {
+			add = {
+				desc = gov_efficiency_interactions_desc
+				if = {
+					limit = { has_character_modifier = ep3_boost_efficiency_modifier }
+					add = {
+						value = {
+							value = efficiency_interaction_change_value
+							multiply = var:ep3_governor_efficiency_stack
+						}
+					}
+				}
+				if = {
+					limit = { has_character_modifier = ep3_damage_efficiency_modifier }
+					add = {
+						value = {
+							value = efficiency_interaction_change_value
+							multiply = -1 # Negativise
+							multiply = var:ep3_governor_efficiency_stack
+						}
+					}
+				}
+			}
+			divide = 100
+		}
+		
+		# Schemes
+		add = {
+			add = {
+				desc = "[GetModifier('scheme_slandered_modifier').GetNameWithTooltip]"
+				if = {
+					limit = { has_character_modifier = scheme_slandered_modifier }
+					add = efficiency_slandered_value
+				}
+			}
+			divide = 100
+		}
+		
+		# Eunuch
+		if = {
+			limit = {
+				exists = liege
+				liege.culture ?= {
+					has_cultural_parameter = eunuch_trait_bonuses
+				}
+				has_trait = eunuch_1
+			}
+			add = {
+				add = {
+					value = 10
+					desc = court_position_eunuch_trait
+				}
+				divide = 100
+			}
+		}
+		else_if = {
+			limit = {
+				exists = liege
+				liege.culture ?= {
+					has_cultural_parameter = eunuch_trait_bonuses
+				}
+				has_trait = beardless_eunuch
+			}
+			add = {
+				add = {
+					value = 10
+					desc = court_position_beardless_eunuch_trait
+				}
+				divide = 100
+			}
+		}
+		
+		# Non-de jure governors get a penalty
+		if = {
+			limit = {
+				exists = top_liege
+				top_liege = { save_temporary_scope_as = top_liege_temp }
+				is_governor = yes
+				any_sub_realm_county = {
+					NOT = {
+						trigger_if = {
+							limit = { scope:top_liege_temp.highest_held_title_tier = tier_empire }
+							empire ?= scope:top_liege_temp.primary_title
+						}
+						trigger_else = { kingdom ?= scope:top_liege_temp.primary_title }
+					}
+				}
+			}
+			add = {
+				add = {
+					value = de_jure_governor_bonus
+					desc = de_jure_governor_desc
+				}
+				divide = 100
+			}
+		}
+		min = 0.5 # Can't go lower than -50%
+		max = 1.5 # Can't go higher than +50%
+	}
+}
+
+gov_efficiency_diplomacy_value = {
+	value = diplomacy
+	if = {
+		limit = {
+			diplomacy >= excellent_skill_level
+		}
+		multiply = gov_efficiency_excellent_multiplier
+	}
+	else_if = {
+		limit = {
+			diplomacy >= good_skill_level
+		}
+		multiply = gov_efficiency_good_multiplier
+	}
+	else_if = {
+		limit = {
+			diplomacy >= average_skill_level
+		}
+		multiply = gov_efficiency_average_multiplier
+	}
+	else_if = {
+		limit = {
+			diplomacy >= poor_skill_level
+		}
+		multiply = gov_efficiency_poor_multiplier
+	}
+	else = {
+		multiply = gov_efficiency_terrible_multiplier
+	}
+}
+
+gov_efficiency_martial_value = {
+	value = martial
+	if = {
+		limit = {
+			martial >= excellent_skill_level
+		}
+		multiply = gov_efficiency_excellent_multiplier
+	}
+	else_if = {
+		limit = {
+			martial >= good_skill_level
+		}
+		multiply = gov_efficiency_good_multiplier
+	}
+	else_if = {
+		limit = {
+			martial >= average_skill_level
+		}
+		multiply = gov_efficiency_average_multiplier
+	}
+	else_if = {
+		limit = {
+			martial >= poor_skill_level
+		}
+		multiply = gov_efficiency_poor_multiplier
+	}
+	else = {
+		multiply = gov_efficiency_terrible_multiplier
+	}
+}
+
+
+gov_efficiency_stewardship_value = {
+	value = stewardship
+	if = {
+		limit = {
+			stewardship >= excellent_skill_level
+		}
+		multiply = gov_efficiency_excellent_multiplier
+	}
+	else_if = {
+		limit = {
+			stewardship >= good_skill_level
+		}
+		multiply = gov_efficiency_good_multiplier
+	}
+	else_if = {
+		limit = {
+			stewardship >= average_skill_level
+		}
+		multiply = gov_efficiency_average_multiplier
+	}
+	else_if = {
+		limit = {
+			stewardship >= poor_skill_level
+		}
+		multiply = gov_efficiency_poor_multiplier
+	}
+	else = {
+		multiply = gov_efficiency_terrible_multiplier
+	}
+}
+
+
+gov_efficiency_intrigue_value = {
+	value = intrigue
+	if = {
+		limit = {
+			intrigue >= excellent_skill_level
+		}
+		multiply = gov_efficiency_excellent_multiplier
+	}
+	else_if = {
+		limit = {
+			intrigue >= good_skill_level
+		}
+		multiply = gov_efficiency_good_multiplier
+	}
+	else_if = {
+		limit = {
+			intrigue >= average_skill_level
+		}
+		multiply = gov_efficiency_average_multiplier
+	}
+	else_if = {
+		limit = {
+			intrigue >= poor_skill_level
+		}
+		multiply = gov_efficiency_poor_multiplier
+	}
+	else = {
+		multiply = gov_efficiency_terrible_multiplier
+	}
+}
+
+
+gov_efficiency_learning_value = {
+	value = learning
+	if = {
+		limit = {
+			learning >= excellent_skill_level
+		}
+		multiply = gov_efficiency_excellent_multiplier
+	}
+	else_if = {
+		limit = {
+			learning >= good_skill_level
+		}
+		multiply = gov_efficiency_good_multiplier
+	}
+	else_if = {
+		limit = {
+			learning >= average_skill_level
+		}
+		multiply = gov_efficiency_average_multiplier
+	}
+	else_if = {
+		limit = {
+			learning >= poor_skill_level
+		}
+		multiply = gov_efficiency_poor_multiplier
+	}
+	else = {
+		multiply = gov_efficiency_terrible_multiplier
+	}
+}

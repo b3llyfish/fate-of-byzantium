@@ -1,0 +1,84 @@
+on_game_start = {
+	on_actions = {
+		add_horse_lord_oghuz
+		disable_seljuk_byzantium_invasion
+		add_bonus_rum_troops
+		fix_rum_anatolia_kingdom_capital
+		remove_maa_increase
+	}
+}
+
+add_horse_lord_oghuz = {
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_dlc_feature = khans_of_the_steppe
+				}
+			}
+			# assumed to be incorrectly removed by pdox
+			culture:turkish = { add_culture_tradition = tradition_horse_lords }
+		}
+	}
+}
+
+disable_seljuk_byzantium_invasion = {
+	effect = {
+		if = {
+			limit = {
+				game_start_date >= 1178.10.1 # prevent trigger if rum exists at the game start date
+			}
+			set_global_variable = {
+				name = seljuk_byzantium_invasion_happened
+				value = yes
+			}
+		}
+	}
+}
+
+add_bonus_rum_troops = {
+	effect = {
+		if = {
+			limit = {
+				game_start_date >= 1178.10.1
+			}
+			title:k_rum.holder = {
+				spawn_nomadic_troops = {
+					LOCATION = title:k_rum.holder.location
+				}
+				spawn_nomadic_troops = {
+					LOCATION = title:k_rum.holder.location
+				}
+			}
+		}
+	}
+}
+
+fix_rum_anatolia_kingdom_capital = {
+	effect = {
+		if = {
+			limit = {
+				game_start_date >= 1178.10.1
+			}
+			fix_rum_anatolia_kingdom_capital_effect = yes
+		}
+	}
+}
+
+remove_maa_increase = {
+	effect = {
+		if = {
+			limit = {
+				game_start_date >= 1178.10.1
+			}
+			title:e_byzantium.holder = {
+				random_maa_regiment = {
+					limit = { is_maa_type = varangian_guards }
+					change_maa_regiment_size = {
+						size = -5
+					}
+				}
+			}
+		}
+	}
+}

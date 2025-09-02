@@ -1,0 +1,183 @@
+namespace = seljuk_invasion_byzantium
+
+seljuk_invasion_byzantium.0001 = {
+	scope = none
+	hidden = yes
+	
+	immediate = {
+		spawn_seljuk_invasion_byzantium_character_effect = yes
+		scope:seljuk_byzantium_invader = {
+			start_war = {
+				cb = invade_rum_cb
+				target = title:e_byzantium.holder
+				target_title = title:d_anatolia
+				target_title = title:d_cappadocia
+				target_title = title:d_charsianon
+				target_title = title:d_sebasteia
+			}
+			random_character_war = {
+				save_scope_as = seljuk_byzantium_invasion_war
+			}
+			spawn_seljuk_invasion_byzantium_troops = yes
+		}
+		set_global_variable = {
+			name = seljuk_byzantium_invasion_happened
+			value = yes
+		}
+		title:e_byzantium.holder ?= {
+			trigger_event = seljuk_invasion_byzantium.0002
+		}
+		title:e_persia.holder ?= {
+			trigger_event = seljuk_invasion_byzantium.0003
+		}
+	}
+}
+
+seljuk_invasion_byzantium.0002 = {
+	type = character_event
+	title = seljuk_invasion_byzantium.0002.title
+	desc = seljuk_invasion_byzantium.0002.desc
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}
+	
+	right_portrait = {
+		character = scope:seljuk_byzantium_invader
+		animation = war_attacker
+	}
+
+	option = {
+		name = seljuk_invasion_byzantium.0002.a
+	}
+}
+
+seljuk_invasion_byzantium.0003 = {
+	type = character_event
+	title = seljuk_invasion_byzantium.0003.title
+	desc = seljuk_invasion_byzantium.0003.desc
+	
+	theme = war
+	
+	immediate = {
+		root = { save_scope_as = persia_emperor }
+	}
+	
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	right_portrait = {
+		character = scope:seljuk_byzantium_invader
+		animation = war_attacker
+	}
+
+	option = {
+		name = seljuk_invasion_byzantium.0003.a
+		custom_tooltip = {
+			text = seljuk_invasion_byzantium.0003.a.tooltip
+			scope:persia_emperor = {
+				create_alliance = {
+					target = scope:seljuk_byzantium_invader
+					allied_through_owner = scope:persia_emperor
+					allied_through_target = scope:seljuk_byzantium_invader
+				}
+			}
+			scope:seljuk_byzantium_invader = { # this stop the alliance breaking instantly
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = scope:persia_emperor
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = seljuk_invasion_byzantium.0003.b
+		scope:seljuk_byzantium_invader = {
+			set_relation_rival = {
+				target = root
+				reason = rival_disregarded_plea_for_help
+			}
+		}
+		ai_chance = {
+			# would be cool to give a chance of rival, but rum is so weak on start it needs all the help it can get
+			base = 0
+		}
+	}
+}
+
+seljuk_invasion_byzantium.0004 = {
+	type = character_event
+	title = middle_east_decisions.0014.t
+	desc = middle_east_decisions.0014.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+	right_portrait = {
+		character = scope:roman_emperor
+		animation = disbelief
+	}
+	lower_left_portrait = scope:former_liege
+	
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+		save_scope_as = scoped_ruler
+		if = {
+			limit = { is_independent_ruler = no }
+			liege = { save_scope_as = former_liege }
+		}
+		if = {
+			limit = { exists = title:e_byzantium.holder }
+			title:e_byzantium.holder = { save_scope_as = roman_emperor }
+		}
+		else_if = {
+			limit = { exists = title:e_roman_empire.holder }
+			title:e_roman_empire.holder = { save_scope_as = roman_emperor }
+		}
+		
+		legend_seed_new_title_effect = yes
+		# De jure shifts.
+
+		hidden_effect = {
+			title:d_anatolia = {
+				set_de_jure_liege_title = title:k_rum
+			}
+			title:d_cappadocia = {
+				set_de_jure_liege_title = title:k_rum
+			}
+			title:d_sebasteia = {
+				set_de_jure_liege_title = title:k_rum
+			}
+			title:d_charsianon = {
+				set_de_jure_liege_title = title:k_rum
+			}
+		}
+	}
+	
+	option = {
+		name = middle_east_decisions.0014.a
+		create_rum_scripted_effect = yes
+		# Send narrative fluff to other players (if any).
+		every_player = {
+			limit = {
+				NOT = { this = root }
+				OR = {
+					top_liege = scope:former_liege
+					has_title = title:e_byzantium
+					has_title = title:e_roman_empire
+				}
+			}
+			trigger_event = middle_east_decisions.0015
+		}
+	}
+}

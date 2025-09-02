@@ -1,0 +1,4 @@
+reassign_title_troops = {
+	influence = admin_title_troop_command_cost_value
+	gold = admin_title_troop_command_cost_value
+}

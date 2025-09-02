@@ -1,0 +1,7 @@
+e_anatolia = {
+	color = { 150 0 0 }
+	
+	definite_form = yes
+	
+	capital = c_lycaonia
+}
