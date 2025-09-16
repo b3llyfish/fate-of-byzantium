@@ -1,4 +1,4 @@
-additional_succession_claims_total = {
+﻿additional_succession_claims_total = {
 	value = 1 # succession list starts at 1
 	if = {
 		limit = {

@@ -1,4 +1,4 @@
-namespace = byz_struggle
+﻿namespace = byz_struggle
 
 byz_struggle.0001 = {
 	hidden = yes

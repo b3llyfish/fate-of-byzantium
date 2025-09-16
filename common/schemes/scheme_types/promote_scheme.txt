@@ -1,4 +1,4 @@
-promote = {
+﻿promote = {
 	# Basic Setup
 	skill = diplomacy
 	desc = "promote_desc_general"

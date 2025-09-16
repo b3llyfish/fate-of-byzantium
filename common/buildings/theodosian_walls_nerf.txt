@@ -1,4 +1,4 @@
-theodosian_walls_01 = {
+﻿theodosian_walls_01 = {
 	construction_time = very_slow_construction_time
 	
 	type_icon = "icon_structure_theodosian_walls.dds"
@@ -15,21 +15,20 @@ theodosian_walls_01 = {
 		levy_size = 0.15
 		#tax_mult = 0.15
 		monthly_county_control_growth_factor = 0.25 #new
-		#epidemic_resistance = 15 #new
+		epidemic_resistance = 15 #new
 	}
 	province_modifier = {
-		#monthly_income = 10
+		monthly_income = 5 #down from 10
 		fort_level = 5
 		garrison_size = 1
 		travel_danger = -20
-		defender_holding_advantage = 5 #new
 		stationed_maa_damage_mult = 0.1 #new
 		stationed_maa_toughness_mult = 0.1 #new
 	}
 	county_modifier = {
-		development_growth = 0.2 #reduce from 0.4
+		development_growth = 0.25 #reduce from 0.4
 		development_growth_factor = 0.1 #reduce from 0.2
-		levy_size = 0.4 #reduce from 0.4
+		levy_size = 0.5 #increased from 0.4
 		#tax_mult = 0.3
 		hostile_raid_time = 0.5
 	}

@@ -1,4 +1,4 @@
-fate_of_byzantium_struggle_enable = {
+﻿fate_of_byzantium_struggle_enable = {
 	categories = { fate_of_byzantium }
 	
 	default = fate_of_byzantium_struggle_enabled
@@ -42,4 +42,18 @@ seljuk_invasion_byzantium_invader_culture = {
 	invader_turkmen_culture = {}
 	
 	emperor_persia_culture = {}
+}
+
+historicity_frankokratia = {
+	categories = { historicity difficulty }
+	
+	default = historicity_frankokratia_fourth_crusade
+	
+	historicity_frankokratia_default = {}
+	
+	historicity_frankokratia_blocked = {}
+	
+	historicity_frankokratia_fourth_crusade = {}
+	
+	historicity_frankokratia_high = {}
 }

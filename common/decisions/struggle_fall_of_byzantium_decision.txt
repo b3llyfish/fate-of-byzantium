@@ -1,11 +1,11 @@
-struggle_fall_of_byzantium_decision = {
+﻿struggle_fall_of_byzantium_decision = {
 	ai_goal = yes
 	is_invisible = yes
 	
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
 	}
-	extra_picture = "gfx/interface/illustrations/struggle_decision_buttons/fate_byzantium_decline.dds"
+	extra_picture = "gfx/interface/illustrations/struggle_decision_buttons/fp3_decision_temper.dds"
 	
 	decision_group_type = major
 	
@@ -41,6 +41,9 @@ struggle_fall_of_byzantium_decision = {
 	}
 	
 	effect = {
+		culture:greek = {
+			add_culture_tradition = tradition_byzantine_decline
+		}
 		split_eastern_byzantium_de_jure_effect = yes
 		split_western_byzantium_de_jure_effect = yes
 		split_southern_italy_de_jure_effect = yes

@@ -1,4 +1,4 @@
-on_title_destroyed = {
+﻿on_title_destroyed = {
 	on_actions = {
 		byz_title_destroyed
 	}

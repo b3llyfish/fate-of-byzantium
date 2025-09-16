@@ -1,4 +1,4 @@
-on_game_start = {
+﻿on_game_start = {
 	on_actions = {
 		add_horse_lord_oghuz
 		disable_seljuk_byzantium_invasion
@@ -60,7 +60,7 @@ fix_rum_anatolia_kingdom_capital = {
 			limit = {
 				game_start_date >= 1178.10.1
 			}
-			fix_rum_anatolia_kingdom_capital_effect = yes
+			rum_de_jure_duchies_effect = yes
 		}
 	}
 }

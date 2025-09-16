@@ -7,6 +7,4 @@
 
  seljuk_invasion_byzantium.0003.title: "$invade_rum_war_name$"
  seljuk_invasion_byzantium.0003.desc: "$seljuk_invasion_byzantium.desc$"
- seljuk_invasion_byzantium.0003.a: "I will lend them my support"
- seljuk_invasion_byzantium.0003.a.tooltip: "You form an alliance with [seljuk_byzantium_invader.GetShortUIName|U]"
- seljuk_invasion_byzantium.0003.b: "Pfft, ignore this upstart"
+ seljuk_invasion_byzantium.0003.a: "An interesting development..."

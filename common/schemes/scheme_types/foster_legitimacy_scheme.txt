@@ -1,4 +1,4 @@
-############################
+﻿############################
 # Foster Legitimacy Scheme
 # (Only for Governors against the Emperor)
 ############################

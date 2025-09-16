@@ -1,4 +1,4 @@
-namespace = seljuk_invasion_byzantium
+﻿namespace = seljuk_invasion_byzantium
 
 seljuk_invasion_byzantium.0001 = {
 	scope = none
@@ -25,10 +25,20 @@ seljuk_invasion_byzantium.0001 = {
 			value = yes
 		}
 		title:e_byzantium.holder ?= {
-			trigger_event = seljuk_invasion_byzantium.0002
+			if = {
+				limit = {
+					is_ai = no
+				}
+				trigger_event = seljuk_invasion_byzantium.0002
+			}
 		}
 		title:e_persia.holder ?= {
-			trigger_event = seljuk_invasion_byzantium.0003
+			if = {
+				limit = {
+					is_ai = no
+				}
+				trigger_event = seljuk_invasion_byzantium.0003
+			}
 		}
 	}
 }
@@ -78,39 +88,6 @@ seljuk_invasion_byzantium.0003 = {
 
 	option = {
 		name = seljuk_invasion_byzantium.0003.a
-		custom_tooltip = {
-			text = seljuk_invasion_byzantium.0003.a.tooltip
-			scope:persia_emperor = {
-				create_alliance = {
-					target = scope:seljuk_byzantium_invader
-					allied_through_owner = scope:persia_emperor
-					allied_through_target = scope:seljuk_byzantium_invader
-				}
-			}
-			scope:seljuk_byzantium_invader = { # this stop the alliance breaking instantly
-				add_opinion = {
-					modifier = perk_negotiated_alliance_opinion
-					target = scope:persia_emperor
-				}
-			}
-		}
-		ai_chance = {
-			base = 100
-		}
-	}
-	
-	option = {
-		name = seljuk_invasion_byzantium.0003.b
-		scope:seljuk_byzantium_invader = {
-			set_relation_rival = {
-				target = root
-				reason = rival_disregarded_plea_for_help
-			}
-		}
-		ai_chance = {
-			# would be cool to give a chance of rival, but rum is so weak on start it needs all the help it can get
-			base = 0
-		}
 	}
 }
 
@@ -146,22 +123,6 @@ seljuk_invasion_byzantium.0004 = {
 		}
 		
 		legend_seed_new_title_effect = yes
-		# De jure shifts.
-
-		hidden_effect = {
-			title:d_anatolia = {
-				set_de_jure_liege_title = title:k_rum
-			}
-			title:d_cappadocia = {
-				set_de_jure_liege_title = title:k_rum
-			}
-			title:d_sebasteia = {
-				set_de_jure_liege_title = title:k_rum
-			}
-			title:d_charsianon = {
-				set_de_jure_liege_title = title:k_rum
-			}
-		}
 	}
 	
 	option = {

@@ -1,4 +1,4 @@
-raid_estate = {
+﻿raid_estate = {
 	# Basic Setup
 	skill = intrigue
 	desc = "raid_estate_desc_general"

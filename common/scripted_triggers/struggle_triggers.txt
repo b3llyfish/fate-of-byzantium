@@ -1,4 +1,4 @@
-involved_in_byz_struggle = {
+﻿involved_in_byz_struggle = {
 	any_character_struggle = {
 		involvement = involved
 		is_struggle_type = fate_of_byzantium
@@ -121,4 +121,8 @@ should_activate_catalyst_political_scheme_against_emperor = {
 should_activate_catalyst_political_scheme = {
 	NOT = { exists = scope:suppress_next_event }
 	scheme_owner = { involved_in_byz_struggle = yes }
+}
+
+greek_culture_not_is_decline = {
+	culture = { NOT = { has_cultural_parameter = greek_decline } }
 }

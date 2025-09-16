@@ -1,0 +1,26 @@
+﻿tradition_byzantine_decline = {
+	category = regional
+	
+	layers = {
+		0 = intrigue
+		1 = mediterranean
+		4 = byz_decline.dds
+	}
+	
+	is_shown = {
+		always = no
+	}
+
+	parameters = {
+		greek_decline = yes
+	}
+	
+	character_modifier = {
+		advantage = -5
+		army_damage_mult = -0.1
+		men_at_arms_maintenance = 0.1
+		mercenary_hire_cost_mult = 0.1
+		tax_mult = -0.1
+		max_political_schemes_add = 1
+	}
+}

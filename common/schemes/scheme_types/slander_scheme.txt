@@ -1,4 +1,4 @@
-slander = {
+﻿slander = {
 	# Basic Setup
 	skill = diplomacy
 	desc = "slander_desc_general"

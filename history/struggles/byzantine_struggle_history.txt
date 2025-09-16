@@ -1,4 +1,4 @@
-867.1.1 = {
+﻿867.1.1 = {
 	effect = {
 		if = {
 			limit = { has_game_rule = fate_of_byzantium_struggle_enabled }
@@ -24,7 +24,7 @@
 		if = {
 			limit = { has_game_rule = fate_of_byzantium_struggle_enabled }
 			struggle:fate_of_byzantium = {
-				change_struggle_phase = struggle_fate_of_byzantium_phase_stagnation
+				change_struggle_phase = struggle_fate_of_byzantium_phase_decline
 			}
 		}
 	}

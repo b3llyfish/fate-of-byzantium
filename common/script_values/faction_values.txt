@@ -1,19 +1,13 @@
-## populist
+﻿## populist
 # county_create_score base score = -160
-admin_gov_populist_county_create_score = 0
-struggle_stagnation_county_create_score = 20
-struggle_decline_county_create_score = 40
+admin_gov_populist_county_create_score = 30
 # county_join_score base score = -120
-admin_gov_populist_county_join_score = 0 #40
-struggle_stagnation_county_join_score = 30 #10
-struggle_decline_county_join_score = 60 #20
+admin_gov_populist_county_join_score = 30
 # ai_join_score base score = -25
-admin_gov_populist_ai_join_score = 5
-struggle_stagnation_ai_join_score = 5
-struggle_decline_ai_join_score = 10
+admin_gov_populist_ai_join_score = 10
 
 # county_create_score base score = -160
-governor_efficiency_populist_county_create_score = {
+governor_efficiency_populist_score = {
 	value = 0
 	# get governor efficiency (between -50 & 50)
 	county.holder = { add = governor_efficiency_presented }
@@ -21,30 +15,22 @@ governor_efficiency_populist_county_create_score = {
 	# double the value (range now between -100 & 100)
 	multiply = -2
 	# apply phase multipliers
-	#if = {
-	#	limit = {
-	#		struggle:fate_of_byzantium ?= {
-	#			has_struggle_phase_parameter = populist_rebels_more_likely
-	#		}
-	#	}
-	#	multiply = 1.25
-	#}
-	#if = {
-	#	limit = {
-	#		struggle:fate_of_byzantium ?= {
-	#			has_struggle_phase_parameter = populist_rebels_much_more_likely
-	#		}
-	#	}
-	#	multiply = 1.5
-	#}
-	# cap the reduction from good governors to 50
-	min = -50
-}
-
-# county_join_score base score = -120
-governor_efficiency_populist_county_join_score = {
-	value = governor_efficiency_populist_county_create_score
-	multiply = 1.5
+	if = {
+		limit = {
+			struggle:fate_of_byzantium ?= {
+				has_struggle_phase_parameter = populist_rebels_more_likely
+			}
+		}
+		multiply = 1.25
+	}
+	if = {
+		limit = {
+			struggle:fate_of_byzantium ?= {
+				has_struggle_phase_parameter = populist_rebels_much_more_likely
+			}
+		}
+		multiply = 1.5
+	}
 	# cap the reduction from good governors to 50
 	min = -50
 }

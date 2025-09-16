@@ -1,4 +1,4 @@
-namespace = fate_of_byzantium_scheme_override
+﻿namespace = fate_of_byzantium_scheme_override
 
 # slander
 fate_of_byzantium_scheme_override.0001 = {
@@ -108,9 +108,19 @@ fate_of_byzantium_scheme_override.0003 = {
 	hidden = yes
 	
 	immediate = {
-		roll_scheme_success_or_failure_effect = {
-			SUCCESS_EVENT = grand_ambitions.0200
-			FAILURE_EVENT = grand_ambitions.0250
+		random = {
+			chance = scope:scheme.scheme_success_chance
+			save_scope_value_as = {
+				name = scheme_successful
+				value = yes
+			}
+		}
+		scope:owner = {
+			if = {
+				limit = { exists = scope:scheme_successful }
+				trigger_event =  grand_ambitions.0200
+			}
+			else = { trigger_event = grand_ambitions.0250 }
 		}
 		scope:scheme = {
 			scheme_target_character = {

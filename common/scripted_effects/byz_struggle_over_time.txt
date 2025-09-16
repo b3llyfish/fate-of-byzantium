@@ -1,4 +1,4 @@
-byz_struggle_yearly_effect = {
+﻿byz_struggle_yearly_effect = {
 	# optimism
 	if = {
 		limit = {
@@ -22,13 +22,6 @@ byz_struggle_yearly_effect = {
 	# decline
 	if = {
 		limit = {
-			NOT = { exists = title:e_byzantium.holder }
-			phase_has_catalyst = catalyst_no_byz_emperor
-		}
-		activate_struggle_catalyst = catalyst_no_byz_emperor
-	}
-	if = {
-		limit = {
 			OR = {
 				phase_has_catalyst = catalyst_byz_loss_control_greek_region_over_time
 				phase_has_catalyst = catalyst_byz_major_loss_control_greek_region_over_time
@@ -46,12 +39,5 @@ byz_struggle_yearly_effect = {
 			}
 			activate_struggle_catalyst = catalyst_byz_loss_control_greek_region_over_time
 		}
-	}
-	if = {
-		limit = {
-			phase_has_catalyst = catalyst_byz_doesnt_hold_constantinople_over_time
-			NOT = { title:b_constantinople.holder = title:e_byzantium.holder }
-		}
-		activate_struggle_catalyst = catalyst_byz_doesnt_hold_constantinople_over_time
 	}
 }

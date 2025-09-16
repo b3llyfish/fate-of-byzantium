@@ -8,7 +8,7 @@
  setting_fate_of_byzantium_struggle_disabled_desc: "The struggle mechanic will be disabled"
  
  rule_admin_gov_succession_claims: "Fate of Byzantium: Emperor Additional Succession Claims"
- setting_admin_gov_succession_claims_none: "None"
+ setting_admin_gov_succession_claims_none: "No additional claims"
  setting_admin_gov_succession_claims_none_desc: "There will be no additional succession claims"
  setting_admin_gov_succession_claims_one: "One"
  setting_admin_gov_succession_claims_one_desc: "Successions in Empire tiered admin titles will give an unpressed claim to the person in #Z second#! place"

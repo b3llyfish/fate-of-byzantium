@@ -1,7 +1,6 @@
-on_death = {
+﻿on_death = {
 	on_actions = {
 		give_unpressed_admin_title_claim
-		struggle_emperor_death
 	}
 }
 
@@ -37,24 +36,6 @@ give_unpressed_admin_title_claim = {
 					}
 					add_unpressed_claim = scope:admin_title
 				}
-			}
-		}
-	}
-}
-
-struggle_emperor_death = {
-	effect = {
-		if = {
-			limit = {
-				exists = scope:killer
-				struggle:fate_of_byzantium ?= {
-					phase_has_catalyst = catalyst_byz_emperor_assassinated
-				}
-				involved_in_byz_struggle = yes
-				primary_title = title:e_byzantium
-			}
-			struggle:fate_of_byzantium ?= {
-				activate_struggle_catalyst = catalyst_byz_emperor_assassinated
 			}
 		}
 	}

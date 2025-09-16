@@ -1,4 +1,4 @@
-# scope: character owning the scheme
+﻿# scope: character owning the scheme
 fate_of_byzantium_catalyst_challenge_status_scheme_effect = {
 	if = {
 		limit = {
@@ -7,8 +7,12 @@ fate_of_byzantium_catalyst_challenge_status_scheme_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_challenge_status_scheme
+			activate_struggle_catalyst = {
+				catalyst = catalyst_challenge_status_scheme
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -22,8 +26,12 @@ fate_of_byzantium_catalyst_promote_scheme_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_promote_scheme
+			activate_struggle_catalyst = {
+				catalyst = catalyst_promote_scheme
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -37,8 +45,12 @@ fate_of_byzantium_catalyst_slander_scheme_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_slander_scheme
+			activate_struggle_catalyst = {
+				catalyst = catalyst_slander_scheme
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -52,8 +64,12 @@ fate_of_byzantium_catalyst_damage_legitimacy_scheme_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_damage_legitimacy_scheme
+			activate_struggle_catalyst = {
+				catalyst = catalyst_damage_legitimacy_scheme
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -67,8 +83,12 @@ fate_of_byzantium_catalyst_foster_legitimacy_scheme_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_foster_legitimacy_scheme
+			activate_struggle_catalyst = {
+				catalyst = catalyst_foster_legitimacy_scheme
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -82,8 +102,12 @@ fate_of_byzantium_catalyst_raid_estate_scheme_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_raid_estate_scheme
+			activate_struggle_catalyst = {
+				catalyst = catalyst_raid_estate_scheme
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -97,8 +121,12 @@ fate_of_byzantium_catalyst_dispute_border_scheme_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_dispute_border_scheme
+			activate_struggle_catalyst = {
+				catalyst = catalyst_dispute_border_scheme
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -112,8 +140,12 @@ fate_of_byzantium_catalyst_subsume_governorship_scheme_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_subsume_governorship_scheme
+			activate_struggle_catalyst = {
+				catalyst = catalyst_subsume_governorship_scheme
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -127,8 +159,12 @@ fate_of_byzantium_catalyst_ingratiate_family_scheme_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_ingratiate_family_scheme
+			activate_struggle_catalyst = {
+				catalyst = catalyst_ingratiate_family_scheme
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -142,8 +178,12 @@ fate_of_byzantium_catalyst_depose_scheme_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_depose_scheme
+			activate_struggle_catalyst = {
+				catalyst = catalyst_depose_scheme
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -157,8 +197,12 @@ fate_of_byzantium_catalyst_expand_power_base_scheme_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_expand_power_base_scheme
+			activate_struggle_catalyst = {
+				catalyst = catalyst_expand_power_base_scheme
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -172,8 +216,12 @@ fate_of_byzantium_catalyst_influence_candidate_interaction_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_influence_candidate_interaction
+			activate_struggle_catalyst = {
+				catalyst = catalyst_influence_candidate_interaction
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -187,8 +235,12 @@ fate_of_byzantium_catalyst_request_appointment_interaction_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_request_appointment_interaction
+			activate_struggle_catalyst = {
+				catalyst = catalyst_request_appointment_interaction
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -202,8 +254,12 @@ fate_of_byzantium_catalyst_request_council_interaction_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_request_council_interaction
+			activate_struggle_catalyst = {
+				catalyst = catalyst_request_council_interaction
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -217,8 +273,12 @@ fate_of_byzantium_catalyst_damage_efficiency_interaction_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_damage_efficiency_interaction
+			activate_struggle_catalyst = {
+				catalyst = catalyst_damage_efficiency_interaction
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -232,8 +292,12 @@ fate_of_byzantium_catalyst_boost_efficiency_interaction_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_boost_efficiency_interaction
+			activate_struggle_catalyst = {
+				catalyst = catalyst_boost_efficiency_interaction
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -247,8 +311,12 @@ fate_of_byzantium_catalyst_force_governor_removal_interaction_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_force_governor_removal_interaction
+			activate_struggle_catalyst = {
+				catalyst = catalyst_force_governor_removal_interaction
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -262,8 +330,12 @@ fate_of_byzantium_catalyst_force_retirement_interaction_effect = {
 			}
 			involved_in_byz_struggle = yes
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_force_retirement_interaction
+			activate_struggle_catalyst = {
+				catalyst = catalyst_force_retirement_interaction
+				character = scope:trigger_char
+			}
 		}
 	}
 }
@@ -278,8 +350,12 @@ fate_of_byzantium_catalyst_political_scheme_against_emperor_effect = {
 			exists = title:e_byzantium.holder
 			has_title = title:e_byzantium
 		}
+		save_scope_as = trigger_char
 		struggle:fate_of_byzantium ?= {
-			activate_struggle_catalyst = catalyst_political_scheme_against_emperor
+			activate_struggle_catalyst = {
+				catalyst = catalyst_political_scheme_against_emperor
+				character = scope:trigger_char
+			}
 		}
 	}
 }

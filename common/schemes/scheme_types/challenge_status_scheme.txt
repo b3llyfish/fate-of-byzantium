@@ -1,4 +1,4 @@
-challenge_status = {
+﻿challenge_status = {
 	# Basic Setup
 	skill = learning
 	desc = "challenge_status_desc_general"

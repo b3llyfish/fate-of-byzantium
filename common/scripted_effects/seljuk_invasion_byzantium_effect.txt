@@ -1,4 +1,4 @@
-spawn_seljuk_invasion_byzantium_character_effect = {
+﻿spawn_seljuk_invasion_byzantium_character_effect = {
 	if = {
 		limit = {
 			exists = title:e_persia.holder
@@ -25,17 +25,16 @@ spawn_seljuk_invasion_byzantium_character_effect = {
 	title:c_edessa = { save_scope_as = seljuk_birthplace }
 	
 	create_character = {
-		age = { 20 30 }
+		age = { 30 36 }
 		location = scope:seljuk_birthplace
 		gender_female_chance = fp3_chance_female_leader
 		culture = scope:seljuk_birth_culture
 		faith = scope:seljuk_birth_faith
-		trait = brave
+		trait = wrathful
 		trait = ambitious
-		trait = impatient
-		trait = education_martial_4
+		trait = arrogant
+		trait = education_martial_3
 		trait = rough_terrain_expert
-		trait = warlike_court_2
 		martial = { 16 21 }
 		stewardship = { 8 11 }
 		diplomacy = { 12 14 }
@@ -46,9 +45,9 @@ spawn_seljuk_invasion_byzantium_character_effect = {
 		dynasty_house = scope:seljuk_birth_house
 		
 		after_creation = {
-			add_gold =  { medium_gold_min_value major_gold_max_value }
-			add_prestige = { medium_prestige_value massive_prestige_value }
-			add_piety = { medium_piety_value massive_piety_value }
+			add_gold = medium_gold_max_value
+			add_prestige = massive_prestige_value
+			add_piety = medium_piety_value
 			add_martial_lifestyle_xp = 10000
 			add_trait = strong
 			add_character_flag = is_seljuk
@@ -97,9 +96,6 @@ spawn_seljuk_invasion_byzantium_troops = {
 		LOCATION = scope:seljuk_byzantium_invader.location
 	}
 	spawn_nomadic_troops = {
-		LOCATION = scope:seljuk_byzantium_invader.location
-	}
-	spawn_temp_nomadic_troops = {
 		LOCATION = scope:seljuk_byzantium_invader.location
 	}
 	spawn_temp_nomadic_troops = {
@@ -175,8 +171,29 @@ seljuk_invader_county_modifier_effect = {
 	every_sub_realm_county = {
 		add_county_modifier = {
 			modifier = seljuk_invader_modifier
-			years = 15
+			years = 10
 		}
+	}
+}
+
+rum_de_jure_duchies_effect = {
+	title:d_anatolia = {
+		set_de_jure_liege_title = title:k_rum
+	}
+	title:d_cappadocia = {
+		set_de_jure_liege_title = title:k_rum
+	}
+	title:d_sebasteia = {
+		set_de_jure_liege_title = title:k_rum
+	}
+	title:d_charsianon = {
+		set_de_jure_liege_title = title:k_rum
+	}
+	title:d_cibyrrhaeot = {
+		set_de_jure_liege_title = title:k_rum
+	}
+	title:d_cilicia = {
+		set_de_jure_liege_title = title:k_rum
 	}
 }
 
@@ -186,5 +203,20 @@ fix_rum_anatolia_kingdom_capital_effect = {
 	}
 	title:k_anatolia = {
 		set_capital_county = title:c_lycia
+	}
+}
+
+ai_anatolia_title_tidy_up_effect = {
+	if = {
+		limit = {
+			is_ai = yes
+			has_title = title:k_anatolia
+			title:k_anatolia = {
+				any_de_jure_county = {
+					count = 0
+				}
+			}
+		}
+		destroy_title = title:k_anatolia
 	}
 }

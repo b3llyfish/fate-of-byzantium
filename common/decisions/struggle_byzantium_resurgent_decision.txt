@@ -1,4 +1,4 @@
-struggle_byzantium_resurgent_decision = {
+﻿struggle_byzantium_resurgent_decision = {
 	ai_goal = yes
 	is_invisible = yes
 	
@@ -56,7 +56,7 @@ struggle_byzantium_resurgent_decision = {
 				region = region_struggle_fate_of_byzantium
 				add_county_modifier = {
 					modifier = byzantium_resurgent_modifier
-					years = 25
+					years = 30
 				}
 			}
 		}

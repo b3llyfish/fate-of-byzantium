@@ -1,4 +1,4 @@
-expand_power_base = {
+﻿expand_power_base = {
 	# Basic Setup
 	skill = stewardship
 	desc = "expand_power_base_desc_general"

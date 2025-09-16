@@ -1,4 +1,4 @@
-e_anatolia = {
+﻿e_anatolia = {
 	pattern="pattern__solid_designer.dds"
 	color1=red
 	color2=yellow

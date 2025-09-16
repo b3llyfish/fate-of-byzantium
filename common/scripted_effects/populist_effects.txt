@@ -1,4 +1,4 @@
-# override to remove populists not breaking free from admin realms
+﻿# override to remove populists not breaking free from admin realms
 successful_popular_revolt_outcome_effect = {
 	# Save scopes for later usage.
 	$FACTION_LEADER$ = {

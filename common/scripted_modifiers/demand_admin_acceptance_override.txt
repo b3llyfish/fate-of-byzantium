@@ -1,4 +1,4 @@
-
+﻿
 demand_admin_acceptance_modifier = {
 	opinion_modifier = { # Opinion Factor
 		who = scope:recipient

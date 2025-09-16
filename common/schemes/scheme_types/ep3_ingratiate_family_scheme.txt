@@ -1,4 +1,4 @@
-ingratiate_family = {
+﻿ingratiate_family = {
 	# Basic Setup
 	skill = diplomacy
 	desc = ingratiate_family_desc_general

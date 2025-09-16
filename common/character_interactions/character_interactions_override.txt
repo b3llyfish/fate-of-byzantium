@@ -1,4 +1,4 @@
-# PLAYER ONLY - AI uses the two separate interactions below this ( Promote/Harm Candidacy)
+﻿# PLAYER ONLY - AI uses the two separate interactions below this ( Promote/Harm Candidacy)
 influence_candidacy_interaction = {
 	icon = support_candidacy
 	category = interaction_category_succession

@@ -1,8 +1,8 @@
-gov_efficiency_terrible_multiplier = 1.3
-gov_efficiency_poor_multiplier = 1.5
-gov_efficiency_average_multiplier = 1.7
-gov_efficiency_good_multiplier = 1.9
-gov_efficiency_excellent_multiplier = 2.1
+﻿gov_efficiency_terrible_multiplier = 1.0
+gov_efficiency_poor_multiplier = 1.3
+gov_efficiency_average_multiplier = 1.5
+gov_efficiency_good_multiplier = 1.8
+gov_efficiency_excellent_multiplier = 2.0
 
 # Governor efficiency used in code
 # root - charater that is evaluated for the governorship

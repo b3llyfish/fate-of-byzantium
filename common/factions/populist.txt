@@ -1,4 +1,4 @@
-populist_faction = {
+﻿populist_faction = {
 	casus_belli = populist_war
 	
 	leaders_allowed_to_leave = no
@@ -8,17 +8,7 @@ populist_faction = {
 	
 	name = FACTION_POPULIST_DYNAMIC_NAME
 	
-	short_effect_desc = {
-		first_valid = {
-			triggered_desc = {
-				trigger = {
-					faction_target = { government_has_flag = government_is_administrative }
-				}
-				desc = populist_faction_short_effect_desc_admin
-			}
-			desc = populist_faction_short_effect_desc
-		}
-	}
+	short_effect_desc = populist_faction_short_effect_desc
 	
 	discontent_progress = {
 		base = 0
@@ -299,8 +289,14 @@ populist_faction = {
 		}
 		
 		modifier = {
+			desc = "admin_gov_modifier"
+			add = admin_gov_populist_county_create_score
+			county.holder = { government_has_flag = government_is_administrative }
+		}
+		
+		modifier = {
 			desc = governor_efficiency
-			add = governor_efficiency_populist_county_create_score
+			add = governor_efficiency_populist_score
 			county.holder = { government_has_flag = government_is_administrative }
 			NOT = { county.culture = county.holder.culture }
 		}
@@ -366,31 +362,6 @@ populist_faction = {
 			add = -200
 			scope:target = { ai_should_get_extreme_conqueror_bonuses = yes }
 		}
-		
-		#modifier = {
-		#	desc = "admin_gov_modifier"
-		#	add = admin_gov_populist_county_create_score
-		#	county.holder = { government_has_flag = government_is_administrative }
-		#}
-		
-		#
-		#modifier = {
-		#	desc = "fate_of_byzantium_stagnation_modifier"
-		#	add = struggle_stagnation_county_create_score
-		#	struggle:fate_of_byzantium ?= {
-		#		has_struggle_phase_parameter = populist_rebels_more_likely
-		#	}
-		#	scope:target = { involved_in_byz_struggle = yes }
-		#}
-		#
-		#modifier = {
-		#	desc = "fate_of_byzantium_decline_modifier"
-		#	add = struggle_decline_county_create_score
-		#	struggle:fate_of_byzantium ?= {
-		#		has_struggle_phase_parameter = populist_rebels_much_more_likely
-		#	}
-		#	scope:target = { involved_in_byz_struggle = yes }
-		#}
 	}
 	
 	county_join_score =  {
@@ -559,36 +530,18 @@ populist_faction = {
 			scope:faction.faction_target.diarch.faith ?= faith
 		}
 		
-		#modifier = {
-		#	desc = "admin_gov_modifier"
-		#	add = admin_gov_populist_county_join_score
-		#	county.holder = { government_has_flag = government_is_administrative }
-		#}
+		modifier = {
+			desc = "admin_gov_modifier"
+			add = admin_gov_populist_county_join_score
+			county.holder = { government_has_flag = government_is_administrative }
+		}
 		
 		modifier = {
 			desc = governor_efficiency
-			add = governor_efficiency_populist_county_join_score
+			add = governor_efficiency_populist_score
 			county.holder = { government_has_flag = government_is_administrative }
 			NOT = { county.culture = county.holder.culture }
 		}
-		#
-		#modifier = {
-		#	desc = "fate_of_byzantium_stagnation_modifier"
-		#	add = struggle_stagnation_county_join_score
-		#	struggle:fate_of_byzantium ?= {
-		#		has_struggle_phase_parameter = populist_rebels_more_likely
-		#	}
-		#	scope:faction.faction_target = { involved_in_byz_struggle = yes }
-		#}
-		#
-		#modifier = {
-		#	desc = "fate_of_byzantium_decline_modifier"
-		#	add = struggle_decline_county_join_score
-		#	struggle:fate_of_byzantium ?= {
-		#		has_struggle_phase_parameter = populist_rebels_much_more_likely
-		#	}
-		#	scope:faction.faction_target = { involved_in_byz_struggle = yes }
-		#}
 	}
 	
 	county_power = county_levies_to_raise
@@ -823,31 +776,13 @@ populist_faction = {
 			}
 		}
 		
-		#modifier = {
-		#	desc = "admin_gov_modifier"
-		#	add = admin_gov_populist_ai_join_score
-		#	scope:faction.faction_target = {
-		#		government_has_flag = government_is_administrative
-		#	}
-		#}
-		#
-		#modifier = {
-		#	desc = "fate_of_byzantium_stagnation_modifier"
-		#	add = struggle_stagnation_ai_join_score
-		#	struggle:fate_of_byzantium ?= {
-		#		has_struggle_phase_parameter = populist_rebels_more_likely
-		#	}
-		#	scope:faction.faction_target = { involved_in_byz_struggle = yes }
-		#}
-		#
-		#modifier = {
-		#	desc = "fate_of_byzantium_decline_modifier"
-		#	add = struggle_decline_ai_join_score
-		#	struggle:fate_of_byzantium ?= {
-		#		has_struggle_phase_parameter = populist_rebels_much_more_likely
-		#	}
-		#	scope:faction.faction_target = { involved_in_byz_struggle = yes }
-		#}
+		modifier = {
+			desc = "admin_gov_modifier"
+			add = admin_gov_populist_ai_join_score
+			scope:faction.faction_target = {
+				government_has_flag = government_is_administrative
+			}
+		}
 	}
 	
 	on_creation = {

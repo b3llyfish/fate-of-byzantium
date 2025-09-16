@@ -1,4 +1,4 @@
-region_struggle_fate_of_byzantium = {
+﻿region_struggle_fate_of_byzantium = {
 	kingdoms = {
 		# greece
 		k_epirus

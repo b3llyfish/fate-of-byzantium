@@ -1,4 +1,4 @@
-form_rum_sultanate_decision = {
+﻿form_rum_sultanate_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/fp3/fp3_decision_concession.dds"
 	}
@@ -54,7 +54,11 @@ form_rum_sultanate_decision = {
 		completely_controls = title:d_anatolia
 		completely_controls = title:d_cappadocia
 		completely_controls = title:d_charsianon
-		completely_controls = title:d_sebasteia
+		OR = {
+			completely_controls = title:d_sebasteia
+			completely_controls = title:d_cibyrrhaeot
+			completely_controls = title:d_cilicia
+		}
 	}
 	
 	is_valid_showing_failures_only = {
@@ -70,9 +74,8 @@ form_rum_sultanate_decision = {
 		show_as_tooltip = {
 			create_rum_scripted_effect = yes
 		}
-		trigger_event = {
-			id = seljuk_invasion_byzantium.0004
-		}
+		rum_de_jure_duchies_effect = yes
+		trigger_event = seljuk_invasion_byzantium.0004
 		hidden_effect = {
 			add_to_global_variable_list = {
 				name = unavailable_unique_decisions
@@ -82,8 +85,13 @@ form_rum_sultanate_decision = {
 				name = flag_formed_rum_sultanate
 				value = root
 			}
-			# ensure rum and anatolia kingdoms both have a capital county
-			fix_rum_anatolia_kingdom_capital_effect = yes
+			# destroy anatolia title if it exists
+			if = {
+				limit = {
+					exists = title:k_anatolia.holder
+				}
+			}
+			destroy_title = title:k_anatolia
 		}
 	}
 	

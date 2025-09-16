@@ -1,4 +1,4 @@
-split_eastern_byzantium_de_jure_effect = {
+﻿split_eastern_byzantium_de_jure_effect = {
 	title:e_anatolia = {
 		save_scope_as = new_empire
 	}
@@ -58,7 +58,7 @@ split_western_byzantium_de_jure_effect = {
 }
 
 split_southern_italy_de_jure_effect = {
-	title:e_italy = {
+	title:k_italy.de_jure_liege = {
 		save_scope_as = new_empire
 	}
 	if = {

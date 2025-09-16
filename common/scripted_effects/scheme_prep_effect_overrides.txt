@@ -1,4 +1,4 @@
-slander_scheme_prep_effect_override = {
+﻿slander_scheme_prep_effect_override = {
 	save_scope_as = scheme
 	save_scope_value_as = {
 		name = follow_up_event

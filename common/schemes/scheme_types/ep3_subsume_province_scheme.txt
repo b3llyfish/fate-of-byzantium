@@ -1,4 +1,4 @@
-subsume_province = {
+﻿subsume_province = {
 	# Basic Setup
 	skill = diplomacy
 	desc = "subsume_province_desc_general"

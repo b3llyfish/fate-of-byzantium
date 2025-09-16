@@ -1,0 +1,28 @@
+﻿l_english:
+ struggle_byzantium_must_be_optimism: "The current [struggle_phase|E] is the [struggle_phase_byzantium_optimism|E]"
+ struggle_byzantium_resurgent_decision: "Byzantine Resurgence"
+ struggle_byzantium_resurgent_decision_desc: "The Eastern Roman Empire used to be a feared and respected name amongst this region. It is time to reestablished this."
+ struggle_byzantium_resurgent_decision_tooltip: "$struggle_fate_of_byzantium_ending_decision_tooltip$"
+ struggle_byzantium_resurgent_decision_confirm: "$struggle_fate_of_byzantium_ending_decision_confirm$"
+ struggle_byzantium_optimism_ending_county_total_text: "Byzantine Empire holds at least #Z [SCOPE.ScriptValue('struggle_byzantium_optimism_ending_county_total')|0]#! counties within the [GetGeographicalRegion('region_struggle_fate_of_byzantium').GetName] (currently #Z [SCOPE.ScriptValue('struggle_byzantium_emperor_struggle_region_county_count')|0]#!)"
+ struggle_byzantium_resurgent_ending_modifier_text: "All Greek counties within the Byzantine Empire gain [GetModifier('byzantium_resurgent_modifier').GetNameWithTooltip] for 25 years"
+ 
+ struggle_fall_of_byzantium_decision: "Fall of Byzantium"
+ struggle_fall_of_byzantium_decision_desc: "The Byzantines are a shadow of their former strength. Let us show them who truly rules these lands so that they will abandoned the foolish notion of the Eastern Roman Empire."
+ struggle_fall_of_byzantium_decision_tooltip: "$struggle_fate_of_byzantium_ending_decision_tooltip$"
+ struggle_fall_of_byzantium_decision_confirm: "$struggle_fate_of_byzantium_ending_decision_confirm$"
+ struggle_byzantium_must_be_decline: "The current [struggle_phase|E] is the [struggle_phase_byzantium_decline|E]"
+ struggle_byzantium_must_be_interloper: "You must be an [struggle_interloper|E]"
+ struggle_byzantium_decline_ending_county_total_text: "Byzantine Emperor holds at most #Z [SCOPE.ScriptValue('struggle_byzantium_decline_ending_county_total')|0]#! counties within the [GetGeographicalRegion('region_struggle_fate_of_byzantium').GetName] (currently #Z [SCOPE.ScriptValue('struggle_byzantium_emperor_struggle_region_county_count')|0]#!)"
+ struggle_fall_of_byzantium_truce_tooltip: "Fall of Byzantium Decision"
+ struggle_fall_of_byzantium_release_vassal_tooltip: "Any Byzantine vassals #Z not#! within the new [GetGeographicalRegion('region_struggle_fate_of_byzantium_fallen').GetName] borders will become independent"
+ 
+ struggle_fate_of_byzantium_ending_decision_tooltip: "End the Byzantine [struggle|E]"
+ struggle_fate_of_byzantium_ending_decision_confirm: "End the Byzantine Struggle"
+
+ dissolve_kingdom_bulgaria_decision: "Dissolve the Kingdom of Bulgaria"
+ dissolve_kingdom_bulgaria_decision_desc: "Though we now hold the Bulgarian lands the continued existence of a Bulgarian King may be a future catalyst for rebellion. We must dissolve the Kingdom of Bulgaria and bring its nobles into our form of government."
+ dissolve_kingdom_bulgaria_decision_tooltip: "Incorporate Bulgaria in the Byzantine Government"
+ dissolve_kingdom_bulgaria_decision_confirm: "Confirm"
+ dissolve_kingdom_bulgaria_byz_vassal: "The Kingdom of Bulgaria holder is a vassal of the Byzantine Empire"
+ dissolve_kingdom_bulgaria_not_admin: "The Kingdom of Bulgaria does not use an Administrative Government"

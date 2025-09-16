@@ -1,4 +1,4 @@
-dispute_border = {
+﻿dispute_border = {
 	# Basic Setup
 	skill = diplomacy
 	desc = "dispute_border_desc_general"

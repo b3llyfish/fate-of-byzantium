@@ -1,4 +1,4 @@
-struggle_byzantium_emperor_struggle_region_county_count = {
+﻿struggle_byzantium_emperor_struggle_region_county_count = {
 	value = 0
 	title:e_byzantium.holder ?= {
 		every_sub_realm_county = {

@@ -1,4 +1,4 @@
-common_create_faction_blockers = {
+﻿common_create_faction_blockers = {
 	# Refuses to make if there was a recent independence faction revolt.
 	modifier = {
 		add = -1000

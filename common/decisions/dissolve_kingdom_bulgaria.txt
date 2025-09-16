@@ -1,0 +1,101 @@
+﻿dissolve_kingdom_bulgaria_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
+	desc = dissolve_kingdom_bulgaria_decision_desc
+	selection_tooltip = dissolve_kingdom_bulgaria_decision_tooltip
+	decision_group_type = major
+	
+	ai_check_interval = 12
+	
+	is_shown = {
+		has_title = title:e_byzantium
+		exists = title:k_bulgaria.holder
+		title:k_bulgaria.holder = {
+			is_ai = yes # can only be done against the AI
+			NOT = { government_has_flag = government_is_administrative }
+		}
+	}
+
+	is_valid = {
+		exists = title:k_bulgaria.holder
+		title:k_bulgaria.holder = {
+			custom_tooltip = {
+				text = dissolve_kingdom_bulgaria_byz_vassal
+				top_liege = title:e_byzantium.holder
+			}
+			custom_tooltip = {
+				text = dissolve_kingdom_bulgaria_not_admin
+				NOT = { government_has_flag = government_is_administrative }
+			}
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+		is_landed = yes
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+	}
+	
+	effect = {
+		create_title_and_vassal_change = {
+			type = usurped
+			save_scope_as = change
+		}
+		title:e_byzantium.holder = { save_scope_as = byz_emperor }
+		title:k_bulgaria.holder = { save_scope_as = bul_king }
+		
+		scope:bul_king = {
+			set_relation_rival = {
+				target = scope:byz_emperor
+				reason = divided_kingdom
+			}
+			add_to_list = vassals_to_transfer
+			every_vassal = {
+				if = {
+					limit = {
+						highest_held_title_tier = tier_duchy
+					}
+					add_to_list = vassals_to_transfer
+				}
+			}
+			every_held_title = {
+				if = {
+					limit = {
+						tier = tier_kingdom
+					}
+					add_to_list = titles_to_destroy
+				}
+			}
+		}
+		every_in_list = {
+			list = vassals_to_transfer
+			change_liege = {
+				liege = scope:byz_emperor
+				change = scope:change
+			}
+			if = {
+				limit = {
+					culture = culture:bulgarian
+				}
+				change_to_administrative_effect = yes
+			}
+		}
+		every_in_list = {
+			list = titles_to_destroy
+			save_scope_as = title_to_destroy
+			scope:bul_king = {
+				destroy_title = scope:title_to_destroy
+			}
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+	
+	ai_will_do = {
+		base = 100
+	}
+}

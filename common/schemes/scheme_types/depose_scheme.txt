@@ -1,4 +1,4 @@
-depose = {
+﻿depose = {
 	# Basic Setup
 	skill = intrigue
 	desc = "depose_desc_general"

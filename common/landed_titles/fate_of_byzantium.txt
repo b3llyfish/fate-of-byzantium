@@ -1,4 +1,4 @@
-e_anatolia = {
+﻿e_anatolia = {
 	color = { 150 0 0 }
 	
 	definite_form = yes

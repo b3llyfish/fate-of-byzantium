@@ -1,4 +1,4 @@
-yearly_global_pulse = {
+﻿yearly_global_pulse = {
 	on_actions = {
 		seljuk_invasion_byzantium
 	}
@@ -13,6 +13,10 @@ seljuk_invasion_byzantium = {
 				has_game_rule = random_seljuk_invasion_byzantium
 				current_date >= 1077.1.1 # only can appear around the historic Battle of Manzikert date
 				NOT = { exists = global_var:seljuk_byzantium_invasion_happened }
+				OR = {
+					exists = title:e_persia.holder
+					exists = house:house_seljuk.house_head
+				}
 			}
 			random = {
 				chance = fp3_seljuk_chance_of_appearance
@@ -45,6 +49,10 @@ seljuk_invasion_byzantium = {
 				has_game_rule = fixed_seljuk_invasion_byzantium
 				current_date >= 1077.1.1 # only can appear around the historic Battle of Manzikert date
 				NOT = { exists = global_var:seljuk_byzantium_invasion_happened }
+				OR = {
+					exists = title:e_persia.holder
+					exists = house:house_seljuk.house_head
+				}
 			}
 			trigger_event = {
 				id = seljuk_invasion_byzantium.0001
