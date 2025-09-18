@@ -25,17 +25,22 @@
 			title:k_rum = { set_de_jure_liege_title = scope:new_empire }
 		}
 	}
+	
+	# if not using CE or in the 1187 start date move armenia/georgia to the backup empire
+	title:e_transcaucasia_backup = {
+		save_scope_as = armenia_georgia_empire
+	}
 	if = {
 		limit = {
 			title:k_georgia = { target_is_de_jure_liege_or_above = title:e_byzantium }
 		}
-		title:k_georgia = { set_de_jure_liege_title = scope:new_empire }
+		title:k_georgia = { set_de_jure_liege_title = scope:armenia_georgia_empire }
 	}
 	if = {
 		limit = {
 			title:k_armenia = { target_is_de_jure_liege_or_above = title:e_byzantium }
 		}
-		title:k_armenia = { set_de_jure_liege_title = scope:new_empire }
+		title:k_armenia = { set_de_jure_liege_title = scope:armenia_georgia_empire }
 	}
 }
 

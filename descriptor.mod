@@ -3,4 +3,4 @@ tags={
 	"Balance"
 }
 name="Fate Of Byzantium"
-supported_version="1.16.*"
+supported_version="1.17.*"

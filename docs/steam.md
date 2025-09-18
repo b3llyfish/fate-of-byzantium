@@ -1,20 +1,21 @@
 ﻿[h1] Fate Of Byzantium [/h1]
-Mod the aims to control Byzantium following their post Roads to Power implementation.
+Mod the aims to control Byzantium (and the Admin Government in general) following their post Roads to Power implementation.
+
 There are two parts to this mod:
-* a new thematic struggle for Byzantium
+* a new thematic struggle for Byzantium (can be disabled via game rules)
 * nerfs/tweaks/fixes to administrative governments
 
 [h2] Key Details [/h2]
-For the full change log please view the README for this mod.
-
 * new Byzantine Struggle mechanic affecting the Byzantine's ability to wage war
 * Populist factions no longer fight for the state faith, instead behaving like they do in other governments
 * Increased conditions for internal factions to form, giving Admin governments more threats
 * Seljuk invasion event for pre-1187 starts, allowing Rum to pose an issue to Byzantium
 
+For the full change log please view the [url=https://github.com/b3llyfish/fate-of-byzantium/blob/main/README.md]README[/url] for this mod.
+
 [h2] Disclaimer [/h2]
-The aim of this mod is to try and fix the mechanics behind CK3's poor implementation of Byzantium. It is not trying to be
-a historically accurate portrayal of Byzantium.
+This mod is an attempt and balance CK3's overpowered implementation of Byzantium. It is not trying to be a historically 
+accurate portrayal of Byzantium.
 
 The mod isn't able to incorporate the 'Name of Byzantium' game rule into the localisation.
 
@@ -27,6 +28,12 @@ Whether to enable the 'Fate of Byzantium' struggle
 
 * Enabled (default)
 * Disabled
+
+[h3] Struggle - 1178 start phase [/h3]
+In the 1178 start date what stage should the struggle start in
+
+* Stagnation (default)
+* Decline
 
 [h3] Emperor Additional Succession Claims [/h3]
 The number of unpressed claims to give to runner-ups on an Admin Emperors death (example: Two means give claims to the candidates in 2nd and 3rd place)

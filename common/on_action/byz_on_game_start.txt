@@ -5,6 +5,7 @@
 		add_bonus_rum_troops
 		fix_rum_anatolia_kingdom_capital
 		remove_maa_increase
+		add_depressed_emperor_1178
 	}
 }
 
@@ -78,6 +79,19 @@ remove_maa_increase = {
 						size = -5
 					}
 				}
+			}
+		}
+	}
+}
+
+add_depressed_emperor_1178 = {
+	effect = {
+		if = {
+			limit = {
+				game_start_date >= 1178.10.1
+			}
+			title:e_byzantium.holder = {
+				add_trait = depressed_1
 			}
 		}
 	}

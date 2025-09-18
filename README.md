@@ -35,7 +35,7 @@ Leads to: Optimism, Decline
 
 Endings: 
 
-Active From: 1066
+Active From: 1066, 1187 (configurable via game rule)
 
 In this phase Byzantium receives military and economic penalties, representing corruption and faults within the administration.
 They still get access to the two new Casus Bellis and Greek characters gain more monthly influence and an additional
@@ -48,7 +48,7 @@ Leads to: Optimism
 
 Endings: Fall of Byzantium
 
-Active From: 1187
+Active From: 1187 (configurable via game rule)
 
 Similar to the stagnation phase but the penalties are enhanced. The fort level and garrison size of Greek counties is 
 also reduced, allowing easier conquest. 
@@ -91,6 +91,11 @@ Below list changes to Byzantium that are independent of the struggle.
 * New decision for Byzantium if they are able to vassalise a non-admin Kingdom of Bulgaria
 * Will destroy the Kingdom title and convert Bulgarian Dukes into governors
 
+#### 1178 Game Start
+* Basileus Manuel now has the depressed trait on game start
+* Emperor now longer starts with thematic Varangian Guards troops that exceed the MAA's unit cap
+* Sultanate of Rum starts with additional troops
+
 ### Administrative Government Changes
 
 #### Defines
@@ -124,6 +129,12 @@ Whether to enable the 'Fate of Byzantium' struggle
 
 * Enabled (default)
 * Disabled
+
+### Struggle - 1178 start phase
+In the 1178 start date what stage should the struggle start in
+
+* Stagnation (default)
+* Decline
 
 ### Emperor Additional Succession Claims
 The number of unpressed claims to give to runner-ups on an Admin Emperors death (example: Two means give claims to the candidates in 2nd and 3rd place)

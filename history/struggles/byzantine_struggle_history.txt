@@ -19,10 +19,13 @@
 		}
 	}
 }
-1087.8.1 = {
+1178.10.1 = {
 	effect = {
 		if = {
-			limit = { has_game_rule = fate_of_byzantium_struggle_enabled }
+			limit = {
+				has_game_rule = fate_of_byzantium_struggle_enabled
+				has_game_rule = fate_of_byzantium_struggle_1178_decline
+			}
 			struggle:fate_of_byzantium = {
 				change_struggle_phase = struggle_fate_of_byzantium_phase_decline
 			}

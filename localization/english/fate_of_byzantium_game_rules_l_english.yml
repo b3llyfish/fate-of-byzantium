@@ -7,6 +7,12 @@
  setting_fate_of_byzantium_struggle_disabled: "Disabled"
  setting_fate_of_byzantium_struggle_disabled_desc: "The struggle mechanic will be disabled"
  
+ rule_fate_of_byzantium_struggle_1178_phase: "Fate of Byzantium: Struggle"
+ setting_fate_of_byzantium_struggle_1178_stagnation: "Stagnation"
+ setting_fate_of_byzantium_struggle_1178_stagnation_desc: "The struggle will start in the #Z Stagnation#! phase in the 1178 start"
+ setting_fate_of_byzantium_struggle_1178_decline: "Decline"
+ setting_fate_of_byzantium_struggle_1178_decline_desc: "The struggle will start in the #Z Decline#! phase in the 1178 start"
+
  rule_admin_gov_succession_claims: "Fate of Byzantium: Emperor Additional Succession Claims"
  setting_admin_gov_succession_claims_none: "No additional claims"
  setting_admin_gov_succession_claims_none_desc: "There will be no additional succession claims"

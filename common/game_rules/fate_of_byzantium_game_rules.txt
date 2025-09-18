@@ -8,6 +8,16 @@
 	fate_of_byzantium_struggle_disabled = {}
 }
 
+fate_of_byzantium_struggle_1178_phase = {
+	categories = { fate_of_byzantium }
+	
+	default = fate_of_byzantium_struggle_1178_stagnation
+	
+	fate_of_byzantium_struggle_1178_stagnation = {}
+	
+	fate_of_byzantium_struggle_1178_decline = {}
+}
+
 admin_gov_succession_claims = {
 	categories = { fate_of_byzantium }
 	
