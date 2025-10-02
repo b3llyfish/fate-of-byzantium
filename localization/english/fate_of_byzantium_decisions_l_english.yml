@@ -15,7 +15,7 @@
  struggle_byzantium_must_be_interloper: "You must be an [struggle_interloper|E]"
  struggle_byzantium_decline_ending_county_total_text: "Byzantine Emperor holds at most #Z [SCOPE.ScriptValue('struggle_byzantium_decline_ending_county_total')|0]#! counties within the [GetGeographicalRegion('region_struggle_fate_of_byzantium').GetName] (currently #Z [SCOPE.ScriptValue('struggle_byzantium_emperor_struggle_region_county_count')|0]#!)"
  struggle_fall_of_byzantium_truce_tooltip: "Fall of Byzantium Decision"
- struggle_fall_of_byzantium_release_vassal_tooltip: "Any Byzantine vassals #Z not#! within the new [GetGeographicalRegion('region_struggle_fate_of_byzantium_fallen').GetName] borders will become independent"
+ struggle_fall_of_byzantium_release_vassal_tooltip: "Any Byzantine vassals with capitals #Z not#! in the Balkans will become independent"
  
  struggle_fate_of_byzantium_ending_decision_tooltip: "End the Byzantine [struggle|E]"
  struggle_fate_of_byzantium_ending_decision_confirm: "End the Byzantine Struggle"
@@ -26,3 +26,5 @@
  dissolve_kingdom_bulgaria_decision_confirm: "Confirm"
  dissolve_kingdom_bulgaria_byz_vassal: "The Kingdom of Bulgaria holder is a vassal of the Byzantine Empire"
  dissolve_kingdom_bulgaria_not_admin: "The Kingdom of Bulgaria does not use an Administrative Government"
+
+ invade_rum_has_victor_flag: "Has won a war using the 'Invasion of Rum' Casus Belli"

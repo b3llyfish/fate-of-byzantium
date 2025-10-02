@@ -1,4 +1,4 @@
-﻿fate_of_byzantium = {
+fate_of_byzantium = {
 	
 	##################################################
 	# Setup
@@ -54,7 +54,7 @@
 						catalyst_ingratiate_family_scheme = 3
 						catalyst_request_appointment_interaction = 3
 						catalyst_request_council_interaction = 3
-						catalyst_slander_scheme = 1
+						catalyst_slander_scheme = 3
 						catalyst_foster_legitimacy_scheme = 1
 						catalyst_expand_power_base_scheme = 1
 						catalyst_influence_candidate_interaction = 1
@@ -77,13 +77,6 @@
 				involved_parameters = {
 					unlocks_reclaim_southern_italy_casus_belli = yes
 					unlocks_balkans_subjugation_cb = yes
-				}
-				
-				involved_character_modifier = {
-					advantage = 5
-					army_damage_mult = 0.1
-					men_at_arms_maintenance = -0.2
-					mercenary_hire_cost_mult = -0.2
 				}
 			
 			}
@@ -149,11 +142,10 @@
 				}
 				
 				involved_character_modifier = {
-					advantage = -5
-					army_damage_mult = -0.1
-					men_at_arms_maintenance = 0.1
-					mercenary_hire_cost_mult = 0.1
+					attacker_advantage = -5
 					movement_speed = -0.1
+					men_at_arms_maintenance = 0.15
+					army_damage_mult = -0.05
 				}
 			}
 			
@@ -176,11 +168,10 @@
 				name = OTHER_EFFECTS_NAME
 				
 				involved_parameters = {
-					populist_rebels_more_likely = yes
+					gov_efficiency_increased_impact = yes
 				}
 				
 				involved_character_modifier = {
-					tax_mult = -0.1
 					monthly_influence = 0.5
 					max_political_schemes_add = 1
 				}
@@ -208,11 +199,10 @@
 				name = WAR_EFFECTS_NAME
 				
 				involved_character_modifier = {
-					advantage = -10
-					army_damage_mult = -0.2
-					men_at_arms_maintenance = 0.2
-					mercenary_hire_cost_mult = 0.2
+					attacker_advantage = -10
 					movement_speed = -0.2
+					men_at_arms_maintenance = 0.3
+					army_damage_mult = -0.1
 				}
 				
 				involved_county_modifier = {
@@ -241,11 +231,7 @@
 				name = OTHER_EFFECTS_NAME
 				
 				involved_parameters = {
-					populist_rebels_much_more_likely = yes
-				}
-				
-				involved_character_modifier = {
-					tax_mult = -0.25
+					gov_efficiency_increased_impact = yes
 				}
 			}
 			

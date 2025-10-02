@@ -1,0 +1,37 @@
+sultan_rum_minor = {
+	category = fame
+	icon = sultan_rum.dds
+	
+	men_at_arms_maintenance = -0.10
+	monthly_income = 2.5
+	monthly_legitimacy_add = 2.5
+	islam_religion_opinion = 5
+	
+	shown_in_ruler_designer = no
+}
+
+sultan_rum = {
+	category = fame
+	icon = sultan_rum.dds
+	
+	men_at_arms_maintenance = -0.25
+	tolerance_advantage_mod = 5
+	monthly_income = 5
+	monthly_legitimacy_add = 5
+	islam_religion_opinion = 10
+	
+	shown_in_ruler_designer = no
+}
+
+sultan_rum_major = {
+	category = fame
+	icon = sultan_rum.dds
+	
+	men_at_arms_maintenance = -0.5
+	tolerance_advantage_mod = 10
+	monthly_income = 10
+	monthly_legitimacy_add = 10
+	islam_religion_opinion = 20
+	
+	shown_in_ruler_designer = no
+}

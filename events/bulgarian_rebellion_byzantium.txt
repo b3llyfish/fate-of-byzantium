@@ -1,0 +1,58 @@
+namespace = bulgarian_rebellion_byzantium
+
+bulgarian_rebellion_byzantium.0001 = {
+	scope = none
+	hidden = yes
+	
+	immediate = {
+		spawn_bulgarian_rebellion_byzantium_character_effect = yes
+		scope:bulgarian_rebellion_byzantium_leader = {
+			start_war = {
+				cb = bulgarian_rebellion_cb
+				target = title:e_byzantium.holder
+				target_title = title:d_dobrudja
+				target_title = title:d_turnovo
+				target_title = title:c_kran
+				target_title = title:c_philippopolis
+			}
+			random_character_war = {
+				save_scope_as = bulgarian_rebellion_byzantium_war
+			}
+			spawn_bulgarian_rebellion_byzantium_troops = yes
+		}
+		set_global_variable = {
+			name = bulgarian_rebellion_byzantium_happened
+			value = yes
+		}
+		title:e_byzantium.holder ?= {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				trigger_event = bulgarian_rebellion_byzantium.0002
+			}
+		}
+	}
+}
+
+bulgarian_rebellion_byzantium.0002 = {
+	type = character_event
+	title = bulgarian_rebellion_byzantium.0002.title
+	desc = bulgarian_rebellion_byzantium.0002.desc
+	
+	theme = war
+	
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}
+	
+	right_portrait = {
+		character = scope:bulgarian_rebellion_byzantium_leader
+		animation = war_attacker
+	}
+
+	option = {
+		name = bulgarian_rebellion_byzantium.0002.a
+	}
+}

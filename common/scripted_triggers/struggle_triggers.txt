@@ -1,4 +1,4 @@
-﻿involved_in_byz_struggle = {
+involved_in_byz_struggle = {
 	any_character_struggle = {
 		involvement = involved
 		is_struggle_type = fate_of_byzantium
@@ -123,6 +123,35 @@ should_activate_catalyst_political_scheme = {
 	scheme_owner = { involved_in_byz_struggle = yes }
 }
 
-greek_culture_not_is_decline = {
-	culture = { NOT = { has_cultural_parameter = greek_decline } }
+can_invade_rum = {
+	NOT = { exists = global_var:seljuk_byzantium_invasion_happened }
+	OR = {
+		exists = title:e_persia.holder
+		exists = house:house_seljuk.house_head
+	}
+	title:e_byzantium.holder = {
+		OR = {
+			completely_controls = title:d_anatolia
+			completely_controls = title:d_cappadocia
+			completely_controls = title:d_charsianon
+		}
+		# try to avoid fighting at same time as persia
+		NOT = { is_at_war_with = title:e_persia.holder }
+	}
+}
+
+can_rebel_bulgaria = {
+	NOT = { exists = global_var:bulgarian_rebellion_byzantium_happened }
+	title:e_byzantium.holder = {
+		OR = {
+			completely_controls = title:d_dobrudja
+			completely_controls = title:d_turnovo
+		}
+	}
+	NOT = {
+		exists = title:k_bulgaria.holder
+		title:k_bulgaria.holder = {
+			is_independent_ruler = yes
+		}
+	}
 }

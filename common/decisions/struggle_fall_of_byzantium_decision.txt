@@ -41,9 +41,6 @@
 	}
 	
 	effect = {
-		culture:greek = {
-			add_culture_tradition = tradition_byzantine_decline
-		}
 		split_eastern_byzantium_de_jure_effect = yes
 		split_western_byzantium_de_jure_effect = yes
 		split_southern_italy_de_jure_effect = yes

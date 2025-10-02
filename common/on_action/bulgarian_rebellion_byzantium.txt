@@ -1,0 +1,41 @@
+yearly_global_pulse = {
+	on_actions = {
+		bulgarian_rebellion_byzantium
+	}
+}
+
+# Called every Jan 1st
+# Root does not exist
+bulgarian_rebellion_byzantium = {
+	effect = {
+		if = { # Random Bulgarian Rebellion
+			limit = {
+				has_game_rule = random_bulgarian_rebellion_byzantium
+				current_date >= 1185.1.1 # only can appear around the historic date
+				can_rebel_bulgaria = yes
+			}
+			random = {
+				chance = 20
+				modifier = {
+					add = 30
+					current_date > 1190.1.1
+				}
+				trigger_event = {
+					id = bulgarian_rebellion_byzantium.0001
+					days = { 2 120 }
+				}
+			}
+		}
+		else_if = { # Historical Bulgarian Rebellion
+			limit = {
+				has_game_rule = fixed_bulgarian_rebellion_byzantium
+				current_date >= 1185.1.1 # only can appear around the historic date
+				can_rebel_bulgaria = yes
+			}
+			trigger_event = {
+				id = bulgarian_rebellion_byzantium.0001
+				days = { 2 120 }
+			}
+		}
+	}
+}

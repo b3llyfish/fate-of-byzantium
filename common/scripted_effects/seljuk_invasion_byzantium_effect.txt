@@ -1,4 +1,4 @@
-﻿spawn_seljuk_invasion_byzantium_character_effect = {
+spawn_seljuk_invasion_byzantium_character_effect = {
 	if = {
 		limit = {
 			exists = title:e_persia.holder
@@ -22,10 +22,10 @@
 		culture:turkmen = { save_scope_as = seljuk_birth_culture }
 	}
 	
-	title:c_edessa = { save_scope_as = seljuk_birthplace }
+	title:c_edessa.holder.capital_province = { save_scope_as = seljuk_birthplace }
 	
 	create_character = {
-		age = { 30 36 }
+		age = { 32 38 }
 		location = scope:seljuk_birthplace
 		gender_female_chance = fp3_chance_female_leader
 		culture = scope:seljuk_birth_culture
@@ -35,29 +35,53 @@
 		trait = arrogant
 		trait = education_martial_3
 		trait = rough_terrain_expert
-		martial = { 16 21 }
-		stewardship = { 8 11 }
-		diplomacy = { 12 14 }
-		intrigue = { 6 9 }
-		learning = { 9 11 }
-		prowess	 = { 20 24 }
+		martial = 15
+		stewardship = 8
+		diplomacy = 7
+		intrigue = 4
+		learning = 5
+		prowess	 = 11
 		
 		dynasty_house = scope:seljuk_birth_house
 		
 		after_creation = {
 			add_gold = medium_gold_max_value
 			add_prestige = massive_prestige_value
-			add_piety = medium_piety_value
+			add_piety = major_piety_value
+			add_perk = stalwart_leader_perk
+			add_perk = engineered_for_destruction_perk
+			add_perk = hit_and_run_perk
+			add_perk = organized_retreat_perk
 			add_martial_lifestyle_xp = 10000
 			add_trait = strong
 			add_character_flag = is_seljuk
 			give_seljuk_invasion_byzantium_title_effect = yes
 			game_rule_create_spouse_and_children = { CHARACTER = this }
+			add_trait_xp = {
+				trait = rough_terrain_expert
+				value = 100
+			}
 		}
 		save_scope_as = seljuk_byzantium_invader
 	}
+	add_seljuk_knight_effect = yes
+	add_seljuk_knight_effect = yes
+	add_seljuk_knight_effect = yes
+	add_seljuk_knight_effect = yes
+	add_seljuk_knight_effect = yes
+	add_seljuk_knight_effect = yes
 }
 
+add_seljuk_knight_effect = {
+	create_character = {
+		employer = scope:seljuk_byzantium_invader
+		faith = scope:seljuk_byzantium_invader.faith
+		culture = scope:seljuk_byzantium_invader.culture
+		template = pool_repopulate_prowess
+		prowess = { 17 22 }
+		save_scope_as = knight
+	}
+}
 
 ## Set up default title
 give_seljuk_invasion_byzantium_title_effect = {
@@ -76,8 +100,7 @@ give_seljuk_invasion_byzantium_title_effect = {
 		set_capital_county = scope:seljuk_birthplace.county
 		set_landless_title = yes
 		set_coa = scope:seljuk_byzantium_invader.house
-		set_destroy_if_invalid_heir = yes
-		set_destroy_on_gain_same_tier = yes
+		set_destroy_on_succession = yes
 		set_delete_on_destroy = yes
 		set_no_automatic_claims = yes
 		set_definitive_form = yes
@@ -92,66 +115,41 @@ give_seljuk_invasion_byzantium_title_effect = {
 }
 
 spawn_seljuk_invasion_byzantium_troops = {
-	spawn_nomadic_troops = {
-		LOCATION = scope:seljuk_byzantium_invader.location
-	}
-	spawn_nomadic_troops = {
-		LOCATION = scope:seljuk_byzantium_invader.location
-	}
-	spawn_temp_nomadic_troops = {
-		LOCATION = scope:seljuk_byzantium_invader.location
-	}
-	spawn_temp_nomadic_troops = {
-		LOCATION = scope:seljuk_byzantium_invader.location
-	}
-	spawn_temp_nomadic_troops = {
-		LOCATION = scope:seljuk_byzantium_invader.location
-	}
-}
-
-# troops will persist after the war but won't be inherited
-spawn_nomadic_troops = {
-	spawn_army = {
-		name = turkmen_nomads
-		men_at_arms = {
-			type = steppe_raiders
-			stacks = 5
-		}
-		men_at_arms = {
-			type = horse_archers
-			stacks = 5
-		}
-		men_at_arms = {
-			type = cataphract_archers
-			stacks = 2
-		}
-		men_at_arms = {
-			type = mangonel
-			stacks = 4
-		}
-		location = $LOCATION$
-		inheritable = no
-		uses_supply = no
-	}
+	spawn_temp_nomadic_troops = yes
+	spawn_temp_nomadic_troops = yes
+	spawn_temp_nomadic_troops = yes
 }
 
 # troops will disband after the war
 spawn_temp_nomadic_troops = {
 	spawn_army = {
 		name = turkmen_nomads
+		levies = 750
+		men_at_arms = {
+			type = armored_footmen
+			stacks = 10
+		}
+		men_at_arms = {
+			type = pikemen_unit
+			stacks = 10
+		}
 		men_at_arms = {
 			type = steppe_raiders
-			stacks = 4
+			stacks = 10
 		}
 		men_at_arms = {
 			type = horse_archers
-			stacks = 4
+			stacks = 10
 		}
 		men_at_arms = {
 			type = cataphract_archers
-			stacks = 4
+			stacks = 10
 		}
-		location = $LOCATION$
+		men_at_arms = {
+			type = mangonel
+			stacks = 10
+		}
+		location = scope:seljuk_byzantium_invader.location
 		war = scope:seljuk_byzantium_invasion_war
 		uses_supply = no
 	}
@@ -167,10 +165,11 @@ seljuk_invader_spread_culture_effect = {
 	title:c_isauria = { set_county_culture = scope:new_culture }
 }
 
-seljuk_invader_county_modifier_effect = {
+seljuk_invader_modifier_effect = {
 	every_sub_realm_county = {
+		change_county_control = 75
 		add_county_modifier = {
-			modifier = seljuk_invader_modifier
+			modifier = seljuk_invader_county_modifier
 			years = 10
 		}
 	}
@@ -197,26 +196,118 @@ rum_de_jure_duchies_effect = {
 	}
 }
 
-fix_rum_anatolia_kingdom_capital_effect = {
-	title:k_rum = {
-		set_capital_county = title:c_lycaonia
-	}
-	title:k_anatolia = {
-		set_capital_county = title:c_lycia
+spawn_maa_rum_effect = {
+	title:k_rum.holder = {
+		create_maa_or_upgrade_regiment_effect = {
+			TYPE = armored_footmen
+			SIZE = 4
+		}
+		create_maa_or_upgrade_regiment_effect = {
+			TYPE = pikemen_unit
+			SIZE = 6
+		}
+		create_maa_or_upgrade_regiment_effect = {
+			TYPE = horse_archers
+			SIZE = 6
+		}
+		create_maa_or_upgrade_regiment_effect = {
+			TYPE = cataphract_archers
+			SIZE = 4
+		}
+		# try to give right level siege
+		if = {
+			limit = {
+				culture = {
+					has_innovation = innovation_trebuchet
+				}
+			}
+			create_maa_or_upgrade_regiment_effect = {
+				TYPE = trebuchet
+				SIZE = 4
+			}
+		}
+		else = {
+			create_maa_or_upgrade_regiment_effect = {
+				TYPE = mangonel
+				SIZE = 4
+			}
+		}
 	}
 }
 
-ai_anatolia_title_tidy_up_effect = {
+add_sultan_rum_trait_effect = {
 	if = {
 		limit = {
-			is_ai = yes
-			has_title = title:k_anatolia
-			title:k_anatolia = {
-				any_de_jure_county = {
-					count = 0
-				}
-			}
+			game_start_date = 1178.10.1
 		}
-		destroy_title = title:k_anatolia
+		if = {
+			limit = {
+				has_game_rule = sultan_rum_trait_major_1178
+			}
+			add_trait = sultan_rum_major
+		}
+		else_if = {
+			limit = {
+				has_game_rule = sultan_rum_trait_moderate_1178
+			}
+			add_trait = sultan_rum
+		}
+		else_if = {
+			limit = {
+				has_game_rule = sultan_rum_trait_minor_1178
+			}
+			add_trait = sultan_rum_minor
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				has_game_rule = sultan_rum_trait_major
+			}
+			add_trait = sultan_rum_major
+		}
+		else_if = {
+			limit = {
+				has_game_rule = sultan_rum_trait_moderate
+			}
+			add_trait = sultan_rum
+		}
+		else_if = {
+			limit = {
+				has_game_rule = sultan_rum_trait_minor
+			}
+			add_trait = sultan_rum_minor
+		}
+	}
+}
+
+create_rum_1187_maa_effect = {
+	create_maa_or_upgrade_regiment_effect = {
+		TYPE = armored_footmen
+		SIZE = 8
+	}
+	create_maa_or_upgrade_regiment_effect = {
+		TYPE = pikemen_unit
+		SIZE = 8
+	}
+	create_maa_or_upgrade_regiment_effect = {
+		TYPE = light_horsemen
+		SIZE = 8
+	}
+	create_maa_or_upgrade_regiment_effect = {
+		TYPE = crossbowmen
+		SIZE = 8
+	}
+	create_maa_or_upgrade_regiment_effect = {
+		TYPE = horse_archers
+		SIZE = 8
+	}
+	create_maa_or_upgrade_regiment_effect = {
+		TYPE = trebuchet
+		SIZE = 10
+	}
+	create_maa_or_upgrade_regiment_effect = {
+		TYPE = cataphract_archers
+		SIZE = 6
 	}
 }

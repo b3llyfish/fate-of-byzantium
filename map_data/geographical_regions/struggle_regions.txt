@@ -94,5 +94,7 @@ region_struggle_fate_of_byzantium_fallen = {
 		k_cyprus
 		# balkans
 		k_bulgaria
+		k_serbia
+		k_croatia
 	}
 }

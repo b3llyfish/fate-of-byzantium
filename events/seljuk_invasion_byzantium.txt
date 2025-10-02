@@ -1,4 +1,4 @@
-﻿namespace = seljuk_invasion_byzantium
+namespace = seljuk_invasion_byzantium
 
 seljuk_invasion_byzantium.0001 = {
 	scope = none
@@ -128,6 +128,14 @@ seljuk_invasion_byzantium.0004 = {
 	option = {
 		name = middle_east_decisions.0014.a
 		create_rum_scripted_effect = yes
+		rum_de_jure_duchies_effect = yes
+		spawn_maa_rum_effect = yes
+		if = {
+			limit = {
+				has_character_flag = invade_rum_victor
+			}
+			add_legitimacy = major_legitimacy_gain
+		}
 		# Send narrative fluff to other players (if any).
 		every_player = {
 			limit = {

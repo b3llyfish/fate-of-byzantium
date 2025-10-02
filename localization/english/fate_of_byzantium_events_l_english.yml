@@ -8,3 +8,9 @@
  seljuk_invasion_byzantium.0003.title: "$invade_rum_war_name$"
  seljuk_invasion_byzantium.0003.desc: "$seljuk_invasion_byzantium.desc$"
  seljuk_invasion_byzantium.0003.a: "An interesting development..."
+
+ bulgarian_rebellion_byzantium.desc: "For a while now rumours that an ambitious [seljuk_byzantium_invader.GetDynastyHouseNameNoTooltip] warlord is gathering an army somewhere on the borders of the Byzantine Empire.\n\nOusted from their clan after a bitter succession dispute they have aligned themselves with Turkish Nomads. [seljuk_byzantium_invader.GetSheHe|U] now seeks to establish a Kingdom within the heart of Anatolia.\n\nThis warlord has now revealed themselves to be [seljuk_byzantium_invader.GetShortUIName|U] and they now ride to strike the Byzantium Empire!"
+ 
+ bulgarian_rebellion_byzantium.0002.title: "$bulgarian_rebellion_war_name$"
+ bulgarian_rebellion_byzantium.0002.desc: "A young Bulgarian noble by the name of [bulgarian_rebellion_byzantium_leader.GetShortUIName|U] has been travelling around Moesia the past few months. They spread lies and slander, claiming the Byzantium is oppressing the Bulgarian people and that they deserve better!.\n\nTheir words have worked and now a sizable force has assembled, demanding a free Bulgarian Kingdom. A rebellion is happening!"
+ bulgarian_rebellion_byzantium.0002.a: "Filthy Peasants!"

@@ -26,7 +26,7 @@ struggle_byzantium_optimism_ending_county_total = {
 
 struggle_byzantium_decline_ending_county_total = {
 	value = struggle_byzantium_struggle_region_county_count
-	multiply = 0.45
+	multiply = 0.48
 	ceiling = yes
 }
 

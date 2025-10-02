@@ -1,4 +1,4 @@
-﻿reclaim_southern_italy_cb = {
+reclaim_southern_italy_cb = {
 	icon = duchy_conquest_cb
 	group = conquest
 	
@@ -46,7 +46,7 @@
 	}
 	
 	ai_score = {
-		value = 1000
+		value = 500
 	}
 	
 	ai_score_mult = {
@@ -73,7 +73,7 @@
 	}
 	
 	cost = {
-		prestige = 250
+		prestige = 500
 	}
 	
 	on_declaration = {

@@ -35,7 +35,7 @@ Leads to: Optimism, Decline
 
 Endings: 
 
-Active From: 1066, 1187 (configurable via game rule)
+Active From: 1066, 1178 (configurable via game rule)
 
 In this phase Byzantium receives military and economic penalties, representing corruption and faults within the administration.
 They still get access to the two new Casus Bellis and Greek characters gain more monthly influence and an additional
@@ -48,7 +48,7 @@ Leads to: Optimism
 
 Endings: Fall of Byzantium
 
-Active From: 1187 (configurable via game rule)
+Active From: 1178 (configurable via game rule)
 
 Similar to the stagnation phase but the penalties are enhanced. The fort level and garrison size of Greek counties is 
 also reduced, allowing easier conquest. 
@@ -74,37 +74,50 @@ Below list changes to Byzantium that are independent of the struggle.
 
 #### Theodosian Walls
 * Tax multiplier modifiers have been removed
-* Monthly income has been reduced from 10 to 5 gold 
+* Monthly income has been removed 
 * Development modifiers have been slightly reduced
 * County control and epidemic resistance modifiers have been added
 
 #### Seljuk Invasion
-* A Seljuk invasion will occur against Byzantium at some point after 1077 if not using the 1187 start date. 
+* A Seljuk invasion will occur against Byzantium at some point after 1077 if not using the 1178 start date. 
 * The invader will attempt to establish the Sultanate of Rum. 
 * The date of the invasion and invader culture can be changed via game rules. The invasion can also be disabled. 
 
 #### Sultanate of Rum
 * The decision to form the Sultanate of Rum is now much easier
-* All de jure duchies under the Anatolia Kingdom will be transferred to Rum upon its formation
+* All de jure duchies under the Anatolia Kingdom title will be transferred to Rum upon its formation
+* Forming the Sultanate of Rum will give the character a trait with bonuses to help continue the fight against the Byzantines
+* This trait is passed on upon succession
 
 #### Dissolve Bulgaria
 * New decision for Byzantium if they are able to vassalise a non-admin Kingdom of Bulgaria
 * Will destroy the Kingdom title and convert Bulgarian Dukes into governors
 
+#### 867 Game Start
+* Byzantium title starts with theme troops
+
+#### 1066 Game Start
+* Byzantium title starts with theme troops
+* The Seljuk Invasion of Armenia will be resolved on game start (configurable via game rules)
+
 #### 1178 Game Start
 * Basileus Manuel now has the depressed trait on game start
+* Byzantium title starts with theme troops
 * Emperor now longer starts with thematic Varangian Guards troops that exceed the MAA's unit cap
 * Sultanate of Rum starts with additional troops
+* Sultanate of Rum start with the 'Sultan of Rum' trait
+
+#### Seize Peripheral Duchy
+* Can only target neighbouring land/sea provinces
 
 ### Administrative Government Changes
 
 #### Defines
 * Score required to be a powerful house decreased to 35
 * Max number of powerful houses increased to 8
-* Base influence cost of hiring theme troops increased to 200
 
 #### Demand Administrative Governance Interaction
-* Cultures who do not benefit from Admin governments are less likely to accept
+* Cultures who do not benefit from Admin governments are much less likely to accept
 
 #### Factions
 * Removed 'Admin empire should not face new factions during ongoing faction wars' faction blocker
@@ -112,15 +125,17 @@ Below list changes to Byzantium that are independent of the struggle.
 * Populists factions now fight for independence rather than enforcing a state faith
 * Populists counties are no longer prevent from joining factions if their faith matches the state faith
 * A character's 'Governor Efficiency' now affects a county's desire to join a Populist faction (poor governors lead to more revolts)
+* Characters will now consider a claimant's 'House Power' (relative to the Emperors) when creating/joining claimant factions
 
 #### Government
-* Cost of mercenaries and men-at-arms is increased by 15%
+* Theme armies cap and limit is reduced by 1
+* Cost of mercenaries is increased by 50%
 
 #### Governor Efficiency
 * Revamped how skills contribute to the score, with low skills contributing less and high skills contributing more
 
 #### Succession
-* Empire level successions in admin governments will give an unpressed claim to the runner-up (can be extended/removed via game rule)
+* Empire level successions in admin governments will give an unpressed claims to the runner-ups (number of claims given can be extended/removed via game rules)
 
 ## Game Rules
 
@@ -159,6 +174,27 @@ What culture should the Seljuk invader have
 
 ### Chance of Frankokratia
 This is a base game rule, however the default has been overridden to 'Fourth Crusade' to prevent a very early Latin Empire
+
+### Seljuk Invasion of Armenia ###
+In 1066 should the result of Seljuk's invasion of Armenia?
+
+* Seljuk Victory (default)
+* Mechanical
+* Byzantium Victory
+
+### Sultan of Rum Trait ###
+How powerful are the bonuses that the Sultan of Rum gets
+
+* Minor
+* Moderate (default)
+* Major
+
+### Sultan of Rum Trait (1178) ###
+How powerful are the bonuses that the Sultan of Rum gets in the 1178 start date
+
+* Minor
+* Moderate
+* Major (default)
 
 ## Compatibility
 There are a bunch of overrides (populists, rum, governor efficiency, etc...) made by this mod. It is unlikely to cause

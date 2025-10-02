@@ -1,4 +1,4 @@
-﻿form_rum_sultanate_decision = {
+form_rum_sultanate_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/fp3/fp3_decision_concession.dds"
 	}
@@ -51,13 +51,21 @@
 	}
 
 	is_valid = {
-		completely_controls = title:d_anatolia
-		completely_controls = title:d_cappadocia
-		completely_controls = title:d_charsianon
 		OR = {
-			completely_controls = title:d_sebasteia
-			completely_controls = title:d_cibyrrhaeot
-			completely_controls = title:d_cilicia
+			AND = {
+				completely_controls = title:d_anatolia
+				completely_controls = title:d_cappadocia
+				completely_controls = title:d_charsianon
+				OR = {
+					completely_controls = title:d_sebasteia
+					completely_controls = title:d_cibyrrhaeot
+					completely_controls = title:d_cilicia
+				}
+			}
+			custom_tooltip = {
+				text = invade_rum_has_victor_flag
+				has_character_flag = invade_rum_victor
+			}
 		}
 	}
 	
@@ -74,7 +82,7 @@
 		show_as_tooltip = {
 			create_rum_scripted_effect = yes
 		}
-		rum_de_jure_duchies_effect = yes
+		add_sultan_rum_trait_effect = yes
 		trigger_event = seljuk_invasion_byzantium.0004
 		hidden_effect = {
 			add_to_global_variable_list = {

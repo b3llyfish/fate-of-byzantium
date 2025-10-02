@@ -1,0 +1,70 @@
+admin_government_modifier = {
+	modifier = {
+		desc = admin_gov_modifier
+		# only apply if target has admin gov
+		$TARGET$ = { government_has_flag = government_is_administrative }
+		add = $SCORE$
+	}
+}
+
+governor_efficiency_populist_modifier = {
+	modifier = {
+		desc = governor_efficiency
+		# only apply if target has admin gov
+		$TARGET$ = { government_has_flag = government_is_administrative }
+		# only apply if populist's culture differs to target
+		NOT = { $POPULIST_CULTURE$ = $TARGET$.culture }
+		add = {
+			value = 0
+			$TARGET$ = {
+				add = {
+					value = governor_efficiency_score
+					# inverse - bad governors increase score, good governors lower it
+					multiply = -1
+					# cap good governor score at -50
+					min = -50
+				}
+			}
+		}
+	}
+}
+
+populist_no_admin_join_modifier = {
+	modifier = {
+		desc = does_not_have_admin_gov_modifier
+		# only apply if target has admin gov
+		$TARGET$ = { government_has_flag = government_is_administrative }
+		# only apply if populist does not have admin gov
+		$SELF$ = { NOT = { government_has_flag = government_is_administrative } }
+		# only apply if populist's culture differs to target
+		NOT = { $SELF$.culture = $TARGET$.culture }
+		add = admin_gov_populist_ai_join_score
+	}
+}
+
+house_score_difference_modifier = {
+	modifier = {
+		# dont compare if same house
+		NOT = { $TARGET$.house = $CLAIMANT$.house }
+		# only apply if target has admin gov
+		$TARGET$ = { government_has_flag = government_is_administrative }
+		# only apply if claimant has admin gov
+		$CLAIMANT$ = { government_has_flag = government_is_administrative }
+		add = {
+			value = $CLAIMANT$.house.house_power_score
+			subtract = {
+				value = $TARGET$.house.house_power_score
+				if = {
+					limit = {
+						# if the target is independent (aka admin top liege) halve the imperial house score bonus
+						$TARGET$ = {
+							is_independent_ruler = yes
+						}
+					}
+					subtract = 100
+				}
+			}
+		}
+		desc = house_score_difference
+	}
+}

@@ -1,4 +1,4 @@
-﻿balkans_subjugation_cb = {
+balkans_subjugation_cb = {
 	icon = vassalization
 	group = subjugation
 	ai_only_against_neighbors = yes
@@ -21,6 +21,7 @@
 	allowed_against_character = {
 		scope:defender = {
 			is_independent_ruler = yes
+			highest_held_title_tier < tier_empire
 			capital_province = {
 				geographical_region = region_struggle_fate_of_byzantium_balkan_kingdoms
 			}
@@ -63,13 +64,7 @@
 				limit = {
 					scope:defender.highest_held_title_tier = tier_kingdom
 				}
-				add = 1000
-			}
-			if = {
-				limit = {
-					scope:defender.highest_held_title_tier = tier_empire
-				}
-				add = 2000
+				add = 750
 			}
 		}
 	}
@@ -389,7 +384,7 @@
 	max_ai_diplo_distance_to_title = 500
 	
 	ai_score = {
-		value = 1000
+		value = 500
 	}
 	
 	ai_score_mult = {

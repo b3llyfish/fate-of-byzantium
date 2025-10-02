@@ -1,0 +1,14 @@
+﻿l_english:
+ trait_sultan_rum: "Sultan of Rum"
+ trait_sultan_rum_desc: "This character is leading the Islamic conquest of Anatolia."
+ trait_sultan_rum_minor: "$trait_sultan_rum$"
+ trait_sultan_rum_minor_desc: "$trait_sultan_rum_desc$"
+ trait_sultan_rum_major:  "$trait_sultan_rum$"
+ trait_sultan_rum_major_desc: "$trait_sultan_rum_desc$"
+ 
+ trait_bulgarian_resistance: "Bulgarian Resistance"
+ trait_bulgarian_resistance_desc: "This character is defending Bulgaria from subjugation."
+ trait_bulgarian_resistance_minor: "$trait_bulgarian_resistance$"
+ trait_bulgarian_resistance_minor_desc: "$trait_bulgarian_resistance_desc$"
+ trait_bulgarian_resistance_major:  "$trait_bulgarian_resistance$"
+ trait_bulgarian_resistance_major_desc: "$trait_bulgarian_resistance_desc$"

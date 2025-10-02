@@ -1,4 +1,4 @@
-﻿split_eastern_byzantium_de_jure_effect = {
+split_eastern_byzantium_de_jure_effect = {
 	title:e_anatolia = {
 		save_scope_as = new_empire
 	}
@@ -26,7 +26,7 @@
 		}
 	}
 	
-	# if not using CE or in the 1187 start date move armenia/georgia to the backup empire
+	# if not using CE or in the 1178 start date move armenia/georgia to the backup empire
 	title:e_transcaucasia_backup = {
 		save_scope_as = armenia_georgia_empire
 	}

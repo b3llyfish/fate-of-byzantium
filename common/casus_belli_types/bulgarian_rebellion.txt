@@ -1,4 +1,4 @@
-invade_rum_cb = {
+bulgarian_rebellion_cb = {
 	icon = invasion
 	group = event
 	
@@ -55,13 +55,13 @@ invade_rum_cb = {
 		first_valid = {
 			triggered_desc = {
 				trigger = { scope:attacker = { is_local_player = yes } }
-				desc = invade_rum_cb_victory_desc_attacker
+				desc = bulgarian_rebellion_cb_victory_desc_attacker
 			}
 			triggered_desc = {
 				trigger = { scope:defender = { is_local_player = yes } }
-				desc = invade_rum_cb_victory_desc_defender
+				desc = bulgarian_rebellion_cb_victory_desc_defender
 			}
-			desc = invade_rum_cb_victory_desc
+			desc = bulgarian_rebellion_cb_victory_desc
 		}
 	}
 	
@@ -190,11 +190,10 @@ invade_rum_cb = {
 		laamp_as_mercenary_payout_tooltip_effect = yes
 		
 		scope:attacker = {
-			# spread invader culture
-			seljuk_invader_spread_culture_effect = yes
-			seljuk_invader_modifier_effect = yes
-			# add flag
-			add_character_flag = invade_rum_victor
+			bulgarian_rebellion_byzantium_modifier_effect = yes
+			add_bulgarian_resistance_trait_effect = yes
+			bulgarian_crown_effect = yes
+			spawn_maa_bulgaria_effect = yes
 		}
 	}
 	
@@ -207,13 +206,13 @@ invade_rum_cb = {
 		first_valid = {
 			triggered_desc = {
 				trigger = { scope:defender = { is_local_player = yes } }
-				desc = invade_rum_cb_defeat_desc_defender
+				desc = bulgarian_rebellion_cb_defeat_desc_defender
 			}
 			triggered_desc = {
 				trigger = {	scope:attacker = { is_local_player = yes } }
-				desc = invade_rum_cb_defeat_desc_attacker
+				desc = bulgarian_rebellion_cb_defeat_desc_attacker
 			}
-			desc = invade_rum_cb_defeat_desc
+			desc = bulgarian_rebellion_cb_defeat_desc
 		}
 	}
 	
@@ -272,9 +271,9 @@ invade_rum_cb = {
 	attacker_allies_inherit = yes
 	defender_allies_inherit = yes
 	
-	war_name = "invade_rum_war_name"
-	war_name_base = "invade_rum_war_name_base"
-	cb_name = "invade_rum_cb_name"
+	war_name = "bulgarian_rebellion_war_name"
+	war_name_base = "bulgarian_rebellion_war_name_base"
+	cb_name = "bulgarian_rebellion_cb_name"
 	
 	interface_priority = 79
 	

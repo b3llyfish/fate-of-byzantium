@@ -4,4 +4,6 @@
  fate_of_byzantium_stagnation_modifier: "Fate of Byzantium struggle is in the Stagnation phase: $VALUE|=+0$"
  fate_of_byzantium_decline_modifier: "Fate of Byzantium struggle is in the Decline phase: $VALUE|=+0$"
  admin_gov_modifier: "Administrative Government: $VALUE|=+0$"
- governor_efficiency: "Poor Governor Efficiency: $VALUE|=+0$"
+ governor_efficiency: "Governor Efficiency: $VALUE|=+0$"
+ does_not_have_admin_gov_modifier: "Does not have Administrative Government: $VALUE|=+0$"
+ house_score_difference: "Liege and [claimant|E] Relative House Power: $VALUE|+0=$"

@@ -1,4 +1,4 @@
-﻿fate_of_byzantium_struggle_enable = {
+fate_of_byzantium_struggle_enable = {
 	categories = { fate_of_byzantium }
 	
 	default = fate_of_byzantium_struggle_enabled
@@ -21,7 +21,7 @@ fate_of_byzantium_struggle_1178_phase = {
 admin_gov_succession_claims = {
 	categories = { fate_of_byzantium }
 	
-	default = admin_gov_succession_claims_one
+	default = admin_gov_succession_claims_two
 	
 	admin_gov_succession_claims_none = {}
 	
@@ -54,6 +54,18 @@ seljuk_invasion_byzantium_invader_culture = {
 	emperor_persia_culture = {}
 }
 
+bulgarian_rebellion_byzantium = {
+	categories = { fate_of_byzantium }
+	
+	default = random_bulgarian_rebellion_byzantium
+	
+	random_bulgarian_rebellion_byzantium = {}
+	
+	fixed_bulgarian_rebellion_byzantium = {}
+	
+	disable_bulgarian_rebellion_byzantium = {}
+}
+
 historicity_frankokratia = {
 	categories = { historicity difficulty }
 	
@@ -66,4 +78,58 @@ historicity_frankokratia = {
 	historicity_frankokratia_fourth_crusade = {}
 	
 	historicity_frankokratia_high = {}
+}
+
+seljuk_invasion_armenia_outcome = {
+	categories = { fate_of_byzantium }
+	
+	default = invasion_armenia_seljuk_victory
+	
+	invasion_armenia_seljuk_victory = {}
+	
+	mechanical = {}
+	
+	invasion_armenia_byz_victory = {}
+}
+
+sultan_rum_trait = {
+	categories = { fate_of_byzantium }
+	
+	default = sultan_rum_trait_moderate
+	
+	sultan_rum_trait_major = {}
+	
+	sultan_rum_trait_moderate = {}
+	
+	sultan_rum_trait_minor = {}
+	
+	sultan_rum_trait_off = {}
+}
+
+sultan_rum_trait_1178 = {
+	categories = { fate_of_byzantium }
+	
+	default = sultan_rum_trait_major_1178
+	
+	sultan_rum_trait_major_1178 = {}
+	
+	sultan_rum_trait_moderate_1178 = {}
+	
+	sultan_rum_trait_minor_1178 = {}
+	
+	sultan_rum_trait_off_1178 = {}
+}
+
+bulgarian_resistance_trait = {
+	categories = { fate_of_byzantium }
+	
+	default = bulgarian_resistance_trait_major
+	
+	bulgarian_resistance_trait_major = {}
+	
+	bulgarian_resistance_trait_moderate = {}
+	
+	bulgarian_resistance_trait_minor = {}
+	
+	bulgarian_resistance_trait_off = {}
 }

@@ -1,4 +1,4 @@
-﻿byzantium_resurgent_modifier = {
+byzantium_resurgent_modifier = {
 	icon = economy_positive
 	development_growth_factor = small_development_growth_gain
 	county_opinion_add = 10
@@ -7,10 +7,16 @@
 	tax_mult = 0.10
 }
 
-seljuk_invader_modifier = {
+seljuk_invader_county_modifier = {
 	icon = economy_positive
 	tax_mult = 0.25
 	levy_size = 0.25
-	monthly_county_control_growth_add = 0.25
+	development_growth_factor = medium_development_growth_gain
+}
+
+bulgarian_rebellion_county_modifier = {
+	icon = economy_positive
+	tax_mult = 0.25
+	levy_size = 0.25
 	development_growth_factor = medium_development_growth_gain
 }

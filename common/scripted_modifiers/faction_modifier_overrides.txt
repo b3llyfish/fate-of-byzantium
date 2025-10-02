@@ -1,4 +1,4 @@
-﻿common_create_faction_blockers = {
+common_create_faction_blockers = {
 	# Refuses to make if there was a recent independence faction revolt.
 	modifier = {
 		add = -1000
@@ -22,4 +22,455 @@
 	
 	# Admin empire should not face new factions during ongoing faction wars
 	# removed this since its stupid
+}
+
+admin_claimant_faction_modifiers = {
+	# State Faith
+	modifier = { # State Faith is preferred if Liege does not follow it
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		NOT = { faith = $FACTION_TARGET$.faith }
+		faith = $FACTION_CLAIMANT$.faith
+		$FACTION_TARGET$.primary_title.state_faith ?= faith
+		add = 75
+		desc = FACTION_REASON_ADMIN_CLAIMANT_STATE_FAITH
+	}
+	modifier = { # Don't push a claimaint who doesn't follow the State Faith, especially when a zealot
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_TARGET$.primary_title.state_faith ?= faith
+		$FACTION_CLAIMANT$.faith != faith
+		add = {
+			value = -40
+			if = {
+				limit = { has_vassal_stance = zealot }
+				multiply = 2
+			}
+		}
+		desc = FACTION_REASON_ADMIN_CLAIMANT_NOT_STATE_FAITH
+	}
+	# Stances
+	modifier = { # Courtly want diplomatic Lieges
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		NOT = { this = $FACTION_CLAIMANT$ }
+		has_vassal_stance = courtly
+		add = {
+			value = $FACTION_CLAIMANT$.diplomacy
+			subtract = $FACTION_TARGET$.diplomacy
+			multiply = 5
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = gregarious }
+					NOT = { $FACTION_TARGET$ = { has_trait = gregarious } }
+				}
+				add = 10
+			}
+			else_if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = shy }
+					NOT = { $FACTION_TARGET$ = { has_trait = shy } }
+				}
+				add = -10
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = august }
+					NOT = { $FACTION_TARGET$ = { has_trait = august } }
+				}
+				add = 10
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = family_first }
+					NOT = { $FACTION_TARGET$ = { has_trait = family_first } }
+				}
+				add = 10
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = diplomat }
+					NOT = { $FACTION_TARGET$ = { has_trait = diplomat } }
+				}
+				add = 10
+			}
+		}
+		desc = FACTION_REASON_ADMIN_COURTLY
+	}
+	modifier = { # Glory Hounds want martial Lieges
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		NOT = { this = $FACTION_CLAIMANT$ }
+		has_vassal_stance = glory_hound
+		add = {
+			value = $FACTION_CLAIMANT$.martial
+			subtract = $FACTION_TARGET$.martial
+			multiply = 5
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = brave }
+					NOT = { $FACTION_TARGET$ = { has_trait = brave } }
+				}
+				add = 10
+			}
+			else_if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = craven }
+					NOT = { $FACTION_TARGET$ = { has_trait = craven } }
+				}
+				add = -10
+			}
+			add = {
+				value = $FACTION_CLAIMANT$.number_of_commander_traits
+				subtract = $FACTION_TARGET$.number_of_commander_traits
+				multiply = 5
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = gallant }
+					NOT = { $FACTION_TARGET$ = { has_trait = gallant } }
+				}
+				add = 10
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = overseer }
+					NOT = { $FACTION_TARGET$ = { has_trait = overseer } }
+				}
+				add = 10
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = strategist }
+					NOT = { $FACTION_TARGET$ = { has_trait = strategist } }
+				}
+				add = 10
+			}
+		}
+		desc = FACTION_REASON_ADMIN_GLORY_HOUND
+	}
+	modifier = { # Parochial want stewardly Lieges
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		NOT = { this = $FACTION_CLAIMANT$ }
+		has_vassal_stance = parochial
+		add = {
+			value = $FACTION_CLAIMANT$.stewardship
+			subtract = $FACTION_TARGET$.stewardship
+			multiply = 5
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = zealous }
+					NOT = { $FACTION_TARGET$ = { has_trait = zealous } }
+				}
+				add = 10
+			}
+			else_if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = cynical }
+					NOT = { $FACTION_TARGET$ = { has_trait = cynical } }
+				}
+				add = -10
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = architect }
+					NOT = { $FACTION_TARGET$ = { has_trait = architect } }
+				}
+				add = 10
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = administrator }
+					NOT = { $FACTION_TARGET$ = { has_trait = administrator } }
+				}
+				add = 10
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = avaricious }
+					NOT = { $FACTION_TARGET$ = { has_trait = avaricious } }
+				}
+				add = 10
+			}
+		}
+		desc = FACTION_REASON_ADMIN_PAROCHIAL
+	}
+	modifier = { # Zealots want learned Lieges
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		NOT = { this = $FACTION_CLAIMANT$ }
+		has_vassal_stance = zealot
+		faith = $FACTION_CLAIMANT$.faith
+		faith = $FACTION_TARGET$.faith # Dislike of other faiths handled already
+		add = {
+			value = $FACTION_CLAIMANT$.learning
+			subtract = $FACTION_TARGET$.learning
+			multiply = 2
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = diligent }
+					NOT = { $FACTION_TARGET$ = { has_trait = diligent } }
+				}
+				add = 10
+			}
+			else_if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = lazy }
+					NOT = { $FACTION_TARGET$ = { has_trait = lazy } }
+				}
+				add = -10
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = whole_of_body }
+					NOT = { $FACTION_TARGET$ = { has_trait = whole_of_body } }
+				}
+				add = 10
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = scholar }
+					NOT = { $FACTION_TARGET$ = { has_trait = scholar } }
+				}
+				add = 10
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = theologian }
+					NOT = { $FACTION_TARGET$ = { has_trait = theologian } }
+				}
+				add = 10
+			}
+		}
+		desc = FACTION_REASON_ADMIN_ZEALOT
+	}
+	modifier = { # Minorities want representative Lieges
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		NOT = { this = $FACTION_CLAIMANT$ }
+		has_vassal_stance = minority
+		OR = {
+			AND = {
+				culture != $FACTION_TARGET$.culture
+				culture = $FACTION_CLAIMANT$.culture
+			}
+			AND = {
+				faith != $FACTION_TARGET$.faith
+				faith = $FACTION_CLAIMANT$.faith
+			}
+		}
+		add = {
+			value = 10
+			if = {
+				limit = {
+					culture = $FACTION_CLAIMANT$.culture
+					faith = $FACTION_CLAIMANT$.faith
+				}
+				add = 10
+			}
+			if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = just }
+					NOT = { $FACTION_TARGET$ = { has_trait = just } }
+				}
+				add = 10
+			}
+			else_if = {
+				limit = {
+					$FACTION_CLAIMANT$ = { has_trait = arbitrary }
+					NOT = { $FACTION_TARGET$ = { has_trait = arbitrary } }
+				}
+				add = -10
+			}
+		}
+		desc = FACTION_REASON_ADMIN_MINORITY
+	}
+	## FOB
+	# Skill Relative
+	modifier = { # Directly compare the governor efficiency of liege to claimant
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		NOT = { this = $FACTION_CLAIMANT$ }
+		add = {
+			value = $FACTION_CLAIMANT$.governor_efficiency_score
+			subtract = $FACTION_TARGET$.governor_efficiency_score
+		}
+		desc = FACTION_REASON_ADMIN_RELATIVE_SKILL
+	}
+	# Family Reasons
+	modifier = { # Don't support a claimant who doesn't belong to a powerful family (unless same house as claimant)
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		exists = $FACTION_CLAIMANT$.house
+		NOT = { house ?= $FACTION_CLAIMANT$.house }
+		$FACTION_CLAIMANT$.house = { is_powerful_family = no }
+		add = -30
+		desc = FACTION_REASON_ADMIN_POWERFUL_FAMILY # Needs better loc
+	}
+	modifier = { # Dominant Family members are preferred Claimants
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		exists = $FACTION_CLAIMANT$.house
+		$FACTION_CLAIMANT$.house = { is_dominant_family = yes }
+		add = 20
+		desc = FACTION_REASON_ADMIN_DOMINANT_FAMILY
+	}
+	modifier = { # Less likely to support other houses when their own house is powerful/dominant
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		exists = $FACTION_CLAIMANT$.house
+		house ?= {
+			OR = {
+				is_powerful_family = yes
+				is_dominant_family = yes
+			}
+			NOT = { this = $FACTION_CLAIMANT$.house }
+		}
+		add = -20
+		desc = MY_HOUSE_IS_POWERFUL # Needs better loc
+	}
+	modifier = { # Less likely to support other houses when their own house is on the throne
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		exists = $FACTION_CLAIMANT$.house
+		exists = $FACTION_TARGET$.house
+		house ?= {
+			NOT = { this = $FACTION_CLAIMANT$.house }
+			this = $FACTION_TARGET$.house
+		}
+		add = -20
+		desc = FACTION_REASON_CLAIMANT_HOUSE # Needs better loc
+	}
+	# Negative Traits
+	modifier = { # Criminal Claimants are not desirable
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_CLAIMANT$ = {
+			has_trait = deviant
+			exists = top_liege.primary_title.state_faith
+			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+		}
+		add = -20
+		desc = FACTION_REASON_ADMIN_CLAIMANT_DEVIANT_AND_CRIMINAL
+	}
+	modifier = { # Criminal Claimants are not desirable
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_CLAIMANT$ = {
+			has_trait = incestuous
+			exists = top_liege.primary_title.state_faith
+			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+		}
+		add = -20
+		desc = FACTION_REASON_ADMIN_CLAIMANT_INCESTUOUS_AND_CRIMINAL
+	}
+	modifier = { # Criminal Claimants are not desirable
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_CLAIMANT$ = {
+			has_trait = sodomite
+			exists = top_liege.primary_title.state_faith
+			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+		}
+		add = -20
+		desc = FACTION_REASON_ADMIN_CLAIMANT_SODOMITE_AND_CRIMINAL
+	}
+	modifier = { # Criminal Claimants are not desirable
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_CLAIMANT$ = {
+			has_trait = cannibal
+			exists = top_liege.primary_title.state_faith
+			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+		}
+		add = -20
+		desc = FACTION_REASON_ADMIN_CLAIMANT_CANNIBAL_AND_CRIMINAL
+	}
+	modifier = { # Criminal Claimants are not desirable
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_CLAIMANT$ = {
+			has_trait = kinslayer_1
+			exists = top_liege.primary_title.state_faith
+			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+		}
+		add = -10
+		desc = FACTION_REASON_ADMIN_CLAIMANT_KINSLAYER_1_AND_CRIMINAL
+	}
+	modifier = { # Criminal Claimants are not desirable
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_CLAIMANT$ = {
+			has_trait = kinslayer_2
+			exists = top_liege.primary_title.state_faith
+			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+		}
+		add = -20
+		desc = FACTION_REASON_ADMIN_CLAIMANT_KINSLAYER_2_AND_CRIMINAL
+	}
+	modifier = { # Criminal Claimants are not desirable
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_CLAIMANT$ = {
+			has_trait = kinslayer_3
+			exists = top_liege.primary_title.state_faith
+			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+		}
+		add = -30
+		desc = FACTION_REASON_ADMIN_CLAIMANT_KINSLAYER_3_AND_CRIMINAL
+	}
+	modifier = { # Criminal Claimants are not desirable
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_CLAIMANT$ = {
+			has_trait = witch
+			exists = top_liege.primary_title.state_faith
+			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+		}
+		add = -20
+		desc = FACTION_REASON_ADMIN_CLAIMANT_WITCH_AND_CRIMINAL
+	}
+	modifier = { # Criminal Claimants are not desirable
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_CLAIMANT$ = {
+			has_trait = adulterer
+			exists = top_liege.primary_title.state_faith
+			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+		}
+		add = -20
+		desc = FACTION_REASON_ADMIN_CLAIMANT_ADULTERER_AND_CRIMINAL
+	}
+	modifier = { # Criminal Claimants are not desirable
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_CLAIMANT$ = {
+			has_trait = fornicator
+			exists = top_liege.primary_title.state_faith
+			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+		}
+		add = -20
+		desc = FACTION_REASON_ADMIN_CLAIMANT_FORNICATOR_AND_CRIMINAL
+	}
+	# Born in Purple
+	modifier = { # Prefer a claimant who is born in the purple when the liege is not
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_TARGET$.primary_title = title:e_byzantium
+		$FACTION_CLAIMANT$ = { has_trait = born_in_the_purple }
+		NOT = {
+			$FACTION_TARGET$ = { has_trait = born_in_the_purple }
+		}
+		add = 25
+		desc = FACTION_REASON_ADMIN_BORN_IN_PURPLE
+	}
+	## FOB
+	admin_government_modifier = {
+		TARGET = $FACTION_TARGET$
+		SCORE = admin_gov_claimant_create_join_score
+	}
+	## FOB
+	house_score_difference_modifier = {
+		TARGET = $FACTION_TARGET$
+		CLAIMANT = $FACTION_CLAIMANT$
+	}
+	# Co-Emperor
+	modifier = { # Making Claimant your Co-Emperor defuses the faction somewhat
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_TARGET$ = {
+			has_diarchy_type = co_emperorship
+			has_active_diarchy = yes
+			diarch = $FACTION_CLAIMANT$
+		}
+		factor = 0.5
+		desc = "FACTION_REASON_ADMIN_CLAIMANT_CO_EMPEROR"
+	}
+	modifier = { # Making Claimant your Co-Emperor defuses the faction somewhat
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		$FACTION_TARGET$ = {
+			has_diarchy_type = junior_emperorship
+			has_active_diarchy = yes
+			diarch = $FACTION_CLAIMANT$
+		}
+		factor = 0.5
+		desc = "FACTION_REASON_ADMIN_CLAIMANT_JUNIOR_EMPEROR"
+	}
 }

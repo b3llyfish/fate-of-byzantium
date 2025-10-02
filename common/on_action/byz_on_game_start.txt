@@ -1,4 +1,4 @@
-﻿on_game_start = {
+on_game_start = {
 	on_actions = {
 		add_horse_lord_oghuz
 		disable_seljuk_byzantium_invasion
@@ -6,6 +6,9 @@
 		fix_rum_anatolia_kingdom_capital
 		remove_maa_increase
 		add_depressed_emperor_1178
+		add_byz_title_troops
+		resolve_armenia_war
+		add_sultan_rum_trait
 	}
 }
 
@@ -27,7 +30,7 @@ disable_seljuk_byzantium_invasion = {
 	effect = {
 		if = {
 			limit = {
-				game_start_date >= 1178.10.1 # prevent trigger if rum exists at the game start date
+				game_start_date = 1178.10.1 # prevent trigger if rum exists at the game start date
 			}
 			set_global_variable = {
 				name = seljuk_byzantium_invasion_happened
@@ -41,15 +44,10 @@ add_bonus_rum_troops = {
 	effect = {
 		if = {
 			limit = {
-				game_start_date >= 1178.10.1
+				game_start_date = 1178.10.1
 			}
 			title:k_rum.holder = {
-				spawn_nomadic_troops = {
-					LOCATION = title:k_rum.holder.location
-				}
-				spawn_nomadic_troops = {
-					LOCATION = title:k_rum.holder.location
-				}
+				create_rum_1187_maa_effect = yes
 			}
 		}
 	}
@@ -59,7 +57,7 @@ fix_rum_anatolia_kingdom_capital = {
 	effect = {
 		if = {
 			limit = {
-				game_start_date >= 1178.10.1
+				game_start_date = 1178.10.1
 			}
 			rum_de_jure_duchies_effect = yes
 		}
@@ -70,7 +68,7 @@ remove_maa_increase = {
 	effect = {
 		if = {
 			limit = {
-				game_start_date >= 1178.10.1
+				game_start_date = 1178.10.1
 			}
 			title:e_byzantium.holder = {
 				random_maa_regiment = {
@@ -88,10 +86,152 @@ add_depressed_emperor_1178 = {
 	effect = {
 		if = {
 			limit = {
-				game_start_date >= 1178.10.1
+				game_start_date = 1178.10.1
 			}
 			title:e_byzantium.holder = {
 				add_trait = depressed_1
+			}
+		}
+	}
+}
+
+add_byz_title_troops = {
+	effect = {
+		if = {
+			limit = {
+				game_start_date = 867.1.1
+			}
+			title:e_byzantium.holder = {
+				create_maa_regiment = {
+					type = skoutatoi
+					check_can_recruit = no
+					title = title:e_byzantium
+					size = 2
+				}
+				create_maa_regiment = {
+					type = cataphract
+					check_can_recruit = no
+					title = title:e_byzantium
+					size = 1
+				}
+				create_maa_regiment = {
+					type = akritai
+					check_can_recruit = no
+					title = title:e_byzantium
+					size = 2
+				}
+				create_maa_regiment = {
+					type = ballistrai
+					check_can_recruit = no
+					title = title:e_byzantium
+					size = 2
+				}
+			}
+		}
+		if = {
+			limit = {
+				game_start_date = 1066.9.15
+			}
+			title:e_byzantium.holder = {
+				create_maa_regiment = {
+					type = skoutatoi
+					check_can_recruit = no
+					title = title:e_byzantium
+					size = 4
+				}
+				create_maa_regiment = {
+					type = cataphract
+					check_can_recruit = no
+					title = title:e_byzantium
+					size = 2
+				}
+				create_maa_regiment = {
+					type = akritai
+					check_can_recruit = no
+					title = title:e_byzantium
+					size = 4
+				}
+				create_maa_regiment = {
+					type = ballistrai
+					check_can_recruit = no
+					title = title:e_byzantium
+					size = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				game_start_date = 1178.10.1
+			}
+			title:e_byzantium.holder = {
+				create_maa_regiment = {
+					type = skoutatoi
+					check_can_recruit = no
+					title = title:e_byzantium
+					size = 6
+				}
+				create_maa_regiment = {
+					type = cataphract
+					check_can_recruit = no
+					title = title:e_byzantium
+					size = 3
+				}
+				create_maa_regiment = {
+					type = akritai
+					check_can_recruit = no
+					title = title:e_byzantium
+					size = 6
+				}
+				create_maa_regiment = {
+					type = ballistrai
+					check_can_recruit = no
+					title = title:e_byzantium
+					size = 6
+				}
+			}
+		}
+	}
+}
+
+resolve_armenia_war = {
+	effect = {
+		if = {
+			limit = {
+				game_start_date = 1066.9.15
+				OR = {
+					has_game_rule = invasion_armenia_seljuk_victory
+					has_game_rule = invasion_armenia_byz_victory
+				}
+			}
+			title:e_persia.holder = {
+				random_character_war = {
+					limit = { using_cb = claim_cb }
+					if = {
+						limit = {
+							has_game_rule = invasion_armenia_seljuk_victory
+						}
+						end_war = attacker
+					}
+					else_if = {
+						limit = {
+							has_game_rule = invasion_armenia_byz_victory
+						}
+						end_war = defender
+					}
+				}
+			}
+		}
+	}
+}
+
+add_sultan_rum_trait = {
+	effect = {
+		if = {
+			limit = {
+				game_start_date = 1178.10.1
+			}
+			title:k_rum.holder = {
+				add_sultan_rum_trait_effect = yes
 			}
 		}
 	}

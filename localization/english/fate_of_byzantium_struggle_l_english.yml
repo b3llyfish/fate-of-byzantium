@@ -4,8 +4,7 @@
  
  struggle_parameter_unlocks_reclaim_southern_italy_casus_belli: "Gains access to the Reclaim Southern Italy casus belli"
  struggle_parameter_unlocks_balkans_subjugation_cb: "Gains access to the Balkans Subjugation casus belli"
- struggle_parameter_populist_rebels_more_likely: "[popular_factions|E] have a higher chance to form"
- struggle_parameter_populist_rebels_much_more_likely: "[popular_factions|E] have a much higher chance to form"
+ struggle_parameter_gov_efficiency_increased_impact: "The contribution [governor_efficiency|E] has on [claimant_factions|E] and [popular_factions|E] is increased"
 
  struggle_fate_of_byzantium_phase_optimism: "Optimism"
  struggle_fate_of_byzantium_phase_optimism_desc: "$game_concept_struggle_phase_byzantium_optimism_desc$"
