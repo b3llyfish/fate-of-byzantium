@@ -139,19 +139,3 @@ can_invade_rum = {
 		NOT = { is_at_war_with = title:e_persia.holder }
 	}
 }
-
-can_rebel_bulgaria = {
-	NOT = { exists = global_var:bulgarian_rebellion_byzantium_happened }
-	title:e_byzantium.holder = {
-		OR = {
-			completely_controls = title:d_dobrudja
-			completely_controls = title:d_turnovo
-		}
-	}
-	NOT = {
-		exists = title:k_bulgaria.holder
-		title:k_bulgaria.holder = {
-			is_independent_ruler = yes
-		}
-	}
-}

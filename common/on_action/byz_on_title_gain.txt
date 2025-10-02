@@ -1,7 +1,6 @@
 on_title_gain = {
 	on_actions = {
 		sultan_of_rum_trait
-		bulgarian_resistance_trait
 	}
 }
 
@@ -24,26 +23,6 @@ sultan_of_rum_trait = {
 				}
 			}
 			add_sultan_rum_trait_effect = yes
-		}
-	}
-}
-
-bulgarian_resistance_trait = {
-	effect = {
-		if = {
-			limit = {
-				exists = scope:previous_holder
-				scope:previous_holder = {
-					OR = {
-						has_trait = bulgarian_resistance_minor
-						has_trait = bulgarian_resistance
-						has_trait = bulgarian_resistance_major
-					}
-				}
-				scope:title = title:k_bulgaria
-				culture = { has_cultural_pillar = heritage_south_slavic }
-			}
-			add_bulgarian_resistance_trait_effect = yes
 		}
 	}
 }

@@ -13,10 +13,3 @@ seljuk_invader_county_modifier = {
 	levy_size = 0.25
 	development_growth_factor = medium_development_growth_gain
 }
-
-bulgarian_rebellion_county_modifier = {
-	icon = economy_positive
-	tax_mult = 0.25
-	levy_size = 0.25
-	development_growth_factor = medium_development_growth_gain
-}

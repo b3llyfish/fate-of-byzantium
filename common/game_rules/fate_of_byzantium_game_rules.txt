@@ -54,18 +54,6 @@ seljuk_invasion_byzantium_invader_culture = {
 	emperor_persia_culture = {}
 }
 
-bulgarian_rebellion_byzantium = {
-	categories = { fate_of_byzantium }
-	
-	default = random_bulgarian_rebellion_byzantium
-	
-	random_bulgarian_rebellion_byzantium = {}
-	
-	fixed_bulgarian_rebellion_byzantium = {}
-	
-	disable_bulgarian_rebellion_byzantium = {}
-}
-
 historicity_frankokratia = {
 	categories = { historicity difficulty }
 	
@@ -118,18 +106,4 @@ sultan_rum_trait_1178 = {
 	sultan_rum_trait_minor_1178 = {}
 	
 	sultan_rum_trait_off_1178 = {}
-}
-
-bulgarian_resistance_trait = {
-	categories = { fate_of_byzantium }
-	
-	default = bulgarian_resistance_trait_major
-	
-	bulgarian_resistance_trait_major = {}
-	
-	bulgarian_resistance_trait_moderate = {}
-	
-	bulgarian_resistance_trait_minor = {}
-	
-	bulgarian_resistance_trait_off = {}
 }
