@@ -5,7 +5,7 @@ seljuk_invasion_byzantium.0001 = {
 	hidden = yes
 	
 	immediate = {
-		spawn_seljuk_invasion_byzantium_character_effect = yes
+		setup_seljuk_invasion_byzantium_character_effect = yes
 		scope:seljuk_byzantium_invader = {
 			start_war = {
 				cb = invade_rum_cb

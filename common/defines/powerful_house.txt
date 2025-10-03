@@ -2,3 +2,7 @@ NHouse = {
 	POWERFUL_HOUSE_MINIMUM_POWER = 35		# Miminum house power values for the house to be considered powerful
 	POWERFUL_HOUSE_MAX_COUNT = 8			# Max number of powerful houses in an admin realm (not counting the top liege house)
 }
+
+NAdministrative = {
+	BASE_REASSIGN_COST = 150 				# Base value used in the scripted cost for reassigning title troops
+}

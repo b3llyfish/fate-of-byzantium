@@ -190,11 +190,14 @@ invade_rum_cb = {
 		laamp_as_mercenary_payout_tooltip_effect = yes
 		
 		scope:attacker = {
-			# spread invader culture
-			seljuk_invader_spread_culture_effect = yes
+			# create duchies and convert
+			seljuk_invader_create_duchies_and_convert_effect = yes
+			# county modifiers
 			seljuk_invader_modifier_effect = yes
 			# add flag
 			add_character_flag = invade_rum_victor
+			# ensure clan gov
+			change_government = clan_government
 		}
 	}
 	
@@ -257,6 +260,8 @@ invade_rum_cb = {
 		
 		scope:attacker = {
 			save_temporary_scope_as = loser
+			# cast them out as an adventure
+			change_government = landless_adventurer_government
 		}
 		on_lost_aggression_war_discontent_loss = yes
 		

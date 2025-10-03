@@ -1,0 +1,21 @@
+on_title_lost = {
+	on_actions = {
+		remove_sultan_of_rum_trait
+	}
+}
+
+remove_sultan_of_rum_trait = {
+	effect = {
+		if = {
+			limit = {
+				scope:title = title:k_rum
+				OR = {
+					has_trait = sultan_rum_minor
+					has_trait = sultan_rum
+					has_trait = sultan_rum_major
+				}
+			}
+			remove_sultan_rum_trait_effect = yes
+		}
+	}
+}

@@ -1,11 +1,18 @@
 sultan_rum_minor = {
 	category = fame
 	icon = sultan_rum.dds
+	flag = sultan_rum_bonuses_modifier
 	
-	men_at_arms_maintenance = -0.10
+	men_at_arms_maintenance = -0.1
 	monthly_income = 2.5
 	monthly_legitimacy_add = 2.5
 	islam_religion_opinion = 5
+	
+	# ai only stuff
+	ai_war_chance = 0.25
+	ai_amenity_spending = -0.10
+	ai_amenity_target_baseline = -0.25
+	ai_boldness = medium_positive_ai_value
 	
 	shown_in_ruler_designer = no
 }
@@ -13,12 +20,21 @@ sultan_rum_minor = {
 sultan_rum = {
 	category = fame
 	icon = sultan_rum.dds
+	flag = sultan_rum_bonuses_modifier
 	
-	men_at_arms_maintenance = -0.25
+	men_at_arms_maintenance = -0.33
 	tolerance_advantage_mod = 5
+	men_at_arms_cap = 1 # how many maa slots
+	men_at_arms_limit = 1 # how many maa per stack
 	monthly_income = 5
-	monthly_legitimacy_add = 5
+	monthly_legitimacy_add = 2.5
 	islam_religion_opinion = 10
+	
+	# ai only stuff
+	ai_war_chance = 0.25
+	ai_amenity_spending = -0.10
+	ai_amenity_target_baseline = -0.25
+	ai_boldness = medium_positive_ai_value
 	
 	shown_in_ruler_designer = no
 }
@@ -26,12 +42,22 @@ sultan_rum = {
 sultan_rum_major = {
 	category = fame
 	icon = sultan_rum.dds
+	flag = sultan_rum_bonuses_modifier
 	
-	men_at_arms_maintenance = -0.5
+	men_at_arms_maintenance = -0.66
 	tolerance_advantage_mod = 10
+	men_at_arms_cap = 2 # how many maa slots
+	men_at_arms_limit = 2 # how many maa per stack
 	monthly_income = 10
-	monthly_legitimacy_add = 10
+	monthly_legitimacy_add = 5
 	islam_religion_opinion = 20
+	
+	# ai only stuff
+	ai_war_chance = 5
+	ai_war_cooldown = -0.25
+	ai_amenity_spending = -0.10
+	ai_amenity_target_baseline = -0.25
+	ai_boldness = medium_positive_ai_value
 	
 	shown_in_ruler_designer = no
 }

@@ -139,3 +139,13 @@ can_invade_rum = {
 		NOT = { is_at_war_with = title:e_persia.holder }
 	}
 }
+
+can_use_suleyman = {
+	character:3046 = {
+		is_alive = yes
+		is_healthy = yes
+		is_landed = no
+		is_ai = yes
+		is_at_war = no
+	}
+}

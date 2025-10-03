@@ -143,7 +143,7 @@ add_byz_title_troops = {
 					type = cataphract
 					check_can_recruit = no
 					title = title:e_byzantium
-					size = 2
+					size = 3
 				}
 				create_maa_regiment = {
 					type = akritai
@@ -174,7 +174,7 @@ add_byz_title_troops = {
 					type = cataphract
 					check_can_recruit = no
 					title = title:e_byzantium
-					size = 3
+					size = 6
 				}
 				create_maa_regiment = {
 					type = akritai

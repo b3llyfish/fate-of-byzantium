@@ -1,3 +1,37 @@
+setup_seljuk_invasion_byzantium_character_effect = {
+	if = {
+		limit = {
+			can_use_suleyman = yes
+		}
+		setup_suleyman_seljuk_invasion_byzantium_effect = yes
+	}
+	else = {
+		spawn_seljuk_invasion_byzantium_character_effect = yes
+	}
+	setup_seljuk_knights_effect = yes
+}
+
+setup_suleyman_seljuk_invasion_byzantium_effect = {
+	character:3046 = {
+		save_scope_as = seljuk_byzantium_invader
+		add_character_flag = is_seljuk
+		add_gold = medium_gold_max_value
+		add_prestige = massive_prestige_value
+		add_piety = massive_piety_value
+		ordered_army = { set_army_location = title:c_edessa.holder.capital_province }
+		if = {
+			limit = {
+				has_game_rule = invader_turkmen_culture
+			}
+			convert_family_culture_and_notify_vassals_effect = {
+				CONVERTER = root
+				OLD_CULTURE = root.culture
+				NEW_CULTURE = culture:turkmen
+			}
+		}
+	}
+}
+
 spawn_seljuk_invasion_byzantium_character_effect = {
 	if = {
 		limit = {
@@ -25,7 +59,7 @@ spawn_seljuk_invasion_byzantium_character_effect = {
 	title:c_edessa.holder.capital_province = { save_scope_as = seljuk_birthplace }
 	
 	create_character = {
-		age = { 32 38 }
+		age = { 25 32 }
 		location = scope:seljuk_birthplace
 		gender_female_chance = fp3_chance_female_leader
 		culture = scope:seljuk_birth_culture
@@ -47,7 +81,7 @@ spawn_seljuk_invasion_byzantium_character_effect = {
 		after_creation = {
 			add_gold = medium_gold_max_value
 			add_prestige = massive_prestige_value
-			add_piety = major_piety_value
+			add_piety = massive_piety_value
 			add_perk = stalwart_leader_perk
 			add_perk = engineered_for_destruction_perk
 			add_perk = hit_and_run_perk
@@ -64,6 +98,9 @@ spawn_seljuk_invasion_byzantium_character_effect = {
 		}
 		save_scope_as = seljuk_byzantium_invader
 	}
+}
+
+setup_seljuk_knights_effect = {
 	add_seljuk_knight_effect = yes
 	add_seljuk_knight_effect = yes
 	add_seljuk_knight_effect = yes
@@ -124,30 +161,30 @@ spawn_seljuk_invasion_byzantium_troops = {
 spawn_temp_nomadic_troops = {
 	spawn_army = {
 		name = turkmen_nomads
-		levies = 750
+		levies = 500
 		men_at_arms = {
 			type = armored_footmen
-			stacks = 10
+			stacks = 8
 		}
 		men_at_arms = {
 			type = pikemen_unit
-			stacks = 10
+			stacks = 8
 		}
 		men_at_arms = {
 			type = steppe_raiders
-			stacks = 10
+			stacks = 8
 		}
 		men_at_arms = {
 			type = horse_archers
-			stacks = 10
+			stacks = 8
 		}
 		men_at_arms = {
 			type = cataphract_archers
-			stacks = 10
+			stacks = 8
 		}
 		men_at_arms = {
 			type = mangonel
-			stacks = 10
+			stacks = 8
 		}
 		location = scope:seljuk_byzantium_invader.location
 		war = scope:seljuk_byzantium_invasion_war
@@ -155,14 +192,39 @@ spawn_temp_nomadic_troops = {
 	}
 }
 
-seljuk_invader_spread_culture_effect = {
-	culture = { save_scope_as = new_culture}
-	title:c_lycaonia = { set_county_culture = scope:new_culture }
-	title:c_galatia_salutaris = { set_county_culture = scope:new_culture }
-	title:c_cappadocia = { set_county_culture = scope:new_culture }
-	title:c_lower_galatia = { set_county_culture = scope:new_culture }
-	title:c_kyzistra = { set_county_culture = scope:new_culture }
-	title:c_isauria = { set_county_culture = scope:new_culture }
+seljuk_invader_create_duchies_and_convert_effect = {
+	this = { save_scope_as = new_owner }
+	
+	title:d_anatolia = { add_to_list = to_create_convert }
+	title:d_cappadocia = { add_to_list = to_create_convert }
+	title:d_charsianon = { add_to_list = to_create_convert }
+	title:d_sebasteia = { add_to_list = to_create_convert }
+	
+	every_in_list = {
+		list = to_create_convert
+		# create duchy
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		change_title_holder = {
+			holder = scope:new_owner
+			change = scope:change
+		}
+		resolve_title_and_vassal_change = scope:change
+		every_de_jure_county = {
+			if = {
+				limit = {
+					culture = culture:greek
+				}
+				# convert culture (if greek)
+				set_county_culture = scope:new_owner.culture
+			}
+			# convert faith
+			set_county_faith = scope:new_owner.faith
+		}
+	}
 }
 
 seljuk_invader_modifier_effect = {
@@ -200,10 +262,14 @@ spawn_maa_rum_effect = {
 	title:k_rum.holder = {
 		create_maa_or_upgrade_regiment_effect = {
 			TYPE = armored_footmen
-			SIZE = 4
+			SIZE = 6
 		}
 		create_maa_or_upgrade_regiment_effect = {
 			TYPE = pikemen_unit
+			SIZE = 6
+		}
+		create_maa_or_upgrade_regiment_effect = {
+			TYPE = light_horsemen
 			SIZE = 6
 		}
 		create_maa_or_upgrade_regiment_effect = {
@@ -211,25 +277,19 @@ spawn_maa_rum_effect = {
 			SIZE = 6
 		}
 		create_maa_or_upgrade_regiment_effect = {
-			TYPE = cataphract_archers
-			SIZE = 4
+			TYPE = mangonel
+			SIZE = 6
 		}
-		# try to give right level siege
 		if = {
 			limit = {
-				culture = {
-					has_innovation = innovation_trebuchet
+				OR = {
+					has_trait = sultan_rum
+					has_trait = sultan_rum_major
 				}
 			}
 			create_maa_or_upgrade_regiment_effect = {
-				TYPE = trebuchet
-				SIZE = 4
-			}
-		}
-		else = {
-			create_maa_or_upgrade_regiment_effect = {
-				TYPE = mangonel
-				SIZE = 4
+				TYPE = horse_archers
+				SIZE = 6
 			}
 		}
 	}
@@ -281,26 +341,55 @@ add_sultan_rum_trait_effect = {
 	}
 }
 
+remove_sultan_rum_trait_effect = {
+	if = {
+		limit = {
+			has_trait = sultan_rum_major
+		}
+		remove_trait = sultan_rum_major
+	}
+	if = {
+		limit = {
+			has_trait = sultan_rum
+		}
+		remove_trait = sultan_rum
+	}
+	if = {
+		limit = {
+			has_trait = sultan_rum_minor
+		}
+		remove_trait = sultan_rum_minor
+	}
+}
+
 create_rum_1187_maa_effect = {
 	create_maa_or_upgrade_regiment_effect = {
 		TYPE = armored_footmen
-		SIZE = 8
+		SIZE = 10
 	}
 	create_maa_or_upgrade_regiment_effect = {
 		TYPE = pikemen_unit
-		SIZE = 8
+		SIZE = 10
 	}
 	create_maa_or_upgrade_regiment_effect = {
 		TYPE = light_horsemen
-		SIZE = 8
+		SIZE = 10
 	}
 	create_maa_or_upgrade_regiment_effect = {
-		TYPE = crossbowmen
-		SIZE = 8
+		TYPE = bowmen
+		SIZE = 10
+	}
+	create_maa_or_upgrade_regiment_effect = {
+		TYPE = light_footmen
+		SIZE = 10
 	}
 	create_maa_or_upgrade_regiment_effect = {
 		TYPE = horse_archers
-		SIZE = 8
+		SIZE = 10
+	}
+	create_maa_or_upgrade_regiment_effect = {
+		TYPE = armored_horsemen
+		SIZE = 10
 	}
 	create_maa_or_upgrade_regiment_effect = {
 		TYPE = trebuchet
@@ -308,6 +397,6 @@ create_rum_1187_maa_effect = {
 	}
 	create_maa_or_upgrade_regiment_effect = {
 		TYPE = cataphract_archers
-		SIZE = 6
+		SIZE = 10
 	}
 }

@@ -21,6 +21,7 @@ sultan_of_rum_trait = {
 					religion = religion:islam_religion
 					culture = { has_cultural_pillar = heritage_turkic }
 				}
+				is_independent_ruler = yes
 			}
 			add_sultan_rum_trait_effect = yes
 		}

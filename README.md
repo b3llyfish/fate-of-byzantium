@@ -115,6 +115,7 @@ Below list changes to Byzantium that are independent of the struggle.
 #### Defines
 * Score required to be a powerful house decreased to 35
 * Max number of powerful houses increased to 8
+* Base cost of hiring theme troops increased to 150 influence
 
 #### Demand Administrative Governance Interaction
 * Cultures who do not benefit from Admin governments are much less likely to accept
@@ -155,8 +156,8 @@ In the 1178 start date what stage should the struggle start in
 The number of unpressed claims to give to runner-ups on an Admin Emperors death (example: Two means give claims to the candidates in 2nd and 3rd place)
 
 * No additional claims
-* One (default)
-* Two
+* One
+* Two (default)
 * Three
 
 ### Invasion of Rum
@@ -185,16 +186,18 @@ In 1066 should the result of Seljuk's invasion of Armenia?
 ### Sultan of Rum Trait ###
 How powerful are the bonuses that the Sultan of Rum gets
 
-* Minor
-* Moderate (default)
 * Major
+* Moderate (default)
+* Minor
+* Off
 
 ### Sultan of Rum Trait (1178) ###
 How powerful are the bonuses that the Sultan of Rum gets in the 1178 start date
 
-* Minor
-* Moderate
 * Major (default)
+* Moderate
+* Minor
+* Off
 
 ## Compatibility
 There are a bunch of overrides (populists, rum, governor efficiency, etc...) made by this mod. It is unlikely to cause

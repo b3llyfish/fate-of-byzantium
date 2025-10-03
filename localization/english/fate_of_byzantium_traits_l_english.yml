@@ -5,3 +5,4 @@
  trait_sultan_rum_minor_desc: "$trait_sultan_rum_desc$"
  trait_sultan_rum_major:  "$trait_sultan_rum$"
  trait_sultan_rum_major_desc: "$trait_sultan_rum_desc$"
+ TRAIT_FLAG_DESC_sultan_rum_bonuses_modifier: "AI Rulers will prioritise warfare"
