@@ -1,4 +1,4 @@
-form_rum_sultanate_decision = {
+﻿form_rum_sultanate_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/fp3/fp3_decision_concession.dds"
 	}

@@ -1,4 +1,4 @@
-yearly_global_pulse = {
+﻿yearly_global_pulse = {
 	on_actions = {
 		seljuk_invasion_byzantium
 	}

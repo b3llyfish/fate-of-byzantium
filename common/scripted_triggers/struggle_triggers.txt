@@ -1,4 +1,4 @@
-involved_in_byz_struggle = {
+﻿involved_in_byz_struggle = {
 	any_character_struggle = {
 		involvement = involved
 		is_struggle_type = fate_of_byzantium

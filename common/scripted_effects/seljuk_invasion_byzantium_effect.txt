@@ -1,4 +1,4 @@
-setup_seljuk_invasion_byzantium_character_effect = {
+﻿setup_seljuk_invasion_byzantium_character_effect = {
 	if = {
 		limit = {
 			can_use_suleyman = yes

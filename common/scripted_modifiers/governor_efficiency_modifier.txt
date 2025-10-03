@@ -1,4 +1,4 @@
-admin_government_modifier = {
+﻿admin_government_modifier = {
 	modifier = {
 		desc = admin_gov_modifier
 		# only apply if target has admin gov

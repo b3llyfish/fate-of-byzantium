@@ -1,4 +1,4 @@
-sultan_rum_minor = {
+﻿sultan_rum_minor = {
 	category = fame
 	icon = sultan_rum.dds
 	flag = sultan_rum_bonuses_modifier

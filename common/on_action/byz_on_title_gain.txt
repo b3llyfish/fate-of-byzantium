@@ -1,4 +1,4 @@
-on_title_gain = {
+﻿on_title_gain = {
 	on_actions = {
 		sultan_of_rum_trait
 	}

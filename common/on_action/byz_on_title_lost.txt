@@ -1,4 +1,4 @@
-on_title_lost = {
+﻿on_title_lost = {
 	on_actions = {
 		remove_sultan_of_rum_trait
 	}

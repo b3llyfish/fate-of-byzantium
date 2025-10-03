@@ -1,4 +1,4 @@
-gov_efficiency_terrible_multiplier = 1.0
+﻿gov_efficiency_terrible_multiplier = 1.0
 gov_efficiency_poor_multiplier = 1.25
 gov_efficiency_average_multiplier = 1.5
 gov_efficiency_good_multiplier = 1.75

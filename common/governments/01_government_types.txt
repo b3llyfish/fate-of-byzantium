@@ -1,4 +1,4 @@
-### Brief: administrative_government
+﻿### Brief: administrative_government
 # Default administrative government, used for Byzantium
 #
 # This is referenced in code

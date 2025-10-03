@@ -1,4 +1,4 @@
-byzantium_resurgent_modifier = {
+﻿byzantium_resurgent_modifier = {
 	icon = economy_positive
 	development_growth_factor = small_development_growth_gain
 	county_opinion_add = 10

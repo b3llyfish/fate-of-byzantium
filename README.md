@@ -129,7 +129,6 @@ Below list changes to Byzantium that are independent of the struggle.
 * Characters will now consider a claimant's 'House Power' (relative to the Emperors) when creating/joining claimant factions
 
 #### Government
-* Theme armies cap and limit is reduced by 1
 * Cost of mercenaries is increased by 50%
 
 #### Governor Efficiency

@@ -1,4 +1,4 @@
-on_vassal_gained = {
+﻿on_vassal_gained = {
 	on_actions = {
 		remove_sultan_of_rum_trait_vassal
 	}

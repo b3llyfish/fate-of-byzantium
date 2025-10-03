@@ -1,4 +1,4 @@
-on_death = {
+﻿on_death = {
 	on_actions = {
 		give_unpressed_admin_title_claim
 	}

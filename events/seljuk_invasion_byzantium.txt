@@ -1,4 +1,4 @@
-namespace = seljuk_invasion_byzantium
+﻿namespace = seljuk_invasion_byzantium
 
 seljuk_invasion_byzantium.0001 = {
 	scope = none

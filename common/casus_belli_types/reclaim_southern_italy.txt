@@ -1,4 +1,4 @@
-reclaim_southern_italy_cb = {
+﻿reclaim_southern_italy_cb = {
 	icon = duchy_conquest_cb
 	group = conquest
 	
