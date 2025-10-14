@@ -1,9 +1,14 @@
 ﻿[h1] Fate Of Byzantium [/h1]
 Mod the aims to control Byzantium (and the Admin Government in general) following their post Roads to Power implementation.
 
-There are two parts to this mod:
+With this mod Byzantium should be: 
+* a regional power that still poses a challenge to fight
+* unable to expand so freely in all directions
+* vulnerable to internal factions and invading realms
+
+There are two mains parts to this mod:
 * a new thematic struggle for Byzantium (can be disabled via game rules)
-* nerfs/tweaks/fixes to administrative governments
+* nerfs/tweaks/fixes to Administrative governments
 
 [h2] Key Details [/h2]
 * new Byzantine Struggle mechanic affecting the Byzantine's ability to wage war
@@ -14,38 +19,36 @@ There are two parts to this mod:
 For the full change log please view the [url=https://github.com/b3llyfish/fate-of-byzantium/blob/main/README.md]README[/url] for this mod.
 
 [h2] Disclaimer [/h2]
-This mod is an attempt and balance CK3's overpowered implementation of Byzantium. It is not trying to be a historically 
+This mod is an attempt to balance CK3's overpowered implementation of Byzantium via game mechanics. It is not trying to be a historically 
 accurate portrayal of Byzantium.
-
-The mod isn't able to incorporate the 'Name of Byzantium' game rule into the localisation.
 
 Please remember this if you are planning on leaving comments.
 
-[h2] Byzantium Observations [/h2]
-Below lists my observations of Byzantium with this mod on for each start date.
+[h2] Observations [/h2]
+Below list the general behaviour of Byzantium and Rum across the start dates.
+
 Obviously the AI is unpredictable, so I cannot guarantee this behaviour.
 
 [h3] 867 [/h3]
 Byzantium is at its strongest in this start date and will try to pick off bits of Italy and the Balkans. Once King Boris of Bulgaria dies
-Byzantium often subjects Bulgaria.
+Byzantium often subjects and dissolves Bulgaria, allowing Greek rule over those themes.
 
-Around 910 the stagnation phase kicks in and expansion grinds to a halt. Byzantium will spend most of her time dealing with populists
-and claimants.
+Around 910 the stagnation phase kicks in and Byzantium will lose its ability to expand so easily.
 
 [h3] 1066 [/h3]
-Byzantium struggles in this start date, with Muslim clans taking advantage of common Byzantine faction wars. The scripted
-Seljuk invasion war carves a new threat into Anatolia, potentially pushing the struggle into the decline phase.
+Byzantium is attempting to hold things together in this start, however a scripted Islamic invasion of Anatolia combined
+with various claimant factions will see the Empire start to fray and splinter.
 
-If Byzantium can hold things together then typically a power balance forms once the Muslim clans start collapsing due to
-infighting.
+Opportunistic attacks will be common against Byzantium. It is in this start date that the 'Fall of Byzantium' ending
+is likeliest to happen.
 
 [h3] 1178 [/h3]
 I'm of the opinion that the economy in this start date is completely broken and so any attempts to balance this mod for this
 start date is ultimately pointless. 
 
-That said the buffs given to Rum it typically is able to repel Byzantium's initial attempts to annex it from the map in one war.
+That said the buffs given to Rum it typically allows them to repel Byzantium's initial attempts to annex it from the map in one war.
 
-If Byzantium ends up allying a strong European power (e.g. France) or if Saladin takes a liking to Anatolia then Rum doesn't last long.
+Conqueror Saladin will likely waltz up and consume Rum but that's not an issue this mod is trying to solve.
 
 [h2] Game Rules [/h2]
 
@@ -55,7 +58,7 @@ See section in the [url=https://github.com/b3llyfish/fate-of-byzantium/blob/main
 Struggle ending decisions disappear from struggle interface: [url=https://forum.paradoxplaza.com/forum/threads/struggle-endings-illustrations-disappear-when-reopening-the-interface.1859300]Confirmed Issue[/url]
 
 [h2] Recommended Mods [/h2]
-* [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3357686271]Worthy Conquerors[/url] - prevent struggle participants from becoming conquerors
+* [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3357686271]Worthy Conquerors[/url] - prevent struggle participants from becoming conquerors and can remove Saladin's conqueror trait via a game rule
 * [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2829397295]Cultures Expanded[/url] - mod has been designed with this mod enabled
 
 [h2] Compatibility [/h2]

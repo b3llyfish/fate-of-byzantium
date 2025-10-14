@@ -1,4 +1,4 @@
-﻿common_create_faction_blockers = {
+common_create_faction_blockers = {
 	# Refuses to make if there was a recent independence faction revolt.
 	modifier = {
 		add = -1000
@@ -281,15 +281,15 @@ admin_claimant_faction_modifiers = {
 	}
 	## FOB
 	# Skill Relative
-	modifier = { # Directly compare the governor efficiency of liege to claimant
-		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
-		NOT = { this = $FACTION_CLAIMANT$ }
-		add = {
-			value = $FACTION_CLAIMANT$.governor_efficiency_score
-			subtract = $FACTION_TARGET$.governor_efficiency_score
-		}
-		desc = FACTION_REASON_ADMIN_RELATIVE_SKILL
-	}
+	#modifier = { # Directly compare the governor efficiency of liege to claimant
+	#	ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+	#	NOT = { this = $FACTION_CLAIMANT$ }
+	#	add = {
+	#		value = $FACTION_CLAIMANT$.governor_efficiency_score
+	#		subtract = $FACTION_TARGET$.governor_efficiency_score
+	#	}
+	#	desc = FACTION_REASON_ADMIN_RELATIVE_SKILL
+	#}
 	# Family Reasons
 	modifier = { # Don't support a claimant who doesn't belong to a powerful family (unless same house as claimant)
 		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
@@ -315,6 +315,13 @@ admin_claimant_faction_modifiers = {
 				is_dominant_family = yes
 			}
 			NOT = { this = $FACTION_CLAIMANT$.house }
+		}
+		# FOB
+		$FACTION_CLAIMANT$.house = {
+			NOR = {
+				is_powerful_family = yes
+				is_dominant_family = yes
+			}
 		}
 		add = -20
 		desc = MY_HOUSE_IS_POWERFUL # Needs better loc
@@ -443,14 +450,13 @@ admin_claimant_faction_modifiers = {
 		desc = FACTION_REASON_ADMIN_BORN_IN_PURPLE
 	}
 	## FOB
-	admin_government_modifier = {
-		TARGET = $FACTION_TARGET$
-		SCORE = admin_gov_claimant_create_join_score
-	}
-	## FOB
 	house_score_difference_modifier = {
 		TARGET = $FACTION_TARGET$
 		CLAIMANT = $FACTION_CLAIMANT$
+	}
+	## FOB
+	raiktor_modifier = {
+		TARGET = $FACTION_TARGET$
 	}
 	# Co-Emperor
 	modifier = { # Making Claimant your Co-Emperor defuses the faction somewhat

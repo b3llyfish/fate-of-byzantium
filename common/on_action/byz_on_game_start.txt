@@ -1,14 +1,15 @@
-﻿on_game_start = {
+on_game_start = {
 	on_actions = {
 		add_horse_lord_oghuz
 		disable_seljuk_byzantium_invasion
 		add_bonus_rum_troops
-		fix_rum_anatolia_kingdom_capital
+		fix_rum_anatolia_kingdom
 		remove_maa_increase
 		add_depressed_emperor_1178
 		add_byz_title_troops
 		resolve_armenia_war
 		add_sultan_rum_trait
+		add_turkmen_innovation_mangonel
 	}
 }
 
@@ -53,7 +54,7 @@ add_bonus_rum_troops = {
 	}
 }
 
-fix_rum_anatolia_kingdom_capital = {
+fix_rum_anatolia_kingdom = {
 	effect = {
 		if = {
 			limit = {
@@ -137,25 +138,25 @@ add_byz_title_troops = {
 					type = skoutatoi
 					check_can_recruit = no
 					title = title:e_byzantium
-					size = 4
+					size = 3
 				}
 				create_maa_regiment = {
 					type = cataphract
 					check_can_recruit = no
 					title = title:e_byzantium
-					size = 3
+					size = 2
 				}
 				create_maa_regiment = {
 					type = akritai
 					check_can_recruit = no
 					title = title:e_byzantium
-					size = 4
+					size = 3
 				}
 				create_maa_regiment = {
 					type = ballistrai
 					check_can_recruit = no
 					title = title:e_byzantium
-					size = 4
+					size = 3
 				}
 			}
 		}
@@ -168,25 +169,25 @@ add_byz_title_troops = {
 					type = skoutatoi
 					check_can_recruit = no
 					title = title:e_byzantium
-					size = 6
+					size = 5
 				}
 				create_maa_regiment = {
 					type = cataphract
 					check_can_recruit = no
 					title = title:e_byzantium
-					size = 6
+					size = 4
 				}
 				create_maa_regiment = {
 					type = akritai
 					check_can_recruit = no
 					title = title:e_byzantium
-					size = 6
+					size = 5
 				}
 				create_maa_regiment = {
 					type = ballistrai
 					check_can_recruit = no
 					title = title:e_byzantium
-					size = 6
+					size = 5
 				}
 			}
 		}
@@ -233,6 +234,14 @@ add_sultan_rum_trait = {
 			title:k_rum.holder = {
 				add_sultan_rum_trait_effect = yes
 			}
+		}
+	}
+}
+
+add_turkmen_innovation_mangonel = {
+	effect = {
+		culture:turkmen = {
+			add_innovation = innovation_mangonel
 		}
 	}
 }

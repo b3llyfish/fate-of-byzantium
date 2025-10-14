@@ -1,4 +1,4 @@
-﻿fate_of_byzantium = {
+fate_of_byzantium = {
 	
 	##################################################
 	# Setup
@@ -144,7 +144,6 @@
 				involved_character_modifier = {
 					attacker_advantage = -5
 					movement_speed = -0.1
-					men_at_arms_maintenance = 0.15
 					army_damage_mult = -0.05
 				}
 			}
@@ -201,7 +200,6 @@
 				involved_character_modifier = {
 					attacker_advantage = -10
 					movement_speed = -0.2
-					men_at_arms_maintenance = 0.3
 					army_damage_mult = -0.1
 				}
 				

@@ -13,7 +13,7 @@ The struggle is designed to encourage AI Byzantium to focus conquests towards th
 to wage war effectively as it goes through the phases.
 
 It is **not** an interactive struggle, as a player do not expect a revamped Byzantine experience. It has been designed 
-with the AI in mind, with the end goal of Byzantine decline. 
+with the AI in mind, with the ultimate end goal of Byzantine decline. 
 
 #### Phases
 The phases have been designed to be one way for the AI. 
@@ -70,18 +70,19 @@ This ending restructures the Byzantium Empire, resulting in a smaller de jure Em
 will also gain a negative tradition (with modifiers similar to those in the stagnation phase) that cannot be removed.
 
 ### General Byzantium Changes
-Below list changes to Byzantium that are independent of the struggle.
+Below list all changes to Byzantium and the surrounding region that are independent of the struggle.
 
 #### Theodosian Walls
 * Tax multiplier modifiers have been removed
-* Monthly income has been removed 
+* Monthly income has been reduced to 3 
 * Development modifiers have been slightly reduced
 * County control and epidemic resistance modifiers have been added
 
 #### Seljuk Invasion
 * A Seljuk invasion will occur against Byzantium at some point after 1077 if not using the 1178 start date. 
 * The invader will attempt to establish the Sultanate of Rum. 
-* The date of the invasion and invader culture can be changed via game rules. The invasion can also be disabled. 
+* If possible, Suleiman ibn Qutalmish will lead the invasion.
+* Elements of the invasion, including disabling it, can be changed via game rules. 
 
 #### Sultanate of Rum
 * The decision to form the Sultanate of Rum is now much easier
@@ -103,12 +104,14 @@ Below list changes to Byzantium that are independent of the struggle.
 #### 1178 Game Start
 * Basileus Manuel now has the depressed trait on game start
 * Byzantium title starts with theme troops
-* Emperor now longer starts with thematic Varangian Guards troops that exceed the MAA's unit cap
+* Emperor no longer starts with thematic Varangian Guards troops that exceed the MAA's unit cap
 * Sultanate of Rum starts with additional troops
 * Sultanate of Rum start with the 'Sultan of Rum' trait
+* Kingdom of Rum now is de jure liege of all duchies previously under Anatolia
 
-#### Seize Peripheral Duchy
-* Can only target neighbouring land/sea provinces
+#### Culture
+* Oghuz culture now has the Horse Lords tradition
+* Turkmen culture now starts with the mangonel innovation
 
 ### Administrative Government Changes
 
@@ -116,9 +119,12 @@ Below list changes to Byzantium that are independent of the struggle.
 * Score required to be a powerful house decreased to 35
 * Max number of powerful houses increased to 8
 * Base cost of hiring theme troops increased to 150 influence
+* AI will now estimate that an Admin realm can use 10% (down from 40%) of its total power when deciding to attack
 
 #### Demand Administrative Governance Interaction
 * Cultures who do not benefit from Admin governments are much less likely to accept
+* Characters who hold King or higher titles will never accept
+* Characters with 0% acceptance chance will no longer choose the 'negotiate' options
 
 #### Factions
 * Removed 'Admin empire should not face new factions during ongoing faction wars' faction blocker
@@ -136,6 +142,9 @@ Below list changes to Byzantium that are independent of the struggle.
 
 #### Succession
 * Empire level successions in admin governments will give an unpressed claims to the runner-ups (number of claims given can be extended/removed via game rules)
+
+#### Seize Peripheral Duchy
+* Can only target neighbouring land/sea provinces
 
 ## Game Rules
 
@@ -171,6 +180,13 @@ What culture should the Seljuk invader have
 
 * Turkmen (default)
 * Persian Emperor
+
+### Suleiman ibn Qutalmish
+Whether to try and use the historical Rum founder as the Seljuk invader. Suleiman must be AI, an adventurer and not at war. An additional health check can also be done.
+
+* Use Healthy Suleiman (default)
+* Use Suleiman
+* Do not use Suleiman
 
 ### Chance of Frankokratia
 This is a base game rule, however the default has been overridden to 'Fourth Crusade' to prevent a very early Latin Empire

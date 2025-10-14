@@ -1,0 +1,105 @@
+GameRuleByzName = {
+	type = all
+	
+	text = {
+		trigger = {
+			has_game_rule = default_name_of_byzantium
+		}
+		localization_key = e_byzantium
+	}
+	
+	text = {
+		trigger = {
+			has_game_rule = eastern_rome_name_of_byzantium
+		}
+		localization_key = e_eastern_roman_empire
+	}
+	
+	text = {
+		trigger = {
+			has_game_rule = roman_empire_name_of_byzantium
+		}
+		localization_key = e_roman_empire
+	}
+	
+	text = {
+		trigger = {
+			has_game_rule = romania_name_of_byzantium
+		}
+		localization_key = e_romania_empire
+	}
+	
+	text = {
+		trigger = {
+			has_game_rule = empire_of_the_greeks_name_of_byzantium
+		}
+		localization_key = e_empire_of_the_greeks
+	}
+	
+	text = {
+		trigger = {
+			has_game_rule = rhomaion_name_of_byzantium
+		}
+		localization_key = e_rhomaion
+	}
+	
+	text = {
+		trigger = {
+			has_game_rule = unholy_roman_empire_name_of_byzantium
+		}
+		localization_key = e_unholy_roman_empire
+	}
+}
+
+GameRuleByzNameAdj = {
+	type = all
+	
+	text = {
+		trigger = {
+			has_game_rule = default_name_of_byzantium
+		}
+		localization_key = e_byzantium_adj
+	}
+	
+	text = {
+		trigger = {
+			has_game_rule = eastern_rome_name_of_byzantium
+		}
+		localization_key = e_eastern_roman_empire_adj
+	}
+	
+	text = {
+		trigger = {
+			has_game_rule = roman_empire_name_of_byzantium
+		}
+		localization_key = e_roman_empire_adj
+	}
+	
+	text = {
+		trigger = {
+			has_game_rule = romania_name_of_byzantium
+		}
+		localization_key = e_romania_empire_adj
+	}
+	
+	text = {
+		trigger = {
+			has_game_rule = empire_of_the_greeks_name_of_byzantium
+		}
+		localization_key = e_empire_of_the_greeks_adj
+	}
+	
+	text = {
+		trigger = {
+			has_game_rule = rhomaion_name_of_byzantium
+		}
+		localization_key = e_rhomaion_adj
+	}
+	
+	text = {
+		trigger = {
+			has_game_rule = unholy_roman_empire_name_of_byzantium
+		}
+		localization_key = e_unholy_roman_empire_adj
+	}
+}

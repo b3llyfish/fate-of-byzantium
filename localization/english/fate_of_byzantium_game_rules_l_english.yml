@@ -23,7 +23,7 @@
  setting_admin_gov_succession_claims_three: "Three"
  setting_admin_gov_succession_claims_three_desc: "Successions in Empire tiered admin titles will give an unpressed claim to the person in #Z second#!, #Z third#! and #Z fourth#! place"
 
- rule_seljuk_invasion_byzantium: "Fate of Byzantium: Invasion of Rum"
+ rule_seljuk_invasion_byzantium: "Fate of Byzantium: Invasion of Rum Date"
  setting_random_seljuk_invasion_byzantium: "Random"
  setting_random_seljuk_invasion_byzantium_desc: "The invasion will occur randomly at some point after game year 1077"
  setting_fixed_seljuk_invasion_byzantium: "Fixed"
@@ -37,6 +37,14 @@
  setting_emperor_persia_culture: "Persian Emperor"
  setting_emperor_persia_culture_desc: "The invader of Rum will have the same culture as the Emperor of Perisa (or Seljuk if they don't exist)"
  
+ rule_seljuk_invasion_byzantium_invader_suleman: "Fate of Byzantium: Suleiman ibn Qutalmish"
+ setting_use_suleman_healthcheck: "Use Healthy Suleiman"
+ setting_use_suleman_healthcheck_desc: "Will attempt to use Suleiman as the invader of Rum, with an additional check that he is healthy"
+ setting_use_suleman: "Use Suleiman"
+ setting_use_suleman_desc: "Will attempt to use Suleiman as the invader of Rum"
+ setting_do_not_use_suleman: "Do not use Suleiman"
+ setting_do_not_use_suleman_desc: "The invader of Rum will always be randomly generated"
+
  rule_seljuk_invasion_armenia_outcome: "Fate of Byzantium: Seljuk Invasion of Armenia"
  setting_invasion_armenia_seljuk_victory: "Seljuk Victory"
  setting_invasion_armenia_seljuk_victory_desc: "Seljuk will win the war and control Armenia"

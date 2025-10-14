@@ -1,0 +1,166 @@
+demand_admin_interaction = {
+	category = interaction_category_vassal
+	icon = demand_admin_interaction
+	
+	ai_min_reply_days = 4
+	ai_max_reply_days = 9
+	ai_accept_negotiation = yes
+	popup_on_receive = yes
+	common_interaction = no
+	
+	#according to telemetry, practically never used
+	interface_priority = 0
+	
+	ai_targets = {
+		ai_recipients = vassals
+	}
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	ai_frequency = 12
+	
+	desc = demand_admin_interaction_desc
+	
+	is_shown = {
+		scope:actor = { government_allows = administrative }
+		scope:recipient = {
+			target_is_liege_or_above = scope:actor
+			is_ai = yes
+			is_ruler = yes
+			NOT = { government_allows = administrative }
+		}
+		trigger_if = {
+			limit = {
+				scope:actor = {
+					is_ai = yes
+				}
+			}
+			scope:recipient = {
+				highest_held_title_tier >= tier_county
+			}
+		}
+	}
+	
+	cooldown_against_recipient = { years = 10 }
+	
+	is_valid_showing_failures_only = {
+		scope:recipient = { is_busy_in_events_localised = yes }
+		scope:recipient = { NOT = { has_strong_hook = scope:actor } }
+		scope:recipient = { is_at_war = no }
+		scope:actor = { is_at_war = no }
+		custom_tooltip = {
+			text = cannot_take_overt_hostile_actions_against_diarch.tt
+			NOT = { scope:recipient ?= scope:actor.diarch }
+		}
+		custom_tooltip = {
+			text = demand_admin_tribal
+			NOT = {
+				scope:recipient = { government_has_flag = government_is_tribal }
+			}
+		}
+		custom_tooltip = {
+			text = head_of_faith_unable_to_change_government_desc
+			NOT = {
+				scope:recipient = { faith.religious_head ?= this }
+			}
+		}
+	}
+	
+	# Offer hereditary boost
+	send_option = {
+		is_valid = {
+			custom_tooltip = {
+				text = demand_admin_hereditary_tt
+				scope:recipient.house ?= {
+					any_house_member = { count > 1 }
+				}
+			}
+			custom_tooltip = {
+				text = demand_admin_hereditary_exists_tt
+				NOT = { exists = scope:recipient.primary_title.var:petition_house_rights }
+			}
+		}
+		flag = hereditary
+		localization = demand_admin_hereditary
+	}
+	#Spend influence
+	send_option = {
+		flag = influence
+		is_valid = {
+			scope:actor.influence >= massive_influence_value
+		}
+		localization = SPEND_INFLUENCE
+	}
+	#Use hook
+	send_option = {
+		is_valid = {
+			scope:actor = { has_usable_hook = scope:recipient }
+		}
+		flag = hook
+		localization = SCHEME_HOOK
+	}
+	should_use_extra_icon = {
+		scope:actor = { has_usable_hook = scope:recipient }
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+	
+	send_options_exclusive = no
+	
+	auto_accept = {
+		custom_description = {
+			text = "spending_hook"
+			subject = scope:actor
+			object = scope:recipient
+			scope:hook = yes
+		}
+	}
+	
+	on_send = {
+		scope:recipient = {
+			primary_title = { save_scope_as = demanded_administration }
+			trigger_event = {
+				id = demand_admin_override.0001
+				days = 5
+			}
+		}
+	}
+	
+	on_accept = {
+		show_as_tooltip = {
+			change_to_administrative_interaction_effect = yes
+		}
+	}
+	
+	on_decline = {
+		scope:recipient = { custom_tooltip = demand_admin_interaction_vassal_refuses }
+	}
+	
+	ai_potential = {
+		government_allows = administrative
+		is_adult = yes
+	}
+	
+	ai_will_do = {
+		base = 100
+		modifier = {
+			factor = 0
+			scope:recipient = { highest_held_title_tier >= tier_county }
+			gold >= 300
+		}
+		modifier = {
+			factor = 0
+			scope:recipient = { highest_held_title_tier >= tier_duchy }
+			gold >= 600
+		}
+		modifier = {
+			factor = 0
+			scope:recipient = { highest_held_title_tier >= tier_kingdom }
+			gold >= 2000
+		}
+	}
+	
+	ai_accept = {
+		base = 0
+		demand_admin_acceptance_modifier = yes
+	}
+}

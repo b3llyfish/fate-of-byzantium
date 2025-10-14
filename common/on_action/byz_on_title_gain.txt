@@ -1,4 +1,4 @@
-﻿on_title_gain = {
+on_title_gain = {
 	on_actions = {
 		sultan_of_rum_trait
 	}
@@ -17,6 +17,7 @@ sultan_of_rum_trait = {
 					}
 				}
 				scope:title = title:k_rum
+				highest_held_title_tier < tier_empire
 				OR = {
 					religion = religion:islam_religion
 					culture = { has_cultural_pillar = heritage_turkic }

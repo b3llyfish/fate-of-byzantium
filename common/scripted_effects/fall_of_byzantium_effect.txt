@@ -1,4 +1,4 @@
-﻿split_eastern_byzantium_de_jure_effect = {
+split_eastern_byzantium_de_jure_effect = {
 	title:e_anatolia = {
 		save_scope_as = new_empire
 	}
@@ -59,6 +59,15 @@ split_western_byzantium_de_jure_effect = {
 			title:k_serbia = { target_is_de_jure_liege_or_above = title:e_byzantium }
 		}
 		title:k_serbia = { set_de_jure_liege_title = scope:new_empire }
+	}
+	hidden_effect = {
+		# move Vidin to stop border gore
+		if = {
+			limit = {
+				title:d_vidin = { target_is_de_jure_liege_or_above = title:e_byzantium }
+			}
+			title:d_vidin = { set_de_jure_liege_title = title:k_serbia }
+		}
 	}
 }
 

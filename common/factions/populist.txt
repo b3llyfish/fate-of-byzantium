@@ -1,4 +1,4 @@
-﻿populist_faction = {
+populist_faction = {
 	casus_belli = populist_war
 	
 	leaders_allowed_to_leave = no
@@ -298,28 +298,11 @@
 			TARGET = scope:target
 			SCORE = admin_gov_populist_county_create_score
 		}
-		
-		#modifier = {
-		#	desc = "admin_gov_modifier"
-		#	add = admin_gov_populist_county_create_score
-		#	county.holder = { government_has_flag = government_is_administrative }
-		#}
-		
+
 		governor_efficiency_populist_modifier = {
 			TARGET = scope:target
 			POPULIST_CULTURE = this.title_province.culture
 		}
-		
-		#modifier = {
-		#	desc = governor_efficiency
-		#	add = {
-		#		value = governor_efficiency_populist_score
-		#		# inverse - bad governors increase chance
-		#		multiply = -1
-		#	}
-		#	county.holder = { government_has_flag = government_is_administrative }
-		#	NOT = { county.culture = county.holder.culture }
-		#}
 		
 		# 10-year 'grace period' from populist factions forming after game start
 		modifier = {
@@ -555,23 +538,10 @@
 			SCORE = admin_gov_populist_county_join_score
 		}
 		
-		#modifier = {
-		#	desc = "admin_gov_modifier"
-		#	add = admin_gov_populist_county_join_score
-		#	county.holder = { government_has_flag = government_is_administrative }
-		#}
-		
 		governor_efficiency_populist_modifier = {
 			TARGET = this.title_province.county.holder
 			POPULIST_CULTURE = this.title_province.culture
 		}
-		
-		#modifier = {
-		#	desc = governor_efficiency
-		#	add = governor_efficiency_populist_score
-		#	county.holder = { government_has_flag = government_is_administrative }
-		#	NOT = { county.culture = county.holder.culture }
-		#}
 	}
 	
 	county_power = county_levies_to_raise
@@ -806,23 +776,10 @@
 			}
 		}
 		
-		#admin_government_modifier = {
-		#	$TARGET$ = scope:target
-		#	$SCORE$ = admin_gov_populist_ai_join_score
-		#}
-		
 		populist_no_admin_join_modifier = {
 			TARGET = scope:faction.faction_target
 			SELF = this
 		}
-		
-		#modifier = {
-		#	desc = "admin_gov_modifier"
-		#	add = admin_gov_populist_ai_join_score
-		#	scope:faction.faction_target = {
-		#		government_has_flag = government_is_administrative
-		#	}
-		#}
 	}
 	
 	on_creation = {

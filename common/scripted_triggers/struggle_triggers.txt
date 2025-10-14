@@ -1,4 +1,4 @@
-﻿involved_in_byz_struggle = {
+involved_in_byz_struggle = {
 	any_character_struggle = {
 		involvement = involved
 		is_struggle_type = fate_of_byzantium
@@ -141,11 +141,20 @@ can_invade_rum = {
 }
 
 can_use_suleyman = {
+	OR = {
+		has_game_rule = use_suleman_healthcheck
+		has_game_rule = use_suleman
+	}
 	character:3046 = {
 		is_alive = yes
-		is_healthy = yes
 		is_landed = no
 		is_ai = yes
 		is_at_war = no
+		trigger_if = {
+			limit = {
+				has_game_rule = use_suleman_healthcheck
+			}
+			is_healthy = yes
+		}
 	}
 }

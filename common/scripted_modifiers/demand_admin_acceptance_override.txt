@@ -1,4 +1,4 @@
-﻿
+
 demand_admin_acceptance_modifier = {
 	opinion_modifier = { # Opinion Factor
 		who = scope:recipient
@@ -151,6 +151,7 @@ demand_admin_acceptance_modifier = {
 		}
 		desc = "HISTORICAL_ADMIN_REASON"
 	}
+	## FOB
 	modifier = {
 		scope:recipient.culture = {
 			NOR = {
@@ -161,6 +162,12 @@ demand_admin_acceptance_modifier = {
 		}
 		add = -50
 		desc = culture_ill_suited_for_admin
+	}
+	## FOB
+	modifier = {
+		scope:recipient = { highest_held_title_tier > tier_duchy }
+		add = -1000
+		desc = cannot_demand_king_for_admin
 	}
 	# Warning
 	modifier = {

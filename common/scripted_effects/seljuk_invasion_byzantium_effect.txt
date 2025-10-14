@@ -1,4 +1,4 @@
-﻿setup_seljuk_invasion_byzantium_character_effect = {
+setup_seljuk_invasion_byzantium_character_effect = {
 	if = {
 		limit = {
 			can_use_suleyman = yes
@@ -262,23 +262,23 @@ spawn_maa_rum_effect = {
 	title:k_rum.holder = {
 		create_maa_or_upgrade_regiment_effect = {
 			TYPE = armored_footmen
-			SIZE = 6
+			SIZE = 4
 		}
 		create_maa_or_upgrade_regiment_effect = {
 			TYPE = pikemen_unit
-			SIZE = 6
+			SIZE = 4
 		}
 		create_maa_or_upgrade_regiment_effect = {
 			TYPE = light_horsemen
-			SIZE = 6
+			SIZE = 4
 		}
 		create_maa_or_upgrade_regiment_effect = {
 			TYPE = horse_archers
-			SIZE = 6
+			SIZE = 4
 		}
 		create_maa_or_upgrade_regiment_effect = {
 			TYPE = mangonel
-			SIZE = 6
+			SIZE = 4
 		}
 		if = {
 			limit = {

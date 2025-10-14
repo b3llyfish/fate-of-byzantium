@@ -1,4 +1,4 @@
-﻿### Brief: administrative_government
+### Brief: administrative_government
 # Default administrative government, used for Byzantium
 #
 # This is referenced in code
@@ -37,10 +37,13 @@ administrative_government = {
 		clan_government_levy_contribution_mult = -0.5
 		men_at_arms_cap = -2
 		men_at_arms_limit = -2
-		knight_limit = -5
+		#men_at_arms_title_limit = -1 # how many maa per stack
+		men_at_arms_title_cap = -1 # how many maa total
+		knight_limit = -3
 		vassal_limit = 100
 		active_accolades = -1
 		title_creation_cost_mult = -0.5
+		men_at_arms_maintenance = 0.15
 		mercenary_hire_cost_mult = 0.5
 	}
 

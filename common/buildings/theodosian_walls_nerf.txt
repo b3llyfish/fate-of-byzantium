@@ -1,4 +1,4 @@
-﻿theodosian_walls_01 = {
+theodosian_walls_01 = {
 	construction_time = very_slow_construction_time
 
 	type_icon = "icon_structure_theodosian_walls.dds"
@@ -18,7 +18,7 @@
 		epidemic_resistance = 15 #new
 	}
 	province_modifier = {
-		#monthly_income = 5 #down from 10
+		#monthly_income = 3 #down from 10
 		fort_level = 5
 		garrison_size = 1
 		travel_danger = -20

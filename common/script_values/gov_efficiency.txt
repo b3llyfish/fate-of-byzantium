@@ -1,8 +1,14 @@
-﻿gov_efficiency_terrible_multiplier = 1.0
-gov_efficiency_poor_multiplier = 1.25
-gov_efficiency_average_multiplier = 1.5
-gov_efficiency_good_multiplier = 1.75
-gov_efficiency_excellent_multiplier = 2.0
+gov_efficiency_terrible_multiplier = 3
+gov_efficiency_poor_multiplier = 2
+gov_efficiency_average_multiplier = 0
+gov_efficiency_good_multiplier = 1
+gov_efficiency_excellent_multiplier = 1
+
+# baseline is the last 'average' value (10 in base game)
+gov_efficiency_skill_baseline = {
+	value = average_skill_level
+	subtract = 1
+}
 
 # Governor efficiency used in code
 # root - character that is evaluated for the governorship
@@ -12,6 +18,9 @@ governor_efficiency = {
 		# Everyone will calculate their Efficiency according to the following:
 		# Skills
 		add = {
+			add = {
+				add = 100
+			}
 			add = {
 				desc = diplomacy_concept
 				add = gov_efficiency_diplomacy_value
@@ -84,7 +93,7 @@ governor_efficiency = {
 				has_trait = governor
 				has_trait_xp = {
 					trait = governor
-					value >= 25
+					value > 25
 				}
 			}
 			add = {
@@ -94,25 +103,16 @@ governor_efficiency = {
 						limit = {
 							has_trait_xp = {
 								trait = governor
-								value >= 100
+								value > 100
 							}
 						}
-						add = 12
+						add = 10
 					}
 					else_if = {
 						limit = {
 							has_trait_xp = {
 								trait = governor
-								value >= 75
-							}
-						}
-						add = 9
-					}
-					else_if = {
-						limit = {
-							has_trait_xp = {
-								trait = governor
-								value >= 50
+								value > 75
 							}
 						}
 						add = 6
@@ -121,10 +121,19 @@ governor_efficiency = {
 						limit = {
 							has_trait_xp = {
 								trait = governor
-								value >= 25
+								value > 50
 							}
 						}
-						add = 3
+						add = 4
+					}
+					else_if = {
+						limit = {
+							has_trait_xp = {
+								trait = governor
+								value > 25
+							}
+						}
+						add = 2
 					}
 					desc = governor_trait_short_desc
 				}
@@ -226,7 +235,7 @@ governor_efficiency = {
 		# Dynasty Legacy Perk
 		if = {
 			limit = {
-				dynasty ?= { ep3_administrative_legacy_track_perks >= 1 }
+				dynasty ?= { ep3_administrative_legacy_track_perks > 1 }
 			}
 			add = {
 				add = {
@@ -509,165 +518,170 @@ governor_efficiency = {
 				divide = 100
 			}
 		}
-		min = 0.5 # Can't go lower than -50%
+		min = 0 # Can't go lower than -100%
 		max = 1.5 # Can't go higher than +50%
 	}
 }
 
 gov_efficiency_diplomacy_value = {
 	value = diplomacy
+	subtract = gov_efficiency_skill_baseline
 	if = {
 		limit = {
-			diplomacy >= excellent_skill_level
+			diplomacy < terrible_skill_level
 		}
-		multiply = gov_efficiency_excellent_multiplier
+		multiply = gov_efficiency_terrible_multiplier
 	}
 	else_if = {
 		limit = {
-			diplomacy >= good_skill_level
+			diplomacy < poor_skill_level
 		}
-		multiply = gov_efficiency_good_multiplier
+		multiply = gov_efficiency_poor_multiplier
 	}
 	else_if = {
 		limit = {
-			diplomacy >= average_skill_level
+			diplomacy < average_skill_level
 		}
 		multiply = gov_efficiency_average_multiplier
 	}
 	else_if = {
 		limit = {
-			diplomacy >= poor_skill_level
+			diplomacy < good_skill_level
 		}
-		multiply = gov_efficiency_poor_multiplier
+		multiply = gov_efficiency_good_multiplier
 	}
 	else = {
-		multiply = gov_efficiency_terrible_multiplier
+		multiply = gov_efficiency_excellent_multiplier
 	}
 }
 
 gov_efficiency_martial_value = {
 	value = martial
+	subtract = gov_efficiency_skill_baseline
 	if = {
 		limit = {
-			martial >= excellent_skill_level
+			martial < terrible_skill_level
 		}
-		multiply = gov_efficiency_excellent_multiplier
+		multiply = gov_efficiency_terrible_multiplier
 	}
 	else_if = {
 		limit = {
-			martial >= good_skill_level
+			martial < poor_skill_level
 		}
-		multiply = gov_efficiency_good_multiplier
+		multiply = gov_efficiency_poor_multiplier
 	}
 	else_if = {
 		limit = {
-			martial >= average_skill_level
+			martial < average_skill_level
 		}
 		multiply = gov_efficiency_average_multiplier
 	}
 	else_if = {
 		limit = {
-			martial >= poor_skill_level
+			martial < good_skill_level
 		}
-		multiply = gov_efficiency_poor_multiplier
+		multiply = gov_efficiency_good_multiplier
 	}
 	else = {
-		multiply = gov_efficiency_terrible_multiplier
+		multiply = gov_efficiency_excellent_multiplier
 	}
 }
 
 
 gov_efficiency_stewardship_value = {
 	value = stewardship
+	subtract = gov_efficiency_skill_baseline
 	if = {
 		limit = {
-			stewardship >= excellent_skill_level
+			stewardship < terrible_skill_level
 		}
-		multiply = gov_efficiency_excellent_multiplier
+		multiply = gov_efficiency_terrible_multiplier
 	}
 	else_if = {
 		limit = {
-			stewardship >= good_skill_level
+			stewardship < poor_skill_level
 		}
-		multiply = gov_efficiency_good_multiplier
+		multiply = gov_efficiency_poor_multiplier
 	}
 	else_if = {
 		limit = {
-			stewardship >= average_skill_level
+			stewardship < average_skill_level
 		}
 		multiply = gov_efficiency_average_multiplier
 	}
 	else_if = {
 		limit = {
-			stewardship >= poor_skill_level
+			stewardship < good_skill_level
 		}
-		multiply = gov_efficiency_poor_multiplier
+		multiply = gov_efficiency_good_multiplier
 	}
 	else = {
-		multiply = gov_efficiency_terrible_multiplier
+		multiply = gov_efficiency_excellent_multiplier
 	}
 }
 
 
 gov_efficiency_intrigue_value = {
 	value = intrigue
+	subtract = gov_efficiency_skill_baseline
 	if = {
 		limit = {
-			intrigue >= excellent_skill_level
+			intrigue < terrible_skill_level
 		}
-		multiply = gov_efficiency_excellent_multiplier
+		multiply = gov_efficiency_terrible_multiplier
 	}
 	else_if = {
 		limit = {
-			intrigue >= good_skill_level
+			intrigue < poor_skill_level
 		}
-		multiply = gov_efficiency_good_multiplier
+		multiply = gov_efficiency_poor_multiplier
 	}
 	else_if = {
 		limit = {
-			intrigue >= average_skill_level
+			intrigue < average_skill_level
 		}
 		multiply = gov_efficiency_average_multiplier
 	}
 	else_if = {
 		limit = {
-			intrigue >= poor_skill_level
+			intrigue < good_skill_level
 		}
-		multiply = gov_efficiency_poor_multiplier
+		multiply = gov_efficiency_good_multiplier
 	}
 	else = {
-		multiply = gov_efficiency_terrible_multiplier
+		multiply = gov_efficiency_excellent_multiplier
 	}
 }
 
 
 gov_efficiency_learning_value = {
 	value = learning
+	subtract = gov_efficiency_skill_baseline
 	if = {
 		limit = {
-			learning >= excellent_skill_level
+			learning < terrible_skill_level
 		}
-		multiply = gov_efficiency_excellent_multiplier
+		multiply = gov_efficiency_terrible_multiplier
 	}
 	else_if = {
 		limit = {
-			learning >= good_skill_level
+			learning < poor_skill_level
 		}
-		multiply = gov_efficiency_good_multiplier
+		multiply = gov_efficiency_poor_multiplier
 	}
 	else_if = {
 		limit = {
-			learning >= average_skill_level
+			learning < average_skill_level
 		}
 		multiply = gov_efficiency_average_multiplier
 	}
 	else_if = {
 		limit = {
-			learning >= poor_skill_level
+			learning < good_skill_level
 		}
-		multiply = gov_efficiency_poor_multiplier
+		multiply = gov_efficiency_good_multiplier
 	}
 	else = {
-		multiply = gov_efficiency_terrible_multiplier
+		multiply = gov_efficiency_excellent_multiplier
 	}
 }

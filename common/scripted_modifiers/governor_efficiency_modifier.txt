@@ -1,4 +1,4 @@
-﻿admin_government_modifier = {
+admin_government_modifier = {
 	modifier = {
 		desc = admin_gov_modifier
 		# only apply if target has admin gov
@@ -20,7 +20,7 @@ governor_efficiency_populist_modifier = {
 				add = {
 					value = governor_efficiency_score
 					# inverse - bad governors increase score, good governors lower it
-					multiply = -1
+					multiply = -2
 					# cap good governor score at -50
 					min = -50
 				}
@@ -52,19 +52,18 @@ house_score_difference_modifier = {
 		$CLAIMANT$ = { government_has_flag = government_is_administrative }
 		add = {
 			value = $CLAIMANT$.house.house_power_score
-			subtract = {
-				value = $TARGET$.house.house_power_score
-				if = {
-					limit = {
-						# if the target is independent (aka admin top liege) halve the imperial house score bonus
-						$TARGET$ = {
-							is_independent_ruler = yes
-						}
-					}
-					subtract = 100
-				}
-			}
+			subtract = $TARGET$.house.house_power_score
+			max = 50
+			min = -50
 		}
 		desc = house_score_difference
+	}
+}
+
+raiktor_modifier = {
+	modifier = {
+		desc = imposter_mock
+		$TARGET$ = { has_character_flag = raiktor }
+		add = 100
 	}
 }

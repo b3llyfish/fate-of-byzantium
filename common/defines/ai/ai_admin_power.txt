@@ -1,0 +1,7 @@
+NAI = {
+	# unchanged but leaving it here in case I wanna overwrite in the future
+	AI_BOLDNESS_ADJUSTMENT_FACTOR_ADMIN_REALM_POWER = 1.0
+	
+	# down from 0.4
+	ADMIN_REALM_TOTAL_POWER_ADJUSTMENT_TOP_LIEGE = 0
+}

@@ -1,4 +1,4 @@
-﻿fate_of_byzantium_struggle_enable = {
+fate_of_byzantium_struggle_enable = {
 	categories = { fate_of_byzantium }
 	
 	default = fate_of_byzantium_struggle_enabled
@@ -21,7 +21,7 @@ fate_of_byzantium_struggle_1178_phase = {
 admin_gov_succession_claims = {
 	categories = { fate_of_byzantium }
 	
-	default = admin_gov_succession_claims_two
+	default = admin_gov_succession_claims_one
 	
 	admin_gov_succession_claims_none = {}
 	
@@ -52,6 +52,18 @@ seljuk_invasion_byzantium_invader_culture = {
 	invader_turkmen_culture = {}
 	
 	emperor_persia_culture = {}
+}
+
+seljuk_invasion_byzantium_invader_suleman = {
+	categories = { fate_of_byzantium }
+	
+	default = use_suleman_healthcheck
+	
+	use_suleman_healthcheck = {}
+	
+	use_suleman = {}
+	
+	do_not_use_suleman = {}
 }
 
 historicity_frankokratia = {
