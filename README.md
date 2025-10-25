@@ -131,17 +131,37 @@ Below list all changes to Byzantium and the surrounding region that are independ
 * Populists factions are slightly more likely to form for administrative governments
 * Populists factions now fight for independence rather than enforcing a state faith
 * Populists counties are no longer prevent from joining factions if their faith matches the state faith
-* A character's 'Governor Efficiency' now affects a county's desire to join a Populist faction (poor governors lead to more revolts)
+* A character's 'Governor Efficiency' now affects a county's desire to join a Populist faction (poor governors increase the chance of revolts)
 * Characters will now consider a claimant's 'House Power' (relative to the Emperors) when creating/joining claimant factions
 
 #### Government
+* Title Men at Arms cap is reduced by 1
+* Cost of Men at Arms is increased by 15%
 * Cost of mercenaries is increased by 50%
 
 #### Governor Efficiency
-* Revamped how skills contribute to the score, with low skills contributing less and high skills contributing more
+* Revamped how Governor Efficiency is evaluated
+* Higher scores will now be more difficult
+* Base is now 0
+* Skills higher than 10 will increase the score, whilst lower will decrease it
+* Added negative modifiers for 1-star and 2-star education
+* Added negative modifiers for Fate of Byzantium struggle phases
+
+#### House Family Attributes
+* Bonuses to the liege in all attributes have been drastically reduced
+* Improved the bonuses given to family members
 
 #### Succession
-* Empire level successions in admin governments will give an unpressed claims to the runner-ups (number of claims given can be extended/removed via game rules)
+* Empire level successions in admin governments will give an unpressed claims to the runner-ups (configurable via game rules)
+* Children of the Emperor will now inherit an unpressed claim (configurable via game rules)
+* Children of the Byzantine Emperor now require the 'Born in the Purple' trait in order to inherit a claim (configurable via game rules) 
+
+#### Succession Appointment
+* The skill contribution for Emperor succession appointment has been reduced
+
+#### Powerful Vassal Claim Event
+* New event that will periodically trigger on a random powerful vassal
+* The vassal may gain a claim on the Empire title, depending on their personality
 
 #### Seize Peripheral Duchy
 * Can only target neighbouring land/sea provinces
@@ -167,6 +187,14 @@ The number of unpressed claims to give to runner-ups on an Admin Emperors death 
 * One
 * Two (default)
 * Three
+
+### Emperor Succession Inheritance Claims
+How child claims are handled when an administrative Emperor dies.
+
+* No Change
+* No Claims
+* Unpressed + Born in the Purple (default)
+* Pressed + Born in the Purple
 
 ### Invasion of Rum
 When should the Seljuk invader attack Byzantium

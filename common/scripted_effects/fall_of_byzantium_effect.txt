@@ -1,4 +1,4 @@
-split_eastern_byzantium_de_jure_effect = {
+﻿split_eastern_byzantium_de_jure_effect = {
 	title:e_anatolia = {
 		save_scope_as = new_empire
 	}

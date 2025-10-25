@@ -1,5 +1,5 @@
 ﻿l_english:
- byzantium_resurgent_modifier: "[GetTitleByKey('e_byzantium').Custom('GameRuleByzNameAdj')|U] Resurgence"
+ byzantium_resurgent_modifier: "Greek Resurgence"
  culture_ill_suited_for_admin: "[recipient.GetCulture.GetName] culture is ill suited for administrative government: $VALUE|=+0$"
  cannot_demand_king_for_admin: "[recipient.GetShortUIName] is a [recipient.Custom('GetQueenKing')|U] or higher: $VALUE|=+0$"
  fate_of_byzantium_stagnation_modifier: "Fate of the [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U] struggle is in the Stagnation phase: $VALUE|=+0$"
@@ -9,3 +9,9 @@
  does_not_have_admin_gov_modifier: "Does not have Administrative Government: $VALUE|=+0$"
  house_score_difference: "Liege and [claimant|E] Relative House Power: $VALUE|+0=$"
  imposter_mock: "Liege is an imposter: $VALUE|+0=$"
+ has_rank_2_education_desc: "Has a rank 2 [education_trait|E]"
+ has_rank_1_education_desc: "Has a rank 1 [education_trait|E]"
+ state_faith_sinful_traits: "[sinful|E] [traits|E] to the [state_faith|E]"
+ state_faith_virtuous_traits: "[virtuous|E] [traits|E] to the [state_faith|E]"
+ stagnation_phase_modifier_desc: "Fate of Byzantium $game_concept_struggle_phase_byzantium_stagnation$"
+ decline_phase_modifier_desc: "Fate of Byzantium $game_concept_struggle_phase_byzantium_decline$"

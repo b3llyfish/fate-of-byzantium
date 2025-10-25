@@ -1,0 +1,47 @@
+﻿on_explicit_claim_gain = {
+	on_actions = {
+		child_inherit_claim_rework
+	}
+}
+
+child_inherit_claim_rework = {
+	effect = {
+		if = {
+			# if inheriting an independent Empire admin title
+			limit = {
+				NOT = { has_game_rule = admin_gov_child_claims_no_change }
+				scope:transfer_type = flag:inheritance
+				scope:title.tier >= tier_empire
+				exists = scope:title.holder
+				scope:title.holder = {
+					is_independent_ruler = yes
+					government_has_flag = government_is_administrative
+				}
+			}
+			remove_claim = scope:title
+			if = {
+				limit = {
+					OR = {
+						NOT = { scope:title = title:e_byzantium }
+						AND = {
+							scope:title = title:e_byzantium
+							has_trait = born_in_the_purple
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = admin_gov_child_claims_purple_unpressed
+					}
+					add_unpressed_claim = scope:title
+				}
+				else_if = {
+					limit = {
+						has_game_rule = admin_gov_child_claims_purple_pressed
+					}
+					add_pressed_claim = scope:title
+				}
+			}
+		}
+	}
+}

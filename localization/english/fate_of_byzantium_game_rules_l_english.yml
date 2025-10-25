@@ -22,6 +22,16 @@
  setting_admin_gov_succession_claims_two_desc: "Successions in Empire tiered admin titles will give an unpressed claim to the person in #Z second#! and #Z third#! place"
  setting_admin_gov_succession_claims_three: "Three"
  setting_admin_gov_succession_claims_three_desc: "Successions in Empire tiered admin titles will give an unpressed claim to the person in #Z second#!, #Z third#! and #Z fourth#! place"
+ 
+ rule_admin_gov_child_claims: "Fate of Byzantium: Emperor Succession Inheritance Claims"
+ setting_admin_gov_child_claims_no_change: "No Change"
+ setting_admin_gov_child_claims_no_change_desc: "No changes will be made to inheritance claims within Admin Empires"
+ setting_admin_gov_child_claims_no_claims: "No Claims"
+ setting_admin_gov_child_claims_no_claims_desc: "Children will not inherit any claims to Admin Empire titles"
+ setting_admin_gov_child_claims_purple_unpressed: "Unpressed + Born in the Purple"
+ setting_admin_gov_child_claims_purple_unpressed_desc: "Children will inherit an #Z Unpressed#! claim to Admin Empire titles\nOnly children with the #Z Born in the Purple#! trait will inherit claims to the Byzantine Empire title"
+ setting_admin_gov_child_claims_purple_pressed: "Pressed + Born in the Purple"
+ setting_admin_gov_child_claims_purple_pressed_desc: "Children will inherit a #Z Pressed#! claim to Admin Empire titles\nOnly children with the #Z Born in the Purple#! trait will inherit claims to the #Z Byzantine Empire#! title"
 
  rule_seljuk_invasion_byzantium: "Fate of Byzantium: Invasion of Rum Date"
  setting_random_seljuk_invasion_byzantium: "Random"

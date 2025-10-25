@@ -8,3 +8,13 @@
  seljuk_invasion_byzantium.0003.title: "$invade_rum_war_name$"
  seljuk_invasion_byzantium.0003.desc: "$seljuk_invasion_byzantium.desc$"
  seljuk_invasion_byzantium.0003.a: "An interesting development..."
+
+ powerful_house.0001.title: "The time of house [ROOT.Char.GetDynasty.GetName|U]?"
+ powerful_house.0001.desc: "Through [liege.GetShortUIName] house [liege.GetDynasty.GetName|U] has control over the Empire. Yet they do not command loyalty from their vassals and there are those who would prefer another candidate.\n\nIs it time for house [ROOT.Char.GetDynasty.GetName|U] to assert its claim on the Empire?"
+ powerful_house.0001.a: "Let us set in motion the rise of house [ROOT.Char.GetDynasty.GetName|U]!"
+ powerful_house.0001.b: "Now is not the time..."
+ powerful_house.0001.c: "Outrageous! I am loyal to the Empire!"
+
+ powerful_house.0002.title: "A Scheming Vassal"
+ powerful_house.0002.desc: "Today my spies brought me grave news. From the shadows [vassal.GetShortUIName|U] is seeking to claim the Empire for themselves!\n\nCurrently [vassal.GetSheHe] lacks support to outright challenge me but it is only a matter of time before they are ready. I must act now."
+ powerful_house.0002.a: "[vassal.GetShortUIName|U] must be dealt with"

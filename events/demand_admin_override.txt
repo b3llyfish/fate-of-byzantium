@@ -1,4 +1,4 @@
-namespace = demand_admin_override
+﻿namespace = demand_admin_override
 
 demand_admin_override.0001 = {
 	type = letter_event

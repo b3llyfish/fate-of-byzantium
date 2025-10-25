@@ -19,3 +19,6 @@
 		add = 3
 	}
 }
+
+estate_governor_efficiency_bonus_value = 0.05
+estate_governor_efficiency_house_bonus_value = 0.02

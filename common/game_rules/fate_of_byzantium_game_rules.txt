@@ -1,4 +1,4 @@
-fate_of_byzantium_struggle_enable = {
+﻿fate_of_byzantium_struggle_enable = {
 	categories = { fate_of_byzantium }
 	
 	default = fate_of_byzantium_struggle_enabled
@@ -21,7 +21,7 @@ fate_of_byzantium_struggle_1178_phase = {
 admin_gov_succession_claims = {
 	categories = { fate_of_byzantium }
 	
-	default = admin_gov_succession_claims_one
+	default = admin_gov_succession_claims_two
 	
 	admin_gov_succession_claims_none = {}
 	
@@ -30,6 +30,20 @@ admin_gov_succession_claims = {
 	admin_gov_succession_claims_two = {}
 	
 	admin_gov_succession_claims_three = {}
+}
+
+admin_gov_child_claims = {
+	categories = { fate_of_byzantium }
+	
+	default = admin_gov_child_claims_purple_unpressed
+	
+	admin_gov_child_claims_no_change = {}
+	
+	admin_gov_child_claims_no_claims = {}
+	
+	admin_gov_child_claims_purple_unpressed = {}
+	
+	admin_gov_child_claims_purple_pressed = {}
 }
 
 seljuk_invasion_byzantium = {

@@ -1,4 +1,4 @@
-on_game_start = {
+﻿on_game_start = {
 	on_actions = {
 		add_horse_lord_oghuz
 		disable_seljuk_byzantium_invasion

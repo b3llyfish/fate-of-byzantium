@@ -1,4 +1,4 @@
-setup_seljuk_invasion_byzantium_character_effect = {
+﻿setup_seljuk_invasion_byzantium_character_effect = {
 	if = {
 		limit = {
 			can_use_suleyman = yes
@@ -59,7 +59,7 @@ spawn_seljuk_invasion_byzantium_character_effect = {
 	title:c_edessa.holder.capital_province = { save_scope_as = seljuk_birthplace }
 	
 	create_character = {
-		age = { 25 32 }
+		age = { 31 39 }
 		location = scope:seljuk_birthplace
 		gender_female_chance = fp3_chance_female_leader
 		culture = scope:seljuk_birth_culture

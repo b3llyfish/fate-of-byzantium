@@ -1,0 +1,113 @@
+﻿yearly_global_pulse = {
+	on_actions = {
+		seljuk_invasion_byzantium
+		powerful_house_events
+	}
+}
+
+five_year_playable_pulse = {
+	on_actions = {
+	
+	}
+}
+
+# Called every Jan 1st
+# Root does not exist
+seljuk_invasion_byzantium = {
+	effect = {
+		if = { # Random Seljuk Invasion
+			limit = {
+				has_game_rule = random_seljuk_invasion_byzantium
+				current_date >= 1077.1.1 # only can appear around the historic Battle of Manzikert date
+				can_invade_rum = yes
+			}
+			random = {
+				chance = 20
+				modifier = {
+					add = 10
+					current_date > 1082.1.1
+				}
+				modifier = {
+					add = 10
+					current_date > 1087.1.1
+				}
+				modifier = {
+					add = 10
+					current_date > 1092.1.1
+				}
+				trigger_event = {
+					id = seljuk_invasion_byzantium.0001
+					days = { 2 240 }
+				}
+			}
+		}
+		else_if = { # Historical Seljuk Invasion
+			limit = {
+				has_game_rule = fixed_seljuk_invasion_byzantium
+				current_date >= 1077.1.1 # only can appear around the historic Battle of Manzikert date
+				can_invade_rum = yes
+			}
+			trigger_event = {
+				id = seljuk_invasion_byzantium.0001
+				days = { 2 240 }
+			}
+		}
+	}
+}
+
+powerful_house_events = {
+	effect = {
+		if = {
+			limit = {
+				# 5 year grace period
+				years_from_game_start >= 5
+			}
+			every_empire = {
+				limit = {
+					exists = holder
+					holder = {
+						is_independent_ruler = yes
+						government_has_flag = government_is_administrative
+						NOT = { has_character_flag = immune_powerful_house_0001 }
+						primary_title.title_held_years >= 3
+					}
+				}
+				holder = {
+					random_powerful_vassal = {
+						limit = {
+							government_has_flag = government_is_administrative
+							top_liege = prev.top_liege
+							NOR = {
+								has_character_flag = had_powerful_house_0001
+								has_character_flag = completed_powerful_house_0001
+								has_claim_on = top_liege.primary_title
+								house = top_liege.house
+							}
+							# either emperor is AI or vassal thinks poorly of the player emperor
+							OR = {
+								top_liege = { is_ai = yes }
+								opinion = {
+									target = top_liege
+									value <= -25
+								}
+							}
+							
+						}
+						save_scope_as = random_powerful_vassal
+					}
+				}
+				if = {
+					limit = {
+						exists = scope:random_powerful_vassal
+					}
+					scope:random_powerful_vassal = {
+						trigger_event = {
+							id = powerful_house.0001
+							days = { 31 125 }
+						}
+					}
+				}
+			}
+		}
+	}
+}

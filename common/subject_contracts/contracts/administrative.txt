@@ -1,4 +1,4 @@
-administrative_obligations = {
+﻿administrative_obligations = {
 	obligation_levels = {
 		default = {
 			levies = {

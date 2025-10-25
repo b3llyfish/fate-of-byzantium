@@ -1,4 +1,4 @@
-fate_of_byzantium = {
+﻿fate_of_byzantium = {
 	
 	##################################################
 	# Setup

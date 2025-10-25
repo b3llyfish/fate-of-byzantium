@@ -11,7 +11,7 @@ There are two mains parts to this mod:
 * nerfs/tweaks/fixes to Administrative governments
 
 [h2] Key Details [/h2]
-* new Byzantine Struggle mechanic affecting the Byzantine's ability to wage war
+* New Byzantine Struggle mechanic affecting the Byzantine's ability to wage war
 * Populist factions no longer fight for the state faith, instead behaving like they do in other governments
 * Increased conditions for internal factions to form, giving Admin governments more threats
 * Seljuk invasion event for pre-1178 starts, allowing Rum to pose an issue to Byzantium
@@ -23,32 +23,6 @@ This mod is an attempt to balance CK3's overpowered implementation of Byzantium 
 accurate portrayal of Byzantium.
 
 Please remember this if you are planning on leaving comments.
-
-[h2] Observations [/h2]
-Below list the general behaviour of Byzantium and Rum across the start dates.
-
-Obviously the AI is unpredictable, so I cannot guarantee this behaviour.
-
-[h3] 867 [/h3]
-Byzantium is at its strongest in this start date and will try to pick off bits of Italy and the Balkans. Once King Boris of Bulgaria dies
-Byzantium often subjects and dissolves Bulgaria, allowing Greek rule over those themes.
-
-Around 910 the stagnation phase kicks in and Byzantium will lose its ability to expand so easily.
-
-[h3] 1066 [/h3]
-Byzantium is attempting to hold things together in this start, however a scripted Islamic invasion of Anatolia combined
-with various claimant factions will see the Empire start to fray and splinter.
-
-Opportunistic attacks will be common against Byzantium. It is in this start date that the 'Fall of Byzantium' ending
-is likeliest to happen.
-
-[h3] 1178 [/h3]
-I'm of the opinion that the economy in this start date is completely broken and so any attempts to balance this mod for this
-start date is ultimately pointless. 
-
-That said the buffs given to Rum it typically allows them to repel Byzantium's initial attempts to annex it from the map in one war.
-
-Conqueror Saladin will likely waltz up and consume Rum but that's not an issue this mod is trying to solve.
 
 [h2] Game Rules [/h2]
 

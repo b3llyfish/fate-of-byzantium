@@ -1,4 +1,4 @@
-on_rank_up = {
+﻿on_rank_up = {
 	on_actions = {
 		remove_sultan_rum_rank_up
 	}

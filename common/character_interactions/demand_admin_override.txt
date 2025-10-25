@@ -1,4 +1,4 @@
-demand_admin_interaction = {
+﻿demand_admin_interaction = {
 	category = interaction_category_vassal
 	icon = demand_admin_interaction
 	

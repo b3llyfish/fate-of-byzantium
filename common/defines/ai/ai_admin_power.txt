@@ -1,4 +1,4 @@
-NAI = {
+﻿NAI = {
 	# unchanged but leaving it here in case I wanna overwrite in the future
 	AI_BOLDNESS_ADJUSTMENT_FACTOR_ADMIN_REALM_POWER = 1.0
 	

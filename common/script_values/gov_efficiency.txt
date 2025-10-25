@@ -1,8 +1,10 @@
-gov_efficiency_terrible_multiplier = 3
-gov_efficiency_poor_multiplier = 2
-gov_efficiency_average_multiplier = 0
+﻿gov_efficiency_terrible_multiplier = 2
+gov_efficiency_poor_multiplier = 1.5
+gov_efficiency_average_multiplier = 1
 gov_efficiency_good_multiplier = 1
 gov_efficiency_excellent_multiplier = 1
+
+gov_efficiency_skill_contribution_max = 10
 
 # baseline is the last 'average' value (10 in base game)
 gov_efficiency_skill_baseline = {
@@ -62,7 +64,7 @@ governor_efficiency = {
 			}
 			add = {
 				add = {
-					value = 4
+					value = 5
 					desc = has_rank_5_education_desc
 				}
 				divide = 100
@@ -80,13 +82,49 @@ governor_efficiency = {
 			}
 			add = {
 				add = {
-					value = 2
+					value = 3
 					desc = has_rank_4_education_desc
 				}
 				divide = 100
 			}
 		}
-		
+		## FOB
+		else_if = {
+			limit = {
+				OR = {
+					has_trait = education_diplomacy_2
+					has_trait = education_martial_2
+					has_trait = education_stewardship_2
+					has_trait = education_intrigue_2
+					has_trait = education_learning_2
+				}
+			}
+			add = {
+				add = {
+					value = -3
+					desc = has_rank_2_education_desc
+				}
+				divide = 100
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_trait = education_diplomacy_1
+					has_trait = education_martial_1
+					has_trait = education_stewardship_1
+					has_trait = education_intrigue_1
+					has_trait = education_learning_1
+				}
+			}
+			add = {
+				add = {
+					value = -5
+					desc = has_rank_1_education_desc
+				}
+				divide = 100
+			}
+		}
 		# Governor trait
 		if = { # You only get a small bonus since the trait also provides skills that will increase Efficiency further
 			limit = {
@@ -518,7 +556,42 @@ governor_efficiency = {
 				divide = 100
 			}
 		}
-		min = 0 # Can't go lower than -100%
+		
+		# struggle phase
+		if = {
+			limit = {
+				any_character_struggle = {
+					involvement = involved
+					is_struggle_type = fate_of_byzantium
+					is_struggle_phase = struggle_fate_of_byzantium_phase_stagnation
+				}
+			}
+			add = {
+				subtract = {
+					value = 5
+					desc = stagnation_phase_modifier_desc
+				}
+				divide = 100
+			}
+		}
+		else_if = {
+			limit = {
+				any_character_struggle = {
+					involvement = involved
+					is_struggle_type = fate_of_byzantium
+					is_struggle_phase = struggle_fate_of_byzantium_phase_decline
+				}
+			}
+			add = {
+				subtract = {
+					value = 10
+					desc = decline_phase_modifier_desc
+				}
+				divide = 100
+			}
+		}
+		
+		min = 0.5 # Can't go lower than -50%
 		max = 1.5 # Can't go higher than +50%
 	}
 }
@@ -553,6 +626,7 @@ gov_efficiency_diplomacy_value = {
 	else = {
 		multiply = gov_efficiency_excellent_multiplier
 	}
+	max = gov_efficiency_skill_contribution_max
 }
 
 gov_efficiency_martial_value = {
@@ -585,6 +659,7 @@ gov_efficiency_martial_value = {
 	else = {
 		multiply = gov_efficiency_excellent_multiplier
 	}
+	max = gov_efficiency_skill_contribution_max
 }
 
 
@@ -618,6 +693,7 @@ gov_efficiency_stewardship_value = {
 	else = {
 		multiply = gov_efficiency_excellent_multiplier
 	}
+	max = gov_efficiency_skill_contribution_max
 }
 
 
@@ -651,6 +727,7 @@ gov_efficiency_intrigue_value = {
 	else = {
 		multiply = gov_efficiency_excellent_multiplier
 	}
+	max = gov_efficiency_skill_contribution_max
 }
 
 
@@ -684,4 +761,5 @@ gov_efficiency_learning_value = {
 	else = {
 		multiply = gov_efficiency_excellent_multiplier
 	}
+	max = gov_efficiency_skill_contribution_max
 }

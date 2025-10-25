@@ -1,0 +1,192 @@
+﻿##########################################
+# Family Attributes for Powerful Families
+# Administrative Government
+##########################################
+# Attributes appear in-game in script order
+# So we group them in rough categories
+
+# Skills
+diplomatic_envoys = {
+	liege_modifier = {
+		independent_ruler_opinion = 5
+	}
+	
+	member_modifier = {
+		diplomacy = 1
+		diplomacy_per_influence_level = 1
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_egalitarian.dds"
+}
+
+martial_fortitude = {
+	liege_modifier = {
+		army_toughness_mult = 0.01
+	}
+	
+	member_modifier = {
+		martial = 1
+		martial_per_influence_level = 1
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_bellicose.dds"
+}
+
+staunch_stewards = {
+	liege_modifier = {
+		development_growth_factor = 0.01
+	}
+	
+	member_modifier = {
+		stewardship = 1
+		stewardship_per_influence_level = 1
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_bureaucratic.dds"
+}
+
+masterful_intrigue = {
+	liege_modifier = {
+		owned_hostile_scheme_success_chance_growth_add = 1
+	}
+	
+	member_modifier = {
+		intrigue = 1
+		intrigue_per_influence_level = 1
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_courtly.dds"
+}
+
+learned_philosophers = {
+	liege_modifier = {
+		cultural_head_fascination_mult = 0.01
+	}
+	
+	member_modifier = {
+		learning = 1
+		learning_per_influence_level = 1
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_spiritual.dds"
+}
+
+# Currencies
+political_meddlers = {
+	liege_modifier = {
+		owned_political_scheme_success_chance_growth_add = 1
+	}
+	
+	member_modifier = {
+		monthly_influence = 0.2
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_egalitarian.dds"
+}
+
+tax_assessors = {
+	liege_modifier = {
+		administrative_government_tax_contribution_mult = 0.01
+	}
+	
+	member_modifier = {
+		tax_mult = 0.1
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_bureaucratic.dds"
+}
+
+# Military
+army_commanders = {
+	liege_modifier = {
+		knight_effectiveness_mult = 0.01
+	}
+	
+	member_modifier = {
+		advantage = 5
+		maa_damage_mult = 0.1
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_bellicose.dds"
+}
+
+army_quartermasters = {
+	liege_modifier = {
+		men_at_arms_recruitment_cost = -0.05
+	}
+	
+	member_modifier = {
+		men_at_arms_title_cap = 1
+		men_at_arms_title_limit = 1
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_stoic.dds"
+}
+
+tactical_besiegers = {
+	liege_modifier = {
+		army_siege_value_mult = 0.05
+	}
+	
+	member_modifier = {
+		maa_siege_value_mult = 0.15
+		siege_weapon_maintenance_mult = -0.2
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_stoic.dds"
+}
+
+# Schemes
+confident_schemers = {
+	liege_modifier = {
+		max_hostile_schemes_add = 1
+	}
+	
+	member_modifier = {
+		owned_hostile_scheme_success_chance_max_add = 10
+		owned_hostile_scheme_success_chance_growth_add = 2
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_courtly.dds"
+}
+
+charismatic_socialites = {
+	liege_modifier = {
+		max_personal_schemes_add = 1
+	}
+	
+	member_modifier = {
+		owned_personal_scheme_success_chance_max_add = 10
+		owned_personal_scheme_success_chance_growth_add = 2
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_courtly.dds"
+}
+
+# Other
+respected_despots = {
+	liege_modifier = {
+		dread_decay_mult = -0.1
+	}
+	
+	member_modifier = {
+		dread_baseline_add = 10
+		knight_effectiveness_per_dread = 0.005
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_stoic.dds"
+}
+
+lofty_architects = {
+	liege_modifier = {
+		holding_build_gold_cost = -0.05
+	}
+	
+	member_modifier = {
+		build_speed = -0.1
+		build_gold_cost = -0.1
+		domicile_build_gold_cost = -0.1
+	}
+	
+	illustration = "gfx/interface/icons/culture_pillars/ethos_bureaucratic.dds"
+}

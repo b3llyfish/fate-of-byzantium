@@ -1,4 +1,4 @@
-common_create_faction_blockers = {
+﻿common_create_faction_blockers = {
 	# Refuses to make if there was a recent independence faction revolt.
 	modifier = {
 		add = -1000
@@ -281,15 +281,15 @@ admin_claimant_faction_modifiers = {
 	}
 	## FOB
 	# Skill Relative
-	#modifier = { # Directly compare the governor efficiency of liege to claimant
-	#	ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
-	#	NOT = { this = $FACTION_CLAIMANT$ }
-	#	add = {
-	#		value = $FACTION_CLAIMANT$.governor_efficiency_score
-	#		subtract = $FACTION_TARGET$.governor_efficiency_score
-	#	}
-	#	desc = FACTION_REASON_ADMIN_RELATIVE_SKILL
-	#}
+	modifier = { # Directly compare the governor efficiency of liege to claimant
+		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
+		NOT = { this = $FACTION_CLAIMANT$ }
+		add = {
+			value = $FACTION_CLAIMANT$.governor_efficiency_score
+			subtract = $FACTION_TARGET$.governor_efficiency_score
+		}
+		desc = FACTION_REASON_ADMIN_RELATIVE_SKILL
+	}
 	# Family Reasons
 	modifier = { # Don't support a claimant who doesn't belong to a powerful family (unless same house as claimant)
 		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context

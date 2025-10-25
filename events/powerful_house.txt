@@ -1,0 +1,146 @@
+﻿namespace = powerful_house
+
+powerful_house.0001 = {
+	type = character_event
+	title = powerful_house.0001.title
+	desc = powerful_house.0001.desc
+	
+	theme = claim_throne_scheme
+	
+	left_portrait = {
+		character = root
+		animation = idle
+	}
+	
+	right_portrait = {
+		character = top_liege
+		animation = idle
+	}
+	
+	immediate = {
+		this = { save_scope_as = vassal }
+		top_liege = { save_scope_as = liege }
+	}
+	
+	option = {
+		name = powerful_house.0001.a
+		add_unpressed_claim = top_liege.primary_title
+		if = {
+			limit = {
+				NOT = { has_trait = disloyal }
+			}
+			add_trait = disloyal
+		}
+		add_character_flag = completed_powerful_house_0001
+		top_liege = {
+			trigger_event = {
+				id = powerful_house.0002
+				days = { 7 14 }
+			}
+		}
+		
+		ai_chance = {
+			base = 100
+			# is loyal?
+			modifier = {
+				OR = {
+					has_trait = content
+					has_trait = trusting
+					has_trait = humble
+				}
+				factor = 0
+			}
+			# is disloyal?
+			modifier = {
+				OR = {
+					has_trait = ambitious
+					has_trait = impatient
+					has_trait = arrogant
+					has_trait = greedy
+					ai_boldness >= 50
+				}
+				factor = 5
+			}
+		}
+	}
+	
+	option = {
+		name = powerful_house.0001.b
+		add_character_flag = {
+			flag = had_powerful_house_0001
+			years = 15
+		}
+		
+		ai_chance = {
+			base = 100
+			# is loyal?
+			modifier = {
+				OR = {
+					has_trait = content
+					has_trait = trusting
+					has_trait = humble
+				}
+				factor = 0
+			}
+		}
+	}
+	
+	option = {
+		name = powerful_house.0001.c
+		if = {
+			limit = {
+				NOT = { has_trait = loyal }
+			}
+			add_trait = loyal
+		}
+		add_character_flag = completed_powerful_house_0001
+		
+		ai_chance = {
+			base = 0
+			# is loyal?
+			modifier = {
+				OR = {
+					has_trait = content
+					has_trait = trusting
+					has_trait = humble
+				}
+				add = 100
+			}
+		}
+	}
+}
+
+powerful_house.0002 = {
+	type = character_event
+	title = powerful_house.0002.title
+	desc = powerful_house.0002.desc
+	
+	theme = claim_throne_scheme
+	
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	
+	right_portrait = {
+		character = scope:vassal
+		animation = scheme
+	}
+
+	option = {
+		name = powerful_house.0002.a
+		add_character_flag = {
+			flag = immune_powerful_house_0001
+			years = 10
+		}
+		if = {
+			limit = {
+				can_set_relation_rival_trigger = { CHARACTER = scope:vassal }
+			}
+			set_relation_rival = {
+				target = scope:vassal
+				reason = rival_claimed_my_title
+			}
+		}
+	}
+}
