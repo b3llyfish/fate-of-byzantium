@@ -1,5 +1,5 @@
 ﻿[h1] Fate Of Byzantium [/h1]
-Mod the aims to control Byzantium (and the Admin Government in general) following their post Roads to Power implementation.
+Mod that aims to control Byzantium (and the Admin Government in general) following their post Roads to Power implementation.
 
 With this mod Byzantium should be:
 * a regional power that still poses a challenge to fight
