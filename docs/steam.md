@@ -1,7 +1,7 @@
 ﻿[h1] Fate Of Byzantium [/h1]
 Mod the aims to control Byzantium (and the Admin Government in general) following their post Roads to Power implementation.
 
-With this mod Byzantium should be: 
+With this mod Byzantium should be:
 * a regional power that still poses a challenge to fight
 * unable to expand so freely in all directions
 * vulnerable to internal factions and invading realms
@@ -19,8 +19,7 @@ There are two mains parts to this mod:
 For the full change log please view the [url=https://github.com/b3llyfish/fate-of-byzantium/blob/main/README.md]README[/url] for this mod.
 
 [h2] Disclaimer [/h2]
-This mod is an attempt to balance CK3's overpowered implementation of Byzantium via game mechanics. It is not trying to be a historically 
-accurate portrayal of Byzantium.
+This mod is an attempt to balance CK3's overpowered implementation of Byzantium via game mechanics. It is not trying to be a historically accurate portrayal of Byzantium.
 
 Please remember this if you are planning on leaving comments.
 
@@ -36,8 +35,7 @@ Struggle ending decisions disappear from struggle interface: [url=https://forum.
 * [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2829397295]Cultures Expanded[/url] - mod has been designed with this mod enabled
 
 [h2] Compatibility [/h2]
-There are a bunch of overrides (populists, rum, governor efficiency, etc...) made by this mod. It is unlikely to cause
-any crashes with other mods that override these things but be aware you may get a different experience.
+There are a bunch of overrides (populists, rum, governor efficiency, etc...) made by this mod. It is unlikely to cause any crashes with other mods that override these things but be aware you may get a different experience.
 
 [h2] Localisation [/h2]
 I welcome any localisation mods. Please let me know if you make one, and I will add a link.
