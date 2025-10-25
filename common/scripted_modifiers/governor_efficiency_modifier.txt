@@ -20,7 +20,7 @@ governor_efficiency_populist_modifier = {
 				add = {
 					value = governor_efficiency_score
 					# inverse - bad governors increase score, good governors lower it
-					multiply = -2
+					multiply = -1
 					# cap good governor score at -50
 					min = -50
 				}

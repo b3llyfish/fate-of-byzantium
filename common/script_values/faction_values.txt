@@ -8,9 +8,9 @@ admin_gov_populist_ai_join_score = 50
 
 governor_efficiency_score = {
 	value = 0
-	# get governor efficiency (between -100 & 50)
+	# get governor efficiency (between -50 & 50)
 	add = governor_efficiency_presented
-	# range now -200 to 100
+	# range now -100 to 100
 	multiply = 2
 	# apply phase multipliers
 	if = {
@@ -19,7 +19,7 @@ governor_efficiency_score = {
 				has_struggle_phase_parameter = gov_efficiency_increased_impact
 			}
 		}
-		multiply = 1.5
+		multiply = 2
 		round = yes
 	}
 }

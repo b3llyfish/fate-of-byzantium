@@ -119,7 +119,7 @@ Below list all changes to Byzantium and the surrounding region that are independ
 * Score required to be a powerful house decreased to 35
 * Max number of powerful houses increased to 8
 * Base cost of hiring theme troops increased to 150 influence
-* AI will now estimate that an Admin realm can use 10% (down from 40%) of its total power when deciding to attack
+* AI will no longer over-estimate an Admin Government's military strength
 
 #### Demand Administrative Governance Interaction
 * Cultures who do not benefit from Admin governments are much less likely to accept
@@ -156,8 +156,9 @@ Below list all changes to Byzantium and the surrounding region that are independ
 * Children of the Emperor will now inherit an unpressed claim (configurable via game rules)
 * Children of the Byzantine Emperor now require the 'Born in the Purple' trait in order to inherit a claim (configurable via game rules) 
 
-#### Succession Appointment
-* The skill contribution for Emperor succession appointment has been reduced
+#### Emperor Succession Appointment
+* The skill contribution for Emperor succession appointment has been reduced (now matches the same contribution level as Governor succession appointment)
+* Add modifiers for having virtuous or sinful traits to the state faith
 
 #### Powerful Vassal Claim Event
 * New event that will periodically trigger on a random powerful vassal

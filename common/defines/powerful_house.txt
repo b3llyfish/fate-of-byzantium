@@ -4,7 +4,7 @@
 }
 
 NAdministrative = {
-	BASE_REASSIGN_COST = 200 				# Base value used in the scripted cost for reassigning title troops
+	BASE_REASSIGN_COST = 150 				# Base value used in the scripted cost for reassigning title troops
 }
 
 NCharacter = {

@@ -28,9 +28,9 @@
  setting_admin_gov_child_claims_no_change_desc: "No changes will be made to inheritance claims within Admin Empires"
  setting_admin_gov_child_claims_no_claims: "No Claims"
  setting_admin_gov_child_claims_no_claims_desc: "Children will not inherit any claims to Admin Empire titles"
- setting_admin_gov_child_claims_purple_unpressed: "Unpressed + Born in the Purple"
- setting_admin_gov_child_claims_purple_unpressed_desc: "Children will inherit an #Z Unpressed#! claim to Admin Empire titles\nOnly children with the #Z Born in the Purple#! trait will inherit claims to the Byzantine Empire title"
- setting_admin_gov_child_claims_purple_pressed: "Pressed + Born in the Purple"
+ setting_admin_gov_child_claims_purple_unpressed: "Unpressed + Purple Trait"
+ setting_admin_gov_child_claims_purple_unpressed_desc: "Children will inherit an #Z Unpressed#! claim to Admin Empire titles\nOnly children with the #Z Born in the Purple#! trait will inherit claims to the #Z Byzantine Empire#! title"
+ setting_admin_gov_child_claims_purple_pressed: "Pressed + Purple Trait"
  setting_admin_gov_child_claims_purple_pressed_desc: "Children will inherit a #Z Pressed#! claim to Admin Empire titles\nOnly children with the #Z Born in the Purple#! trait will inherit claims to the #Z Byzantine Empire#! title"
 
  rule_seljuk_invasion_byzantium: "Fate of Byzantium: Invasion of Rum Date"
@@ -45,7 +45,7 @@
  setting_invader_turkmen_culture: "Turkmen"
  setting_invader_turkmen_culture_desc: "The invader of Rum will have Turkmen culture"
  setting_emperor_persia_culture: "Persian Emperor"
- setting_emperor_persia_culture_desc: "The invader of Rum will have the same culture as the Emperor of Perisa (or Seljuk if they don't exist)"
+ setting_emperor_persia_culture_desc: "The invader of Rum will have the same culture as the Emperor of Perisa (or Oghuz if they don't exist)"
  
  rule_seljuk_invasion_byzantium_invader_suleman: "Fate of Byzantium: Suleiman ibn Qutalmish"
  setting_use_suleman_healthcheck: "Use Healthy Suleiman"
