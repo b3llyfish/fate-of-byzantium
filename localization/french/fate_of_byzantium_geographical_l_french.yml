@@ -1,0 +1,7 @@
+﻿l_french:
+ region_struggle_fate_of_byzantium: "Struggle Region" #NT!
+ region_struggle_fate_of_byzantium_greek_kingdoms: "Greek Kingdoms" #NT!
+ region_struggle_fate_of_byzantium_balkan_kingdoms: "Balkans" #NT!
+ region_struggle_fate_of_byzantium_southern_italy: "Southern Italy" #NT!
+ region_struggle_fate_of_byzantium_anatolia: "Anatolia" #NT!
+ region_struggle_fate_of_byzantium_fallen: "[GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U]" #NT!

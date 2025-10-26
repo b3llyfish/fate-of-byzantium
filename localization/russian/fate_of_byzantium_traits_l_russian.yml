@@ -1,0 +1,8 @@
+﻿l_russian:
+ trait_sultan_rum: "Sultan of Rum" #NT!
+ trait_sultan_rum_desc: "This character is leading the Islamic conquest of Anatolia." #NT!
+ trait_sultan_rum_minor: "$trait_sultan_rum$" #NT!
+ trait_sultan_rum_minor_desc: "$trait_sultan_rum_desc$" #NT!
+ trait_sultan_rum_major: "$trait_sultan_rum$" #NT!
+ trait_sultan_rum_major_desc: "$trait_sultan_rum_desc$" #NT!
+ TRAIT_FLAG_DESC_sultan_rum_bonuses_modifier: "AI Rulers will prioritise warfare\n\nThis trait will be removed if an [empire|E] or higher title is held" #NT!

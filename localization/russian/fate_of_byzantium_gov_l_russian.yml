@@ -1,0 +1,3 @@
+﻿l_russian:
+ government_more_expensive_maa: "The cost of [men_at_arms|E] is increased by #Z 15%#!" #NT!
+ government_more_expensive_mercs: "The cost of [mercenaries|E] is increased by #Z 50%#!" #NT!

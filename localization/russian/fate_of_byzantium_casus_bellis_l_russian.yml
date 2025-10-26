@@ -1,0 +1,30 @@
+﻿l_russian:
+ reclaim_southern_italy_cb_name: "Reclaim [GetGeographicalRegion('region_struggle_fate_of_byzantium_southern_italy').GetName]" #NT!
+ reclaim_southern_italy_war_name: "$ORDER$ [ATTACKER.GetPrimaryTitle.GetAdjective] Reclamation of the [TITLE.GetBaseName]" #NT!
+ reclaim_southern_italy_war_name_base: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" #NT!
+ reclaim_southern_italy_war_name_invalidation: "The [war.GetName] has ended: [defender.GetShortUIName] no longer [Select_CString( defender.IsLocalPlayer, 'control', 'controls' )] any land in the target region." #NT!
+  
+ invade_anatolia_cb_name: "Invade [GetGeographicalRegion('region_struggle_fate_of_byzantium_anatolia').GetName]" #NT!
+ invade_anatolia_kingdom_cb_name: "Invade [GetGeographicalRegion('region_struggle_fate_of_byzantium_anatolia').GetName] ([kingdom|E])" #NT!
+ invade_anatolia_war_name: "$ORDER$ [ATTACKER.GetPrimaryTitle.GetAdjective] Anatolian Invasion of the [TITLE.GetBaseName]" #NT!
+ invade_anatolia_war_name_base: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" #NT!
+ invade_anatolia_war_name_invalidation: "The [war.GetName] has ended: [defender.GetShortUIName] no longer [Select_CString( defender.IsLocalPlayer, 'control', 'controls' )] any land in the target region." #NT!
+ declared_invade_anatolia_kingdom_flag: "Can only be attempted once per lifetime" #NT!
+ invade_anatolia_kingdom_one_time_warning_desc: "\n\n#X You may only attempt this war once per lifetime#!" #NT!
+  
+ invade_rum_war_name: "Invasion of the [GetTitleByKey('k_rum').GetName]" #NT!
+ invade_rum_war_name_base: "$ORDER$ [ATTACKER.GetPrimaryTitle.GetAdjective] Invasion of the [GetTitleByKey('k_rum').GetName]" #NT!
+ invade_rum_cb_name: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" #NT!
+ invade_rum_cb_victory_desc_attacker: "You seize all of [defender.GetShortUINamePossessive] titles needed to establish the [GetTitleByKey('k_rum').GetName]." #NT!
+ invade_rum_cb_victory_desc_defender: "[attacker.GetShortUIName|U] seizes all of your titles needed to establish the [GetTitleByKey('k_rum').GetName]." #NT!
+ invade_rum_cb_victory_desc: "[attacker.GetShortUIName|U] seizes all of [defender.GetShortUINamePossessive] titles needed to establish the [GetTitleByKey('k_rum').GetName]." #NT!
+ invade_rum_cb_white_peace_desc_attacker: "[defender.GetShortUIName|U] keeps [defender.GetHerHis] titles. You lose [prestige|E]." #NT!
+ invade_rum_cb_white_peace_desc_defender: "You keep your titles. [attacker.GetShortUIName|U] loses [prestige|E]." #NT!
+ invade_rum_cb_white_peace_desc: "[defender.GetShortUIName|U] keeps [defender.GetHerHis] titles. [attacker.GetShortUIName|U] loses [prestige|E]." #NT!
+ invade_rum_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] keeps [defender.GetHerHis] titles. You lose [prestige|E] and pay reparations to [defender.GetShortUIName|U]." #NT!
+ invade_rum_cb_defeat_desc_defender: "You keep your titles. [attacker.GetShortUIName|U] loses [prestige|E] and pays reparations to you." #NT!
+ invade_rum_cb_defeat_desc: "[defender.GetShortUIName|U] keeps [defender.GetHerHis] titles. [attacker.GetShortUIName|U] loses [prestige|E] and pays reparations to [defender.GetShortUIName|U]." #NT!
+  
+ turkmen_nomads: "Turkmen Nomads" #NT!
+ seljuk_invaders_temp_title_name: "Seljuk Invaders" #NT!
+ seljuk_invader_county_modifier: "Turkmen Influx" #NT!

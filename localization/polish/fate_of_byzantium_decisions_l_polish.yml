@@ -1,0 +1,30 @@
+﻿l_polish:
+ struggle_byzantium_must_be_optimism: "The current [struggle_phase|E] is the [struggle_phase_byzantium_optimism|E]" #NT!
+ struggle_byzantium_resurgent_decision: "[GetTitleByKey('e_byzantium').Custom('GameRuleByzNameAdj')|U] Resurgence" #NT!
+ struggle_byzantium_resurgent_decision_desc: "The [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U] used to be a feared and respected name amongst this region. It is time to reestablished this." #NT!
+ struggle_byzantium_resurgent_decision_tooltip: "$struggle_fate_of_byzantium_ending_decision_tooltip$" #NT!
+ struggle_byzantium_resurgent_decision_confirm: "$struggle_fate_of_byzantium_ending_decision_confirm$" #NT!
+ struggle_byzantium_optimism_ending_county_total_text: "[GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U] holds at least #Z [SCOPE.ScriptValue('struggle_byzantium_optimism_ending_county_total')|0]#! counties within the [GetGeographicalRegion('region_struggle_fate_of_byzantium').GetName] (currently #Z [SCOPE.ScriptValue('struggle_byzantium_emperor_struggle_region_county_count')|0]#!)" #NT!
+ struggle_byzantium_resurgent_ending_modifier_text: "All Greek counties within the [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U] gain [GetModifier('byzantium_resurgent_modifier').GetNameWithTooltip] for 25 years" #NT!
+  
+ struggle_fall_of_byzantium_decision: "Fall of the [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U]" #NT!
+ struggle_fall_of_byzantium_decision_desc: "The [GetTitleByKey('e_byzantium').Custom('GameRuleByzNameAdj')|U]s are a shadow of their former strength. Let us show them who truly rules these lands so that they will abandoned the foolish notion of the [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U]." #NT!
+ struggle_fall_of_byzantium_decision_tooltip: "$struggle_fate_of_byzantium_ending_decision_tooltip$" #NT!
+ struggle_fall_of_byzantium_decision_confirm: "$struggle_fate_of_byzantium_ending_decision_confirm$" #NT!
+ struggle_byzantium_must_be_decline: "The current [struggle_phase|E] is the [struggle_phase_byzantium_decline|E]" #NT!
+ struggle_byzantium_must_be_interloper: "You must be an [struggle_interloper|E]" #NT!
+ struggle_byzantium_decline_ending_county_total_text: "[GetTitleByKey('e_byzantium').Custom('GameRuleByzNameAdj')|U] Emperor holds at most #Z [SCOPE.ScriptValue('struggle_byzantium_decline_ending_county_total')|0]#! counties within the [GetGeographicalRegion('region_struggle_fate_of_byzantium').GetName] (currently #Z [SCOPE.ScriptValue('struggle_byzantium_emperor_struggle_region_county_count')|0]#!)" #NT!
+ struggle_fall_of_byzantium_truce_tooltip: "Fall of the [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U] Decision" #NT!
+ struggle_fall_of_byzantium_release_vassal_tooltip: "Any [GetTitleByKey('e_byzantium').Custom('GameRuleByzNameAdj')|U] vassals with capitals #Z not#! in the Balkans will become independent" #NT!
+  
+ struggle_fate_of_byzantium_ending_decision_tooltip: "End the [GetTitleByKey('e_byzantium').Custom('GameRuleByzNameAdj')|U] [struggle|E]" #NT!
+ struggle_fate_of_byzantium_ending_decision_confirm: "End the [GetTitleByKey('e_byzantium').Custom('GameRuleByzNameAdj')|U] Struggle" #NT!
+  
+ dissolve_kingdom_bulgaria_decision: "Dissolve the Kingdom of Bulgaria" #NT!
+ dissolve_kingdom_bulgaria_decision_desc: "Though we now hold the Bulgarian lands the continued existence of a Bulgarian King may be a future catalyst for rebellion. We must dissolve the Kingdom of Bulgaria and bring its nobles into our form of government." #NT!
+ dissolve_kingdom_bulgaria_decision_tooltip: "Incorporate Bulgaria in the [GetTitleByKey('e_byzantium').Custom('GameRuleByzNameAdj')|U] Government" #NT!
+ dissolve_kingdom_bulgaria_decision_confirm: "Confirm" #NT!
+ dissolve_kingdom_bulgaria_byz_vassal: "The Kingdom of Bulgaria holder is a vassal of the [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U]" #NT!
+ dissolve_kingdom_bulgaria_not_admin: "The Kingdom of Bulgaria does not use an Administrative Government" #NT!
+  
+ invade_rum_has_victor_flag: "Has won a war using the 'Invasion of Rum' Casus Belli" #NT!

@@ -1,0 +1,3 @@
+﻿l_korean:
+ FACTION_REASON_ADMIN_RELATIVE_SKILL: "Liege and [claimant|E] Relative [governor_efficiency|E]: $VALUE|+0=$" #NT!
+ ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALID_TT: "#T [governor_efficiency|e]: $ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALUE$#!\n#weak (Min: #N -50%#! - Max: #P +50%#!)#!\n\nBase: #aptitude_average 0#!\n[Character.MakeScope().GetScriptValueDesc( 'governor_efficiency' )]" #NT!

@@ -1,0 +1,20 @@
+﻿l_spanish:
+ seljuk_invasion_byzantium.desc: "For a while now rumours that an ambitious [seljuk_byzantium_invader.GetDynastyHouseNameNoTooltip] warlord is gathering an army somewhere on the borders of the [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U].\n\nOusted from their clan after a bitter succession dispute they have aligned themselves with Turkish Nomads. [seljuk_byzantium_invader.GetSheHe|U] now seeks to establish a Kingdom within the heart of Anatolia.\n\nThis warlord has now revealed themselves to be [seljuk_byzantium_invader.GetShortUIName|U] and they now ride to strike the [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U]!" #NT!
+  
+ seljuk_invasion_byzantium.0002.title: "$invade_rum_war_name$" #NT!
+ seljuk_invasion_byzantium.0002.desc: "$seljuk_invasion_byzantium.desc$" #NT!
+ seljuk_invasion_byzantium.0002.a: "Defend the Empire!" #NT!
+  
+ seljuk_invasion_byzantium.0003.title: "$invade_rum_war_name$" #NT!
+ seljuk_invasion_byzantium.0003.desc: "$seljuk_invasion_byzantium.desc$" #NT!
+ seljuk_invasion_byzantium.0003.a: "An interesting development..." #NT!
+  
+ powerful_house.0001.title: "The time of house [ROOT.Char.GetDynasty.GetName|U]?" #NT!
+ powerful_house.0001.desc: "Through [liege.GetShortUIName] house [liege.GetDynasty.GetName|U] has control over the Empire. Yet they do not command loyalty from their vassals and there are those who would prefer another candidate.\n\nIs it time for house [ROOT.Char.GetDynasty.GetName|U] to assert its claim on the Empire?" #NT!
+ powerful_house.0001.a: "Let us set in motion the rise of house [ROOT.Char.GetDynasty.GetName|U]!" #NT!
+ powerful_house.0001.b: "Now is not the time..." #NT!
+ powerful_house.0001.c: "Outrageous! I am loyal to the Empire!" #NT!
+  
+ powerful_house.0002.title: "A Scheming Vassal" #NT!
+ powerful_house.0002.desc: "Today my spies brought me grave news. From the shadows [vassal.GetShortUIName|U] is seeking to claim the Empire for themselves!\n\nCurrently [vassal.GetSheHe] lacks support to outright challenge me but it is only a matter of time before they are ready. I must act now." #NT!
+ powerful_house.0002.a: "[vassal.GetShortUIName|U] must be dealt with" #NT!

@@ -1,0 +1,84 @@
+﻿l_french:
+ game_rule_category_fate_of_byzantium: "Fate of Byzantium" #NT!
+  
+ rule_fate_of_byzantium_struggle_enable: "Fate of Byzantium: Struggle" #NT!
+ setting_fate_of_byzantium_struggle_enabled: "Enabled" #NT!
+ setting_fate_of_byzantium_struggle_enabled_desc: "The struggle mechanic will be enabled" #NT!
+ setting_fate_of_byzantium_struggle_disabled: "Disabled" #NT!
+ setting_fate_of_byzantium_struggle_disabled_desc: "The struggle mechanic will be disabled" #NT!
+  
+ rule_fate_of_byzantium_struggle_1178_phase: "Fate of Byzantium: 1178 Struggle Phase" #NT!
+ setting_fate_of_byzantium_struggle_1178_stagnation: "Stagnation" #NT!
+ setting_fate_of_byzantium_struggle_1178_stagnation_desc: "The struggle will start in the #Z Stagnation#! phase in the 1178 start" #NT!
+ setting_fate_of_byzantium_struggle_1178_decline: "Decline" #NT!
+ setting_fate_of_byzantium_struggle_1178_decline_desc: "The struggle will start in the #Z Decline#! phase in the 1178 start" #NT!
+  
+ rule_admin_gov_succession_claims: "Fate of Byzantium: Emperor Additional Succession Claims" #NT!
+ setting_admin_gov_succession_claims_none: "No additional claims" #NT!
+ setting_admin_gov_succession_claims_none_desc: "There will be no additional succession claims" #NT!
+ setting_admin_gov_succession_claims_one: "One" #NT!
+ setting_admin_gov_succession_claims_one_desc: "Successions in Empire tiered admin titles will give an unpressed claim to the person in #Z second#! place" #NT!
+ setting_admin_gov_succession_claims_two: "Two" #NT!
+ setting_admin_gov_succession_claims_two_desc: "Successions in Empire tiered admin titles will give an unpressed claim to the person in #Z second#! and #Z third#! place" #NT!
+ setting_admin_gov_succession_claims_three: "Three" #NT!
+ setting_admin_gov_succession_claims_three_desc: "Successions in Empire tiered admin titles will give an unpressed claim to the person in #Z second#!, #Z third#! and #Z fourth#! place" #NT!
+  
+ rule_admin_gov_child_claims: "Fate of Byzantium: Emperor Succession Inheritance Claims" #NT!
+ setting_admin_gov_child_claims_no_change: "No Change" #NT!
+ setting_admin_gov_child_claims_no_change_desc: "No changes will be made to inheritance claims within Admin Empires" #NT!
+ setting_admin_gov_child_claims_no_claims: "No Claims" #NT!
+ setting_admin_gov_child_claims_no_claims_desc: "Children will not inherit any claims to Admin Empire titles" #NT!
+ setting_admin_gov_child_claims_purple_unpressed: "Unpressed + Purple Trait" #NT!
+ setting_admin_gov_child_claims_purple_unpressed_desc: "Children will inherit an #Z Unpressed#! claim to Admin Empire titles\nOnly children with the #Z Born in the Purple#! trait will inherit claims to the #Z Byzantine Empire#! title" #NT!
+ setting_admin_gov_child_claims_purple_pressed: "Pressed + Purple Trait" #NT!
+ setting_admin_gov_child_claims_purple_pressed_desc: "Children will inherit a #Z Pressed#! claim to Admin Empire titles\nOnly children with the #Z Born in the Purple#! trait will inherit claims to the #Z Byzantine Empire#! title" #NT!
+  
+ rule_seljuk_invasion_byzantium: "Fate of Byzantium: Invasion of Rum Date" #NT!
+ setting_random_seljuk_invasion_byzantium: "Random" #NT!
+ setting_random_seljuk_invasion_byzantium_desc: "The invasion will occur randomly at some point after game year 1077" #NT!
+ setting_fixed_seljuk_invasion_byzantium: "Fixed" #NT!
+ setting_fixed_seljuk_invasion_byzantium_desc: "The invasion will be guaranteed to happen shortly after game year 1077" #NT!
+ setting_disable_seljuk_invasion_byzantium: "Disabled" #NT!
+ setting_disable_seljuk_invasion_byzantium_desc: "The invasion will not happen" #NT!
+  
+ rule_seljuk_invasion_byzantium_invader_culture: "Fate of Byzantium: Invader of Rum Culture" #NT!
+ setting_invader_turkmen_culture: "Turkmen" #NT!
+ setting_invader_turkmen_culture_desc: "The invader of Rum will have Turkmen culture" #NT!
+ setting_emperor_persia_culture: "Persian Emperor" #NT!
+ setting_emperor_persia_culture_desc: "The invader of Rum will have the same culture as the Emperor of Perisa (or Oghuz if they don't exist)" #NT!
+  
+ rule_seljuk_invasion_byzantium_invader_suleman: "Fate of Byzantium: Suleiman ibn Qutalmish" #NT!
+ setting_use_suleman_healthcheck: "Use Healthy Suleiman" #NT!
+ setting_use_suleman_healthcheck_desc: "Will attempt to use Suleiman as the invader of Rum, with an additional check that he is healthy" #NT!
+ setting_use_suleman: "Use Suleiman" #NT!
+ setting_use_suleman_desc: "Will attempt to use Suleiman as the invader of Rum" #NT!
+ setting_do_not_use_suleman: "Do not use Suleiman" #NT!
+ setting_do_not_use_suleman_desc: "The invader of Rum will always be randomly generated" #NT!
+  
+ rule_seljuk_invasion_armenia_outcome: "Fate of Byzantium: Seljuk Invasion of Armenia" #NT!
+ setting_invasion_armenia_seljuk_victory: "Seljuk Victory" #NT!
+ setting_invasion_armenia_seljuk_victory_desc: "Seljuk will win the war and control Armenia" #NT!
+ setting_mechanical: "Mechanical" #NT!
+ setting_mechanical_desc: "The war will be resolved in game" #NT!
+ setting_invasion_armenia_byz_victory: "Byzantium Victory" #NT!
+ setting_invasion_armenia_byz_victory_desc: "Byzantium will win the war and control Armenia" #NT!
+  
+ rule_sultan_rum_trait: "Fate of Byzantium: Sultan of Rum Trait" #NT!
+ setting_sultan_rum_trait_major: "Major" #NT!
+ setting_sultan_rum_trait_major_desc: "The Sultan of Rum trait will have major advantages" #NT!
+ setting_sultan_rum_trait_moderate: "Moderate" #NT!
+ setting_sultan_rum_trait_moderate_desc: "The Sultan of Rum trait will have moderate advantages" #NT!
+ setting_sultan_rum_trait_minor: "Minor" #NT!
+ setting_sultan_rum_trait_minor_desc: "The Sultan of Rum trait will have minor advantages" #NT!
+ setting_sultan_rum_trait_off: "Off" #NT!
+ setting_sultan_rum_trait_off_desc: "The Sultan of Rum trait will not be applied" #NT!
+  
+ rule_sultan_rum_trait_1178: "Fate of Byzantium: Sultan of Rum Trait (1178)" #NT!
+ setting_sultan_rum_trait_major_1178: "Major" #NT!
+ setting_sultan_rum_trait_major_1178_desc: "The Sultan of Rum trait will have major advantages" #NT!
+ setting_sultan_rum_trait_moderate_1178: "Moderate" #NT!
+ setting_sultan_rum_trait_moderate_1178_desc: "The Sultan of Rum trait will have moderate advantages" #NT!
+ setting_sultan_rum_trait_minor_1178: "Minor" #NT!
+ setting_sultan_rum_trait_minor_1178_desc: "The Sultan of Rum trait will have minor advantages" #NT!
+ setting_sultan_rum_trait_off_1178: "Off" #NT!
+ setting_sultan_rum_trait_off_1178_desc: "The Sultan of Rum trait will not be applied" #NT!

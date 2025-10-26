@@ -1,0 +1,64 @@
+﻿l_polish:
+ fate_of_byzantium: "Fate of the [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U]" #NT!
+ fate_of_byzantium_desc: "$game_concept_fate_of_byzantium_struggle$" #NT!
+  
+ struggle_parameter_unlocks_reclaim_southern_italy_casus_belli: "Gains access to the Reclaim Southern Italy casus belli" #NT!
+ struggle_parameter_unlocks_balkans_subjugation_cb: "Gains access to the Balkans Subjugation casus belli" #NT!
+ struggle_parameter_gov_efficiency_increased_impact: "The contribution [governor_efficiency|E] has on [claimant_factions|E] and [popular_factions|E] is increased" #NT!
+  
+ struggle_fate_of_byzantium_phase_optimism: "Optimism" #NT!
+ struggle_fate_of_byzantium_phase_optimism_desc: "$game_concept_struggle_phase_byzantium_optimism_desc$" #NT!
+ catalyst_byz_control_struggle_region_over_time: "Control of the struggle region [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_byz_control_struggle_region_over_time_desc: "Yearly Drift: [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U] owns more than 75% of the [GetGeographicalRegion('region_struggle_fate_of_byzantium').GetName]" #NT!
+ catalyst_byz_major_control_struggle_region_over_time: "Major control of the struggle region [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_byz_major_control_struggle_region_over_time_desc: "Yearly Drift: [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U] owns more than 90% of the [GetGeographicalRegion('region_struggle_fate_of_byzantium').GetName]" #NT!
+  
+ struggle_fate_of_byzantium_phase_stagnation: "Stagnation" #NT!
+ struggle_fate_of_byzantium_phase_stagnation_desc: "$game_concept_struggle_phase_byzantium_stagnation_desc$" #NT!
+ catalyst_challenge_status_scheme: "Challenge Status scheme executed [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_challenge_status_scheme_desc: "[GetScheme('challenge_status').GetTypeName] scheme was executed by an [struggle_involved|E] character" #NT!
+ catalyst_promote_scheme: "Promote scheme executed [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_promote_scheme_desc: "[GetScheme('promote').GetTypeName] scheme was executed by an [struggle_involved|E] character" #NT!
+ catalyst_slander_scheme: "Slander scheme executed [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_slander_scheme_desc: "[GetScheme('slander').GetTypeName] scheme was executed by an [struggle_involved|E] character" #NT!
+ catalyst_damage_legitimacy_scheme: "Damage Legitimacy scheme executed [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_damage_legitimacy_scheme_desc: "[GetScheme('damage_legitimacy_scheme').GetTypeName] scheme was executed by an [struggle_involved|E] character" #NT!
+ catalyst_foster_legitimacy_scheme: "Foster Legitimacy scheme executed [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_foster_legitimacy_scheme_desc: "[GetScheme('foster_legitimacy_scheme').GetTypeName] scheme was executed by an [struggle_involved|E] character" #NT!
+ catalyst_raid_estate_scheme: "Raid Estate scheme executed [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_raid_estate_scheme_desc: "[GetScheme('raid_estate').GetTypeName] scheme was executed by an [struggle_involved|E] character" #NT!
+ catalyst_dispute_border_scheme: "Border Dispute scheme executed [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_dispute_border_scheme_desc: "[GetScheme('dispute_border').GetTypeName] scheme was executed by an [struggle_involved|E] character" #NT!
+ catalyst_subsume_governorship_scheme: "Subsume Governorship scheme executed [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_subsume_governorship_scheme_desc: "[GetScheme('subsume_province').GetTypeName] scheme was executed by an [struggle_involved|E] character" #NT!
+ catalyst_ingratiate_family_scheme: "Ingratiate Family scheme executed [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_ingratiate_family_scheme_desc: "[GetScheme('ingratiate_family').GetTypeName] scheme was executed by an [struggle_involved|E] character" #NT!
+ catalyst_depose_scheme: "Depose scheme executed [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_depose_scheme_desc: "[GetScheme('depose').GetTypeName] scheme was executed by an [struggle_involved|E] character" #NT!
+ catalyst_political_scheme_against_emperor: "Political scheme against Emperor executed [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_political_scheme_against_emperor_desc: "An [struggle_involved|E] character executed a [political_scheme|E] targeting the Emperor" #NT!
+ catalyst_expand_power_base_scheme: "Power Base scheme executed [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_expand_power_base_scheme_desc: "[GetScheme('expand_power_base').GetTypeName] scheme was executed by an [struggle_involved|E] character" #NT!
+ catalyst_influence_candidate_interaction: "Influence Candidacy interaction [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_influence_candidate_interaction_desc: "Influence Candidacy interaction used by an [struggle_involved|E] character" #NT!
+ catalyst_request_appointment_interaction: "Request Appointment interaction [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_request_appointment_interaction_desc: "Request Appointment interaction used by an [struggle_involved|E] character" #NT!
+ catalyst_request_council_interaction: "Request Council interaction [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_request_council_interaction_desc: "Request Council interaction used by an [struggle_involved|E] character" #NT!
+ catalyst_boost_efficiency_interaction: "Boost Efficiency interaction [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_boost_efficiency_interaction_desc: "Boost Efficiency interaction used by an [struggle_involved|E] character" #NT!
+ catalyst_damage_efficiency_interaction: "Damage Efficiency interaction [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_damage_efficiency_interaction_desc: "Damage Efficiency interaction used by an [struggle_involved|E] character" #NT!
+ catalyst_force_governor_removal_interaction: "Force Governor Removal interaction [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_force_governor_removal_interaction_desc: "Force Governor Removal interaction used by an [struggle_involved|E] character" #NT!
+ catalyst_force_retirement_interaction: "Force Retirement interaction [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_force_retirement_interaction_desc: "Force Retirement interaction used by an [struggle_involved|E] character" #NT!
+  
+ struggle_fate_of_byzantium_phase_decline: "Decline" #NT!
+ struggle_fate_of_byzantium_phase_decline_desc: "$game_concept_struggle_phase_byzantium_decline_desc$" #NT!
+ catalyst_byz_loss_control_greek_region_over_time: "Loss of control of the Greek Kingdoms [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_byz_loss_control_greek_region_over_time_desc: "Yearly Drift: [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U] owns less than 75% of the [GetGeographicalRegion('region_struggle_fate_of_byzantium_greek_kingdoms').GetName]" #NT!
+ catalyst_byz_major_loss_control_greek_region_over_time: "Major loss of control of the Greek Kingdoms [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_byz_major_loss_control_greek_region_over_time_desc: "Yearly Drift: [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U] owns less than 50% of the [GetGeographicalRegion('region_struggle_fate_of_byzantium_greek_kingdoms').GetName]" #NT!
+ catalyst_no_byz_emperor: "No [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U] title [struggle_catalyst_catalyst|E]" #NT!
+ catalyst_no_byz_emperor_desc: "The [GetTitleByKey('e_byzantium').Custom('GameRuleByzName')|U] title no longer exists" #NT!
