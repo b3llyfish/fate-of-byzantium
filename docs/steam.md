@@ -11,9 +11,10 @@ There are two mains parts to this mod:
 * nerfs/tweaks/fixes to Administrative governments
 
 [h2] Key Details [/h2]
-* New Byzantine Struggle mechanic affecting the Byzantine's ability to wage war
+* New Byzantine Struggle mechanic for the Byzantine region
+* Economic changes to Byzantium, whilst still comparatively rich they no longer print money
 * Populist factions no longer fight for the state faith, instead behaving like they do in other governments
-* Increased conditions for internal factions to form, giving Admin governments more threats
+* Reworked Governor Efficiency score, high scores will be more difficult to achieve
 * Seljuk invasion event for pre-1178 starts, allowing Rum to pose an issue to Byzantium
 
 For the full change log please view the [url=https://github.com/b3llyfish/fate-of-byzantium/blob/main/README.md]README[/url] for this mod.
@@ -39,3 +40,5 @@ There are a bunch of overrides (populists, rum, governor efficiency, etc...) mad
 
 [h2] Localisation [/h2]
 I welcome any localisation mods. Please let me know if you make one, and I will add a link.
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3090564070]Chinese Localization Mod[/url] - thanks to [url=https://steamcommunity.com/profiles/76561198113539588]無壹[/url]
