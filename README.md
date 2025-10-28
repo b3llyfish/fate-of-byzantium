@@ -134,11 +134,6 @@ Below list all changes to Byzantium and the surrounding region that are independ
 * A character's 'Governor Efficiency' now affects a county's desire to join a Populist faction (poor governors increase the chance of revolts)
 * Characters will now consider a claimant's 'House Power' (relative to the Emperors) when creating/joining claimant factions
 
-#### Government
-* Title Men at Arms cap is reduced by 1
-* Cost of Men at Arms is increased by 15%
-* Cost of mercenaries is increased by 50%
-
 #### Governor Efficiency
 * Revamped how Governor Efficiency is evaluated
 * Higher scores will now be more difficult
