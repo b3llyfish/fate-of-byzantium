@@ -90,7 +90,7 @@ spawn_seljuk_invasion_byzantium_character_effect = {
 			add_trait = strong
 			add_character_flag = is_seljuk
 			give_seljuk_invasion_byzantium_title_effect = yes
-			game_rule_create_spouse_and_children = { CHARACTER = this }
+			game_rule_create_spouse_and_children = { CHARACTER = this LOCATION = this }
 			add_trait_xp = {
 				trait = rough_terrain_expert
 				value = 100

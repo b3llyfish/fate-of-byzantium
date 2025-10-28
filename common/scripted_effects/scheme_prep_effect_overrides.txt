@@ -43,7 +43,7 @@ raid_estate_scheme_prep_effect_override = {
 	scheme_owner = { trigger_event = scheme_critical_moments.0002 }
 }
 
-raid_estate_scheme_prep_effect_override = {
+subsume_province_scheme_prep_effect_override = {
 	save_scope_as = scheme
 	save_scope_value_as = {
 		name = follow_up_event

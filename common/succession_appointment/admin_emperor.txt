@@ -1,9 +1,8 @@
 ﻿admin_emperor = {
 	default_candidates = { holder_close_family landed_vassal }
-	invested_candidates = { holder_close_extended_family landed_vassal_close_extended_family unlanded_noble_close_extended_family unlanded_noble_house_head }
-
+	
 	allow_children = yes
-
+	
 	candidate_score = {
 		value = {
 			# AGE
@@ -35,7 +34,7 @@
 					desc = geriatric_candidate_desc
 				}
 			}
-
+			
 			# SKILLS
 			add = {
 				value = {
@@ -48,7 +47,7 @@
 				}
 				desc = sum_of_skills_desc
 			}
-
+			
 			# TRAITS
 			if = {
 				limit = {
@@ -178,7 +177,7 @@
 					exists = top_liege.primary_title.state_faith
 					num_sinful_traits = {
 						value = 1
-						faith = top_liege.primary_title.state_faith
+						target = top_liege.primary_title.state_faith
 					}
 				}
 				subtract = {
@@ -191,7 +190,7 @@
 					exists = top_liege.primary_title.state_faith
 					num_sinful_traits = {
 						value = 2
-						faith = top_liege.primary_title.state_faith
+						target = top_liege.primary_title.state_faith
 					}
 				}
 				subtract = {
@@ -204,7 +203,7 @@
 					exists = top_liege.primary_title.state_faith
 					num_sinful_traits = {
 						value >= 3
-						faith = top_liege.primary_title.state_faith
+						target = top_liege.primary_title.state_faith
 					}
 				}
 				# the devil shouldn't be able to win
@@ -219,7 +218,7 @@
 					exists = top_liege.primary_title.state_faith
 					num_virtuous_traits = {
 						value = 1
-						faith = top_liege.primary_title.state_faith
+						target = top_liege.primary_title.state_faith
 					}
 				}
 				add = {
@@ -232,7 +231,7 @@
 					exists = top_liege.primary_title.state_faith
 					num_virtuous_traits = {
 						value = 2
-						faith = top_liege.primary_title.state_faith
+						target = top_liege.primary_title.state_faith
 					}
 				}
 				add = {
@@ -245,7 +244,7 @@
 					exists = top_liege.primary_title.state_faith
 					num_virtuous_traits = {
 						value >= 3
-						faith = top_liege.primary_title.state_faith
+						target = top_liege.primary_title.state_faith
 					}
 				}
 				add = {
@@ -364,7 +363,7 @@
 					desc = "fornicator_and_criminal_desc"
 				}
 			}
-
+			
 			# COUNCIL POSITIONS
 			if = {
 				limit = {
@@ -389,7 +388,7 @@
 					desc = councillor_position_desc
 				}
 			}
-
+			
 			# COURT POSITIONS
 			if = {
 				limit = {
@@ -418,12 +417,12 @@
 					desc = court_position_succession_desc
 				}
 			}
-
+			
 			# FAITH HOSTILITY
 			if = {
 				limit = {
 					top_liege.primary_title.state_faith ?= {
-						NOT = { this = root.faith }
+						this != root.faith
 						faith_hostility_level = {
 							target = root.faith
 							value = faith_fully_accepted_level
@@ -477,7 +476,7 @@
 					desc = evil_faith_sucession_desc
 				}
 			}
-
+			
 			# CLAIMS
 			if = {
 				limit = { has_strong_claim_on = scope:title }
@@ -493,7 +492,7 @@
 					desc = title_weak_claim_desc
 				}
 			}
-
+			
 			# POPULAR OPINION
 			if = {
 				limit = { is_landed = yes }
@@ -515,7 +514,7 @@
 					desc = popular_opinion_in_capital_desc
 				}
 			}
-
+			
 			# LIFESTYLE PERKS
 			if = {
 				limit = { has_perk = dignitas_perk }
@@ -524,7 +523,7 @@
 					desc = dignitas_perk_name
 				}
 			}
-
+			
 			# TITLE TIER
 			if = {
 				limit = {
@@ -546,7 +545,7 @@
 					desc = kingdom_tier_desc
 				}
 			}
-
+			
 			# LOWBORN? EW no
 			if = {
 				limit = {
@@ -557,7 +556,7 @@
 					desc = lowborn_desc_succession
 				}
 			}
-
+			
 			# INFLUENCE LEVEL
 			if = {
 				limit = {
@@ -572,12 +571,12 @@
 					desc = "[influence_level|E]"
 				}
 			}
-
+			
 			# DIFFERENT CULTURE FROM IMPERIAL CAPITAL
 			if = {
 				limit = {
 					root.top_liege.capital_county.culture ?= {
-						NOT = { this = root.culture }
+						this != root.culture
 						cultural_acceptance = {
 							target = root.culture
 							value = 0
@@ -592,7 +591,7 @@
 			else_if = {
 				limit = {
 					root.top_liege.capital_county.culture ?= {
-						NOT = { this = root.culture }
+						this != root.culture
 						cultural_acceptance = {
 							target = root.culture
 							value <= 20
@@ -607,7 +606,7 @@
 			else_if = {
 				limit = {
 					root.top_liege.capital_county.culture ?= {
-						NOT = { this = root.culture }
+						this != root.culture
 						cultural_acceptance = {
 							target = root.culture
 							value <= 40
@@ -622,7 +621,7 @@
 			else_if = {
 				limit = {
 					root.top_liege.capital_county.culture ?= {
-						NOT = { this = root.culture }
+						this != root.culture
 						cultural_acceptance = {
 							target = root.culture
 							value <= 60
@@ -637,7 +636,7 @@
 			else_if = {
 				limit = {
 					root.top_liege.capital_county.culture ?= {
-						NOT = { this = root.culture }
+						this != root.culture
 						cultural_acceptance = {
 							target = root.culture
 							value <= 80
@@ -649,7 +648,7 @@
 					desc = accepted_foreign_culture
 				}
 			}
-
+			
 			# ELDEST ELIGIBLE CHILD OF EMPEROR
 			if = {
 				limit = {
@@ -755,7 +754,7 @@
 					desc = imperial_same_house_desc
 				}
 			}
-
+			
 			# SPOUSE AND THEIR FAMILY
 			if = {
 				limit = {
@@ -780,7 +779,7 @@
 					desc = close_family_married_to_holder_desc
 				}
 			}
-
+			
 			# FRIENDS OF THE EMPEROR
 			if = {
 				limit = {
@@ -823,7 +822,7 @@
 					desc = "[powerful_family_rating|E]"
 				}
 			}
-
+			
 			# CO-EMPEROR OF EMPEROR
 			if = {
 				limit = {
@@ -855,7 +854,7 @@
 					desc = imperial_diarch_desc
 				}
 			}
-
+			
 			# MODIFIERS
 			if = {
 				limit = {
@@ -866,7 +865,7 @@
 					desc = patriarch_support_2030_desc
 				}
 			}
-
+			
 			if = {
 				limit = { has_character_modifier = restored_greek_theme_modifier }
 				add = {
@@ -901,7 +900,7 @@
 					desc = boosted_by_sycophant_score_desc
 				}
 			}
-
+			
 			# SCHEMES
 			if = {
 				limit = {
@@ -935,7 +934,7 @@
 					desc = admin_renounced_throne
 				}
 			}
-
+			
 			# ACH PURGE PRETENDERS OATH
 			if = {
 				limit = {
@@ -948,7 +947,7 @@
 					desc = oath_of_purge_pretenders_house
 				}
 			}
-
+			
 			# ADJUST BASED ON GENDER LAW - MUST GO AT THE END
 			save_temporary_value_as = pre_gender_law_calc
 			if = { # If the temp value is negative, flip it for the coming calculations
@@ -1058,7 +1057,7 @@
 					}
 				}
 			}
-
+			
 			# ROUND THE NUMBER
 			divide = 1
 			ceiling = yes

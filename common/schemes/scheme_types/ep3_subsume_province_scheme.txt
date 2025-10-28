@@ -364,14 +364,14 @@
 		cap_schemes_and_fire_reminders_effect = yes
 	}
 	on_hud_click  = {
-		raid_estate_scheme_prep_effect_override = yes
+		subsume_province_scheme_prep_effect_override = yes
 	}
 	on_semiyearly = {
 		if = {
 			limit = {
 				scheme_owner = { is_ai = yes }
 			}
-			raid_estate_scheme_prep_effect_override = yes
+			subsume_province_scheme_prep_effect_override = yes
 		}
 	}
 	on_monthly = { fire_generic_contract_scheme_on_going_events_effect = yes }

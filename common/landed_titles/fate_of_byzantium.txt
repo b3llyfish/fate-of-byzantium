@@ -1,12 +1,4 @@
-﻿e_anatolia = {
-	color = { 150 0 0 }
-	
-	definite_form = yes
-	
-	capital = c_lycaonia
-}
-
-# to be used if not using CE or 1178 start date
+﻿# to be used if not using CE or 1178 start date
 e_transcaucasia_backup = {
 	color = { 190 39 39 }
 	

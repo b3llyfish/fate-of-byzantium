@@ -7,7 +7,14 @@
 	# Deliberately left in the major group rather than the Roman one.
 	decision_group_type = major
 	
-	ai_check_interval = 1
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 120
+		kingdom = 120
+		empire = 0
+		hegemony = 0
+	}
 	
 	is_shown = {
 		is_ruler = yes
@@ -20,7 +27,7 @@
 		NOT = { culture = culture:greek }
 		NOT = { faith.religion = religion:christianity_religion }
 		OR = {
-			is_independent_ruler = yes
+			top_liege = this
 			top_liege = { faith.religion = faith:ashari.religion }
 		}
 		capital_province = {
@@ -32,8 +39,7 @@
 		}
 		NOR = {
 			exists = title:k_rum.holder
-			top_liege = { has_title = title:e_byzantium }
-			top_liege = { has_title = title:e_roman_empire }
+			top_liege = { is_roman_emperor_trigger = yes }
 		}
 		NOT = {  #Can only do it once.
 			is_target_in_global_variable_list = {
@@ -45,7 +51,7 @@
 			highest_held_title_tier < 4 #Dukes or lower, splitting off from Persia.
 			AND = {
 				highest_held_title_tier < 5
-				is_independent_ruler = yes #Or just a fancy way to get a new King title.
+				top_liege = this #Or just a fancy way to get a new King title.
 			}
 		}
 	}

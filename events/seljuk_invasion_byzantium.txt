@@ -118,8 +118,8 @@ seljuk_invasion_byzantium.0004 = {
 			title:e_byzantium.holder = { save_scope_as = roman_emperor }
 		}
 		else_if = {
-			limit = { exists = title:e_roman_empire.holder }
-			title:e_roman_empire.holder = { save_scope_as = roman_emperor }
+			limit = { exists = title:h_roman_empire.holder }
+			title:h_roman_empire.holder = { save_scope_as = roman_emperor }
 		}
 		
 		legend_seed_new_title_effect = yes
@@ -143,7 +143,7 @@ seljuk_invasion_byzantium.0004 = {
 				OR = {
 					top_liege = scope:former_liege
 					has_title = title:e_byzantium
-					has_title = title:e_roman_empire
+					has_title = title:h_roman_empire
 				}
 			}
 			trigger_event = middle_east_decisions.0015

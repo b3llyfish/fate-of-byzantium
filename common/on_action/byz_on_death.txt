@@ -10,7 +10,7 @@ give_unpressed_admin_title_claim = {
 			limit = {
 				is_independent_ruler = yes
 				government_has_flag = government_is_administrative
-				primary_title >= tier_empire
+				primary_title.tier >= tier_empire
 			}
 			primary_title = {
 				save_temporary_scope_as = admin_title

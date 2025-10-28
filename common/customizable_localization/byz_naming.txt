@@ -19,7 +19,7 @@
 		trigger = {
 			has_game_rule = roman_empire_name_of_byzantium
 		}
-		localization_key = e_roman_empire
+		localization_key = h_roman_empire
 	}
 	
 	text = {
@@ -72,7 +72,7 @@ GameRuleByzNameAdj = {
 		trigger = {
 			has_game_rule = roman_empire_name_of_byzantium
 		}
-		localization_key = e_roman_empire_adj
+		localization_key = h_roman_empire_adj
 	}
 	
 	text = {

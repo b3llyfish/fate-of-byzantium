@@ -31,6 +31,8 @@ See section in the [url=https://github.com/b3llyfish/fate-of-byzantium/blob/main
 [h2] Known Issues [/h2]
 Struggle ending decisions disappear from struggle interface: [url=https://forum.paradoxplaza.com/forum/threads/struggle-endings-illustrations-disappear-when-reopening-the-interface.1859300]Confirmed Issue[/url]
 
+Data error in loc string 'game_concept_fate_of_byzantium_struggle' error logs: Not sure why its complaining here as it resolves the text without issue, can ignore for now
+
 [h2] Recommended Mods [/h2]
 * [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3357686271]Worthy Conquerors[/url] - prevent struggle participants from becoming conquerors and can remove Saladin's conqueror trait via a game rule
 * [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2829397295]Cultures Expanded[/url] - mod has been designed with this mod enabled
