@@ -133,3 +133,33 @@ sultan_rum_trait_1178 = {
 	
 	sultan_rum_trait_off_1178 = {}
 }
+
+admin_china = {
+	categories = { fate_of_byzantium }
+	
+	default = admin_china_on
+	
+	admin_china_on = {}
+	
+	admin_china_off = {}
+}
+
+admin_korea = {
+	categories = { fate_of_byzantium }
+	
+	default = admin_korea_on
+	
+	admin_korea_on = {}
+	
+	admin_korea_off = {}
+}
+
+admin_japan = {
+	categories = { fate_of_byzantium }
+	
+	default = admin_japan_on
+	
+	admin_japan_on = {}
+	
+	admin_japan_off = {}
+}

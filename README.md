@@ -121,6 +121,9 @@ Below list all changes to Byzantium and the surrounding region that are independ
 * Base cost of hiring theme troops increased to 150 influence
 * AI will no longer over-estimate an Admin Government's military strength
 
+#### Government
+* If the DLC 'All Under Heaven' is unavailable then China, Korea and Japan will use Administrative Government (instead of Feudal)
+
 #### Demand Administrative Governance Interaction
 * Cultures who do not benefit from Admin governments are much less likely to accept
 * Characters who hold King or higher titles will never accept
@@ -237,6 +240,24 @@ How powerful are the bonuses that the Sultan of Rum gets in the 1178 start date
 * Moderate
 * Minor
 * Off
+
+### Administrative China
+What government China should have if 'All Under Heaven' is missing
+
+* Administrative (default)
+* Default
+
+### Administrative Korea
+What government Korea should have if 'All Under Heaven' is missing
+
+* Administrative (default)
+* Default
+
+### Administrative Japan
+What government Japan should have if 'All Under Heaven' is missing
+
+* Administrative (default)
+* Default
 
 ## Compatibility
 There are a bunch of overrides (populists, rum, governor efficiency, etc...) made by this mod. It is unlikely to cause

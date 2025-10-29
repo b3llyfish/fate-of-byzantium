@@ -82,3 +82,21 @@
  setting_sultan_rum_trait_minor_1178_desc: "The Sultan of Rum trait will have minor advantages"
  setting_sultan_rum_trait_off_1178: "Off"
  setting_sultan_rum_trait_off_1178_desc: "The Sultan of Rum trait will not be applied"
+ 
+ rule_admin_china: "Fate of Byzantium: Administrative China"
+ setting_admin_china_on: "Administrative"
+ setting_admin_china_on_desc: "If the DLC 'All Under Heaven' is #Z unavailable#! China will use Administrative Government "
+ setting_admin_china_off: "Default"
+ setting_admin_china_off_desc: "China will use the default government"
+ 
+ rule_admin_korea: "Fate of Byzantium: Administrative Korea"
+ setting_admin_korea_on: "Administrative"
+ setting_admin_korea_on_desc: "If the DLC 'All Under Heaven' is #Z unavailable#! Korea will use Administrative Government "
+ setting_admin_korea_off: "Default"
+ setting_admin_korea_off_desc: "Korea will use the default government"
+ 
+ rule_admin_japan: "Fate of Byzantium: Administrative Japan"
+ setting_admin_japan_on: "Administrative"
+ setting_admin_japan_on_desc: "If the DLC 'All Under Heaven' is #Z unavailable#! Japan will use Administrative Government "
+ setting_admin_japan_off: "Default"
+ setting_admin_japan_off_desc: "Japan will use the default government"

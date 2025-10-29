@@ -1,4 +1,6 @@
 ﻿[h1] Fate Of Byzantium [/h1]
+[b]This mod is functional however I am still assessing All Under Heaven's impact[/b]
+
 Mod that aims to control Byzantium (and the Admin Government in general) following their post Roads to Power implementation.
 
 With this mod Byzantium should be:
@@ -16,6 +18,7 @@ There are two mains parts to this mod:
 * Populist factions no longer fight for the state faith, instead behaving like they do in other governments
 * Reworked Governor Efficiency score, high scores will be more difficult to achieve
 * Seljuk invasion event for pre-1178 starts, allowing Rum to pose an issue to Byzantium
+* Admin governments for Asia (if you do not have All Under Heaven)
 
 For the full change log please view the [url=https://github.com/b3llyfish/fate-of-byzantium/blob/main/README.md]README[/url] for this mod.
 

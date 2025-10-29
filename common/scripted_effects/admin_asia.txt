@@ -1,0 +1,78 @@
+﻿admin_china_effect = {
+	if = {
+		limit = {
+			has_game_rule = admin_china_on
+			exists = title:h_china.holder
+		}
+		title:h_china.holder = {
+			asia_admin_title_effect = yes
+		}
+	}
+}
+
+admin_japan_effect = {
+	if = {
+		limit = {
+			has_game_rule = admin_japan_on
+			exists = title:e_japan.holder
+		}
+		title:e_japan.holder = {
+			asia_admin_title_effect = yes
+		}
+	}
+}
+
+admin_korea_effect = {
+	if = {
+		limit = {
+			has_game_rule = admin_korea_on
+			exists = title:e_goryeo.holder
+		}
+		title:e_goryeo.holder = {
+			asia_admin_title_effect = yes
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = admin_korea_on
+			exists = title:e_andong.holder
+		}
+		title:e_andong.holder = {
+			asia_admin_title_effect = yes
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = admin_korea_on
+			exists = title:k_silla.holder
+			title:k_silla.holder.primary_title = title:k_silla
+			is_independent_ruler = yes
+		}
+		title:k_silla.holder = {
+			asia_admin_title_effect = yes
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = admin_korea_on
+			exists = title:k_balhae.holder
+			title:k_balhae.holder.primary_title = title:k_balhae
+			is_independent_ruler = yes
+		}
+		title:k_balhae.holder = {
+			asia_admin_title_effect = yes
+		}
+	}
+}
+
+asia_admin_title_effect = {
+	change_to_administrative_effect = yes
+	every_vassal_or_below = {
+		if = {
+			limit = {
+				government_has_flag = government_is_feudal
+			}
+			change_to_administrative_effect = yes
+		}
+	}
+}

@@ -10,6 +10,20 @@
 		resolve_armenia_war
 		add_sultan_rum_trait
 		add_turkmen_innovation_mangonel
+		admin_asia
+	}
+}
+
+admin_asia = {
+	effect = {
+		if = {
+			limit = {
+				NOT = { has_dlc_feature = all_under_heaven }
+			}
+			admin_china_effect = yes
+			admin_japan_effect = yes
+			admin_korea_effect = yes
+		}
 	}
 }
 
