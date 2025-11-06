@@ -112,6 +112,7 @@ Below list all changes to Byzantium and the surrounding region that are independ
 #### Culture
 * Oghuz culture now has the Horse Lords tradition
 * Turkmen culture now starts with the mangonel innovation
+* Han culture will have the Cultivated Sophistication tradition if Admin
 
 ### Administrative Government Changes
 
@@ -123,6 +124,9 @@ Below list all changes to Byzantium and the surrounding region that are independ
 
 #### Government
 * If the DLC 'All Under Heaven' is unavailable then China, Korea and Japan will use Administrative Government (instead of Feudal)
+* Admin levy modifier has been decreased to -75%
+* Admin MMA maintenance modifiers have been removed
+* Admin will now move 90% of vassal taxes to the treasury
 
 #### Demand Administrative Governance Interaction
 * Cultures who do not benefit from Admin governments are much less likely to accept

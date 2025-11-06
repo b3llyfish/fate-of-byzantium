@@ -20,12 +20,12 @@ damage_legitimacy_scheme = {
 	
 	# Parameters
 	speed_per_skill_point = -2.5
-	spymaster_speed_per_skill_point = 0	
+	spymaster_speed_per_skill_point = 0
 	uses_resistance = no
 	base_progress_goal = 180
 	base_maximum_success = 95
 	minimum_success = 5
-
+	
 	freeze_scheme_when_traveling = yes
 	freeze_scheme_when_traveling_target = no
 	
@@ -49,13 +49,13 @@ damage_legitimacy_scheme = {
 			is_alive = yes
 		}
 	}
-
+	
 	odds_prediction = {
 		add = base_odds_prediction_target_is_char_value
 		add = odds_skill_contribution_intrigue_value
 		min = 0
 	}
-
+	
 	# Base Chances
 	base_success_chance = {
 		base = 0
@@ -71,6 +71,9 @@ damage_legitimacy_scheme = {
 			value = scope:target.intrigue
 			multiplier = -0.5
 		}
+		
+		# Countermeasures
+		apply_political_scheme_success_chance_adjustments_modifier = yes
 		
 		# Popular Opinion of Target's Capital
 		compare_modifier = {
@@ -109,8 +112,19 @@ damage_legitimacy_scheme = {
 			add = 15
 		}
 	}
+	base_secrecy = {
+		add = secrecy_base_value
+		add = countermeasure_apply_secrecy_maluses_value
+		add = eparch_scheme_secrecy_bonus_value
+	}
 	
 	# On Actions
+	on_start = {
+		set_variable = {
+			name = apply_countermeasures
+			value = flag:political
+		}
+	}
 	on_phase_completed = {
 		save_scope_as = scheme
 		scope:scheme = {
@@ -120,17 +134,17 @@ damage_legitimacy_scheme = {
 			}
 			scheme_owner = {
 				save_scope_as = owner
-
+				
 				#SUCCESS ROLL
 				random = {
-					chance = scope:scheme.scheme_success_chance 
-
+					chance = scope:scheme.scheme_success_chance
+					
 					save_scope_value_as = {
 						name = scheme_successful
 						value = yes
 					}
 				}
-
+				
 				if = {
 					limit = {
 						exists = scope:scheme_successful
@@ -144,8 +158,9 @@ damage_legitimacy_scheme = {
 					trigger_event = {
 						id = scheme_critical_moments.4012
 						days = 1
-					}	
+					}
 				}
+				
 				fate_of_byzantium_catalyst_damage_legitimacy_scheme_effect = yes
 			}
 		}
@@ -181,7 +196,7 @@ damage_legitimacy_scheme = {
 		else_if = {
 			limit = {
 				scope:target = {
-					NOT = { this = scope:owner.liege } 
+					this != scope:owner.liege
 				}
 			}
 			scope:owner = {
@@ -199,7 +214,7 @@ damage_legitimacy_scheme = {
 		else_if = {
 			limit = {
 				scope:target = {
-					NOT = { this = scope:owner.liege } 
+					this = scope:owner.liege
 				}
 			}
 			scope:owner = {

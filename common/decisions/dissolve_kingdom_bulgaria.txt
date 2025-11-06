@@ -49,7 +49,7 @@
 		scope:bul_king = {
 			set_relation_rival = {
 				target = scope:byz_emperor
-				reason = divided_kingdom
+				reason = rival_revoked_title_progress
 			}
 			add_to_list = vassals_to_transfer
 			every_vassal = {

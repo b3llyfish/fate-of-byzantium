@@ -7,7 +7,7 @@
 	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
 	category = political
 	target_type = title
-
+	
 	# Parameters
 	speed_per_skill_point = t2_spsp_owner_value
 	speed_per_target_skill_point = t2_spsp_target_value
@@ -18,9 +18,9 @@
 	base_maximum_success = t2_base_max_success_value
 	phases_per_agent_charge = 1
 	success_chance_growth_per_skill_point = t3_scgpsp_value
-
+	
 	is_secret = no
-
+	
 	# Core Triggers
 	allow = {
 		is_adult = yes
@@ -49,7 +49,7 @@
 				this != scope:owner
 				is_alive = yes
 				government_allows = administrative
-				is_independent_ruler = no
+				top_liege != this
 				top_liege = scope:owner.top_liege
 				in_diplomatic_range = scope:owner
 				
@@ -71,7 +71,7 @@
 			}
 		}
 	}
-
+	
 	valid = {
 		scope:owner = {
 			is_imprisoned = no
@@ -100,7 +100,7 @@
 			holder ?= { is_in_civil_war = no }
 		}
 	}
-
+	
 	# Agents
 	agent_leave_threshold = -25
 	agent_join_chance = {
@@ -115,7 +115,7 @@
 	}
 	valid_agent = { is_valid_agent_standard_trigger = yes }
 	agent_groups_owner_perspective = { courtiers peer_vassals vassals councillors }
-
+	
 	odds_prediction = {
 		add = hostile_scheme_base_odds_prediction_target_is_title_value
 		add = odds_skill_contribution_diplomacy_title_value
@@ -124,11 +124,11 @@
 		add = odds_dispute_border_scheme_misc_value
 		min = 0
 	}
-
+	
 	# Base Chances
 	base_success_chance = {
 		base = 0
-
+		
 		# Skill
 		compare_modifier = {
 			desc = "SCHEME_MY_DIPLOMACY"
@@ -144,7 +144,7 @@
 		modifier = {
 			add = -30
 			desc = "SCHEME_VS_SPIRITUAL_HOF"
-			scope:target.holder.faith = {
+			scope:target.holder.faith ?= {
 				this = scope:owner.faith
 				has_doctrine = doctrine_spiritual_head
 				religious_head ?= scope:target.holder
@@ -154,9 +154,8 @@
 		modifier = {
 			add = -15
 			desc = target_has_sponsored_inspiration
-			scope:target.holder = {
-				exists = inspiration
-				inspiration = { exists = inspiration_sponsor }
+			scope:target.holder ?= {
+				inspiration ?= { exists = inspiration_sponsor }
 			}
 		}
 		# Family Feud
@@ -174,24 +173,24 @@
 		}
 		# Land Context
 		modifier = {
-			scope:target.duchy.holder = scope:owner
+			scope:target.duchy.holder ?= scope:owner
 			desc = DISPUTE_BORDERS_DE_JURE_COUNTY_DESC
 			add = 25
 		}
 		modifier = {
 			OR = {
-				scope:target.duchy = scope:target.holder.primary_title
-				scope:target.duchy.de_jure_liege = scope:target.holder.primary_title
+				scope:target.duchy ?= scope:target.holder.primary_title
+				scope:target.duchy.de_jure_liege ?= scope:target.holder.primary_title
 			}
 			desc = DISPUTE_BORDERS_DE_JURE_RATIO_DESC
 			add = -25
 		}
 		modifier = {
-			scope:target.holder = {
+			scope:target.holder ?= {
 				highest_held_title_tier >= tier_duchy
 				NOT = {
 					any_sub_realm_county = {
-						NOT = { this = scope:target.holder.capital_county }
+						this != scope:target.holder.capital_county
 						any_neighboring_county = {
 							county_held_or_vassal_to_target_trigger = { TARGET = scope:owner }
 						}
@@ -224,7 +223,7 @@
 			add = 20
 		}
 		modifier = {
-			scope:target.holder.house = { is_dominant_family = yes }
+			scope:target.holder.house ?= { is_dominant_family = yes }
 			desc = TARGET_HOLDER_DOMINANT_FAMILY_DESC
 			add = -20
 		}
@@ -273,7 +272,7 @@
 			desc = political_schemes_distracted_modifier
 		}
 	}
-
+	
 	# On Actions
 	## Add agents
 	on_start = {
@@ -294,19 +293,18 @@
 	on_phase_completed = {
 		cap_schemes_and_fire_reminders_effect = yes
 	}
-	on_hud_click  = {
-		dispute_border_scheme_prep_effect_override = yes
-	}
+	on_hud_click  = { dispute_border_scheme_prep_effect_override = yes }
 	on_semiyearly = {
 		if = {
 			limit = {
 				scheme_owner = { is_ai = yes }
 			}
 			dispute_border_scheme_prep_effect_override = yes
+			purge_ai_scheme_slots_effect = yes
 		}
 	}
 	on_monthly = { fire_generic_contract_scheme_on_going_events_effect = yes }
-
+	
 	## Invalidation
 	on_invalidated = {
 		scheme_target_title.holder = { save_scope_as = target }

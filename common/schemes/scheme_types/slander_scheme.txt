@@ -10,7 +10,7 @@
 	is_secret = yes
 	maximum_breaches = 5
 	cooldown = { years = 10 }
-
+	
 	# Parameters
 	speed_per_skill_point = t2_spsp_owner_value
 	speed_per_target_skill_point = t2_spsp_target_value
@@ -22,24 +22,24 @@
 	base_maximum_success = t2_base_max_success_value
 	phases_per_agent_charge = 1
 	success_chance_growth_per_skill_point = t3_scgpsp_value
-
+	
 	# Core Triggers
 	allow = {
 		is_adult = yes
 		is_imprisoned = no
 		government_allows = administrative
 	}
-
+	
 	valid = {
 		scope:target = {
 			government_allows = administrative
 			is_alive = yes
 			in_diplomatic_range = prev
 			top_liege.primary_title = prev.top_liege.primary_title # This hides the tooltip
-			NOT = { this = scope:owner }
+			this != scope:owner
 		}
 	}
-
+	
 	# Agents
 	agent_leave_threshold = -25
 	agent_join_chance = {
@@ -50,7 +50,7 @@
 	valid_agent = { is_valid_agent_standard_trigger = yes }
 	agent_groups_owner_perspective = { courtiers guests scripted_relations peer_vassals vassals family }
 	agent_groups_target_character_perspective = { courtiers peer_vassals vassals scripted_relations family }
-
+	
 	odds_prediction = {
 		add = base_odds_prediction_target_is_char_value
 		add = odds_skill_contribution_diplomacy_value
@@ -59,14 +59,17 @@
 		add = odds_slander_scheme_misc_value
 		min = 0
 	}
-
+	
 	# Base Chances
 	base_success_chance = {
 		base = 0
-
+		
 		# Skill
 		scheme_type_skill_success_chance_modifier = { SKILL = DIPLOMACY }
-
+		
+		# Countermeasures
+		apply_political_scheme_success_chance_adjustments_modifier = yes
+		
 		# Spiritual Head of Faith
 		modifier = {
 			add = -30
@@ -77,34 +80,32 @@
 					has_doctrine = doctrine_spiritual_head
 				}
 				faith = {
-					exists = religious_head
-					religious_head = {
-			 			this = scope:target
-			 		}
+					religious_head ?= {
+						this = scope:target
+					}
 				}
 			}
 		}
-
+		
 		# Sponsored Inspiration
 		modifier = {
 			add = -15
 			desc = target_has_sponsored_inspiration
 			scope:target = {
-				exists = inspiration
-				inspiration = { exists = inspiration_sponsor }
+				inspiration ?= { exists = inspiration_sponsor }
 			}
 		}
-
+		
 		# Family Feud
 		house_feud_hostile_scheme_success_modifier = yes
-
+		
 		# Diarchs are better at schemes within their liege's realm
 		diarch_scheming_within_realm_bonus_modifier = yes
-
+		
 		# Modifiers
 		modifier = {
 			scope:owner = { has_character_modifier = poet_for_diplo_schemes_modifier }
-			desc = poet_for_diplo_schemes_modifier
+			desc = poet_for_diplo_schemes_modifier_tt
 			add = 15
 		}
 		modifier = {
@@ -112,16 +113,31 @@
 				has_character_modifier = united_political_agents_modifier
 				is_vassal_of = scope:target
 			}
-			desc = united_political_agents_modifier
+			desc = united_political_agents_modifier_tt2
 			add = 15
 		}
+		modifier = {
+			has_scheme_modifier = didnt_knock_hat_off_modifier
+			desc = didnt_knock_hat_off_modifier_tt
+			add = 20
+		}
+		modifier = {
+			has_scheme_modifier = bided_my_time
+			desc = bided_my_time_tt
+			add = 20
+		}
 	}
-
+	base_secrecy = {
+		add = secrecy_base_value
+		add = countermeasure_apply_secrecy_maluses_value
+		add = eparch_scheme_secrecy_bonus_value
+	}
+	
 	# On Actions
 	on_start = {
 		set_variable = {
 			name = apply_countermeasures
-			value = flag:indirect
+			value = flag:political
 		}
 		# Fallback agents — a balanced config if you start the scheme from script.
 		if = {
@@ -140,9 +156,7 @@
 	on_phase_completed = {
 		cap_schemes_and_fire_reminders_effect = yes
 	}
-	on_hud_click  = {
-		slander_scheme_prep_effect_override = yes
-	}
+	on_hud_click  = { slander_scheme_prep_effect_override = yes }
 	on_semiyearly = {
 		if = {
 			limit = {
@@ -151,7 +165,7 @@
 			slander_scheme_prep_effect_override = yes
 		}
 	}
-
+	
 	## Invalidation
 	on_invalidated = {
 		scheme_target_character = {
@@ -172,8 +186,8 @@
 				}
 				else_if = { # Diplo range: is it relevant here?
 					limit = {
-						scope:target = { 
-							NOT = { in_diplomatic_range = scope:owner } 
+						scope:target = {
+							NOT = { in_diplomatic_range = scope:owner }
 						}
 					}
 					custom_tooltip = scheme_target_not_in_diplomatic_range
@@ -197,7 +211,7 @@
 			}
 		}
 	}
-
+	
 	## Ongoing
 	on_monthly = {
 		hostile_scheme_monthly_discovery_chance_effect = yes

@@ -7,7 +7,7 @@
 	target_type = character
 	category = political
 	cooldown = { years = 10 }
-
+	
 	# Parameters
 	speed_per_skill_point = t2_spsp_owner_value
 	spymaster_speed_per_skill_point = t2_spsp_owner_spy_value
@@ -16,40 +16,40 @@
 	phases_per_agent_charge = 1
 	success_chance_growth_per_skill_point = t2_scgpsp_value
 	is_secret = no
-
+	
 	# Core Triggers
 	allow = {
 		is_adult = yes
 		is_imprisoned = no
 		is_landed_or_landless_administrative = yes
 	}
-
+	
 	# Agents
 	agent_leave_threshold = -25
 	agent_join_chance = {
 		base = 0
-		ai_agent_join_chance_basic_suite_modifier = yes	
+		ai_agent_join_chance_basic_suite_modifier = yes
 	}
 	valid_agent = { is_valid_agent_standard_trigger = yes }
 	agent_groups_owner_perspective = { peer_vassals vassals councillors courtiers scripted_relations }
-
+	
 	odds_prediction = {
 		add = base_odds_prediction_target_is_char_value
 		add = odds_skill_contribution_stewardship_value
 		add = agent_groups_owner_perspective_value
 		min = 0
 	}
-
+	
 	# Base Chances
 	base_success_chance = {
 		base = 0
-
+		
 		# Skill
 		scheme_type_skill_success_chance_modifier = { SKILL = STEWARDSHIP }
-
+		
 		# Diarchs are better at schemes within their liege's realm
 		diarch_scheming_within_realm_bonus_modifier = yes
-
+		
 		# Dynasty Kin Personal Scheme Success Chance on Dynasty Perk
 		modifier = {
 			add = kin_legacy_4_success_chance
@@ -60,7 +60,7 @@
 			}
 			scope:target.dynasty = scope:owner.dynasty
 		}
-
+		
 		# House Personal Scheme Success Chance on Cultural Parameter
 		modifier = {
 			add = cultural_house_personal_scheme_success_chance
@@ -72,7 +72,7 @@
 			}
 			scope:target.house = scope:owner.house
 		}
-
+		
 		# house_head_request_interaction
 		modifier = {
 			add = political_scheme_variable_list_value
@@ -96,7 +96,7 @@
 		}
 	}
 	
-
+	
 	# On Actions
 	on_start = {
 		# Fallback agents — a balanced config if you start the scheme from script.
@@ -123,9 +123,10 @@
 				scheme_owner = { is_ai = yes }
 			}
 			expand_power_base_scheme_prep_effect_override = yes
+			purge_ai_scheme_slots_effect = yes
 		}
 	}
-
+	
 	## Invalidation
 	on_invalidated = {
 		scheme_target_character = {
@@ -148,7 +149,7 @@
 			}
 		}
 	}
-
+	
 	## Ongoing
 	on_monthly = { fire_generic_contract_scheme_on_going_events_effect = yes }
 }

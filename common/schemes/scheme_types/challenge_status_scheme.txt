@@ -8,11 +8,11 @@
 	target_type = character
 	category = political
 	cooldown = { years = 10 }
-
+	
 	# Travel Triggers (default no)
 	freeze_scheme_when_traveling = yes
 	freeze_scheme_when_traveling_target = yes
-
+	
 	# Parameters
 	speed_per_skill_point = t2_spsp_owner_value
 	speed_per_target_skill_point = t2_spsp_target_value
@@ -23,7 +23,7 @@
 	base_maximum_success = t2_base_max_success_value
 	phases_per_agent_charge = 1
 	success_chance_growth_per_skill_point = t2_scgpsp_value
-
+	
 	is_secret = yes
 	maximum_breaches = 5
 	maximum_secrecy = 100
@@ -32,14 +32,14 @@
 		add = secrecy_base_value
 		add = countermeasure_apply_secrecy_maluses_value
 	}
-
+	
 	# Core Triggers
 	allow = {
 		is_adult = yes
 		is_imprisoned = no
 		government_allows = administrative
 	}
-
+	
 	valid = {
 		scope:target = {
 			is_adult = yes
@@ -47,7 +47,7 @@
 			top_liege.primary_title = prev.top_liege.primary_title # This hides the tooltip
 		}
 	}
-
+	
 	# Agents
 	agent_leave_threshold = -25
 	agent_join_chance = {
@@ -59,7 +59,7 @@
 	agent_groups_owner_perspective = { peer_vassals courtiers vassals councillors }
 	agent_groups_target_character_perspective = { courtiers vassals councillors }
 	valid_agent = { is_valid_agent_standard_trigger = yes }
-
+	
 	odds_prediction = {
 		add = base_odds_prediction_target_is_char_value
 		add = odds_skill_contribution_learning_value
@@ -67,11 +67,14 @@
 		add = agent_groups_target_character_perspective_value
 		min = 0
 	}
-
+	
 	# Base Chances
 	base_success_chance = {
 		base = 0
 		scheme_type_skill_success_chance_modifier = { SKILL = LEARNING }
+		
+		# Countermeasures
+		apply_political_scheme_success_chance_adjustments_modifier = yes
 		
 		# Target's learning
 		modifier = {
@@ -81,7 +84,7 @@
 				multiply = -1
 			}
 		}
-
+		
 		# Spiritual Head of Faith
 		modifier = {
 			add = -50
@@ -91,18 +94,18 @@
 					exists = religious_head
 					has_doctrine = doctrine_spiritual_head
 					religious_head = {
-				 		this = scope:target
-				 	}
+						this = scope:target
+					}
 				}
 			}
 		}
-
+		
 		# Family Feud
 		house_feud_hostile_scheme_success_modifier = yes
-
+		
 		# Diarchs are better at schemes within their liege's realm
 		diarch_scheming_within_realm_bonus_modifier = yes
-
+		
 		modifier = {
 			scope:owner = {
 				has_character_modifier = united_political_agents_modifier
@@ -161,9 +164,13 @@
 			add = -20
 		}
 	}
-
+	
 	# On Actions
 	on_start = {
+		set_variable = {
+			name = apply_countermeasures
+			value = flag:political
+		}
 		# Fallback agents — a balanced config if you start the scheme from script.
 		if = {
 			limit = {
@@ -188,9 +195,10 @@
 				scheme_owner = { is_ai = yes }
 			}
 			challenge_status_scheme_prep_effect_override = yes
+			purge_ai_scheme_slots_effect = yes
 		}
 	}
-
+	
 	## Invalidation
 	on_invalidated = {
 		scheme_target_character = {
@@ -212,8 +220,8 @@
 				}
 				else_if = { # No more diplo range
 					limit = {
-						scope:target = { 
-							NOT = { in_diplomatic_range = scope:owner } 
+						scope:target = {
+							NOT = { in_diplomatic_range = scope:owner }
 						}
 					}
 					custom_tooltip = scheme_target_not_in_diplomatic_range
@@ -237,10 +245,10 @@
 			}
 		}
 	}
-
+	
 	## Ongoing
-	on_monthly = { 
+	on_monthly = {
 		hostile_scheme_monthly_discovery_chance_effect = yes
-		fire_generic_contract_scheme_on_going_events_effect = yes 
+		fire_generic_contract_scheme_on_going_events_effect = yes
 	}
 }

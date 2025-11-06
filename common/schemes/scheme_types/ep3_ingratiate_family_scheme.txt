@@ -12,7 +12,7 @@
 	
 	# Parameters
 	speed_per_skill_point = -2.5
-	spymaster_speed_per_skill_point = 0	
+	spymaster_speed_per_skill_point = 0
 	uses_resistance = no
 	base_progress_goal = 365
 	base_maximum_success = 95
@@ -25,16 +25,15 @@
 			is_adult = yes
 			is_imprisoned = no
 			exists = house
-			NOT = { house = scope:owner.house }
+			house != scope:owner.house
 			top_liege = scope:owner.top_liege
 		}
 	}
-
+	
 	valid = {
 		custom_tooltip = {
 			text = ingratiate_family_living_quarters_building_tt
-			exists = domicile
-			domicile = { has_domicile_parameter = estate_unlock_ingratiate_family_interaction }
+			domicile ?= { has_domicile_parameter = estate_unlock_ingratiate_family_interaction }
 		}
 		is_imprisoned = no
 		is_incapable = no
@@ -58,14 +57,14 @@
 			top_liege.primary_title = prev.top_liege.primary_title # This hides the tooltip
 		}
 	}
-
+	
 	odds_prediction = {
 		add = base_odds_prediction_target_is_char_value
 		add = odds_skill_contribution_diplomacy_value
 		add = odds_ingratiate_family_scheme_misc_value
 		min = 0
 	}
-
+	
 	# Base Chances
 	base_success_chance = {
 		base = 15
@@ -77,7 +76,7 @@
 			}
 			desc = SCHEME_YOUR_DIPLOMACY
 		}
-
+		
 		opinion_modifier = {
 			who = scope:target
 			opinion_target = scope:owner
@@ -96,7 +95,7 @@
 			scope:owner = { has_trait = diplomat }
 			desc = SCHEME_BEFRIEND_MY_LIFESTYLE
 		}
-
+		
 		#Rank tier difference (landed target/target whose liege doesn't care)
 		modifier = { #3 or more higher rank
 			trigger = { personal_scheme_should_not_evaluate_tier_differences_trigger = yes }
@@ -191,10 +190,10 @@
 				}
 			}
 		}
-
+		
 		# Diarchs are better at schemes within their liege's realm
 		diarch_scheming_within_realm_bonus_modifier = yes
-
+		
 		#Religious Heads
 		modifier = {
 			add = -50
@@ -202,14 +201,13 @@
 			scope:target = {
 				faith = scope:owner.faith
 				faith = {
-					exists = religious_head
-					religious_head = {
-			 			this = scope:target
-			 		}
+					religious_head ?= {
+						this = scope:target
+					}
 				}
 			}
 		}
-
+		
 		# Thicker Than Water Perk
 		modifier = {
 			add = thicker_than_water_bonus
@@ -221,30 +219,26 @@
 				is_close_or_extended_family_of = scope:owner
 			}
 		}
-
+		
 		#Family Feud
 		house_feud_sway_scheme_success_modifier = yes
-
+		
 		# Modifiers
 		modifier = {
 			scope:owner = { has_character_modifier = poet_for_diplo_schemes_modifier }
 			desc = poet_for_diplo_schemes_modifier
 			add = 15
 		}
-
+		
 		modifier = {
 			scope:owner.house = { is_dominant_family = yes }
 			add = 25
 			desc = YOUR_FAMILY_IS_DOMINANT
 		}
-
+		
 		modifier = {
-			scope:owner = {
-				exists = house
-			}
-			scope:target = {
-				exists = house
-			}
+			exists = scope:owner.house
+			exists = scope:target.house
 			add = {
 				value = scope:owner.house.house_power_score
 				subtract = scope:target.house.house_power_score
@@ -279,18 +273,15 @@
 			desc = political_schemes_distracted_modifier
 		}
 	}
-
+	
 	# On Actions
 	on_phase_completed = {
 		ingratiate_family_scheme_prep_effect = yes
 		scheme_owner = {
 			fate_of_byzantium_catalyst_ingratiate_family_scheme_effect = yes
 		}
-		scheme_target_character = {
-			fate_of_byzantium_catalyst_political_scheme_against_emperor_effect = yes
-		}
 	}
-
+	
 	on_invalidated = {
 		scheme_target_character = { save_scope_as = target }
 		scheme_owner = {
@@ -303,11 +294,11 @@
 					limit = {
 						scope:target = { is_alive = no }
 					}
-					custom_tooltip = ingratiate_family_invalidated_dead 
+					custom_tooltip = ingratiate_family_invalidated_dead
 				}
-				else_if = {	
+				else_if = {
 					limit = { is_at_war_with = scope:target }
-					custom_tooltip = ingratiate_family_invalidated_war 
+					custom_tooltip = ingratiate_family_invalidated_war
 				}
 				else_if = {
 					limit = {
