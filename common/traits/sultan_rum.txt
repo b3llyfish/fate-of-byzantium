@@ -4,7 +4,7 @@
 	flag = sultan_rum_bonuses_modifier
 	
 	men_at_arms_maintenance = -0.2
-	#monthly_income = 2
+	monthly_income = 1
 	monthly_prestige = 1
 	islam_religion_opinion = 5
 	
@@ -13,6 +13,8 @@
 	ai_war_chance = 10
 	ai_amenity_spending = -0.10
 	ai_amenity_target_baseline = -0.25
+	ai_energy = high_positive_ai_value
+	ai_boldness = dominant_positive_ai_value
 	
 	shown_in_ruler_designer = no
 }
@@ -23,11 +25,13 @@ sultan_rum = {
 	flag = sultan_rum_bonuses_modifier
 	
 	men_at_arms_maintenance = -0.33
-	tolerance_advantage_mod = 5
+	archer_cavalry_damage_mult = 0.33
+	monthly_income = 2
+	tolerance_advantage_mod = 10
 	men_at_arms_cap = 1 # how many maa slots
 	men_at_arms_limit = 1 # how many maa per stack
-	#monthly_income = 3
 	monthly_prestige = 2
+	monthly_piety = 2
 	islam_religion_opinion = 10
 	
 	# ai only stuff
@@ -35,6 +39,8 @@ sultan_rum = {
 	ai_war_chance = 10
 	ai_amenity_spending = -0.10
 	ai_amenity_target_baseline = -0.25
+	ai_energy = high_positive_ai_value
+	ai_boldness = dominant_positive_ai_value
 	
 	shown_in_ruler_designer = no
 }
@@ -45,10 +51,10 @@ sultan_rum_major = {
 	flag = sultan_rum_bonuses_modifier
 	
 	men_at_arms_maintenance = -0.5
+	monthly_income = 5
 	tolerance_advantage_mod = 10
 	men_at_arms_cap = 2 # how many maa slots
 	men_at_arms_limit = 2 # how many maa per stack
-	#monthly_income = 5
 	monthly_prestige = 3
 	islam_religion_opinion = 20
 	
@@ -57,6 +63,8 @@ sultan_rum_major = {
 	ai_war_chance = 10
 	ai_amenity_spending = -0.10
 	ai_amenity_target_baseline = -0.25
+	ai_energy = high_positive_ai_value
+	ai_boldness = dominant_positive_ai_value
 	
 	shown_in_ruler_designer = no
 }

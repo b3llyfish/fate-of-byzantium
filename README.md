@@ -119,14 +119,18 @@ Below list all changes to Byzantium and the surrounding region that are independ
 #### Defines
 * Score required to be a powerful house decreased to 35
 * Max number of powerful houses increased to 8
-* Base cost of hiring theme troops increased to 150 influence
 * AI will no longer over-estimate an Admin Government's military strength
 
 #### Government
 * If the DLC 'All Under Heaven' is unavailable then China, Korea and Japan will use Administrative Government (instead of Feudal)
 * Admin levy modifier has been decreased to -75%
 * Admin MMA maintenance modifiers have been removed
-* Admin will now move 90% of vassal taxes to the treasury
+* Admin Vassals will now move 50% of their vassal's taxes to the treasury
+* Admin Top Liege will now move 90% of their vassal's taxes to the treasury
+* Salary and Military budget payments have been increased
+* Vassal Development payment has been greatly reduced
+* Vassal tax and levy obligations have been reduced
+* Fix issue where salaries were paid to landless admin vassals
 
 #### Demand Administrative Governance Interaction
 * Cultures who do not benefit from Admin governments are much less likely to accept
