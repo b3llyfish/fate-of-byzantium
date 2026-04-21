@@ -22,6 +22,10 @@ admin_japan_effect = {
 		title:e_japan.holder = {
 			asia_admin_title_effect = yes
 		}
+		title:e_japan = {
+			# remove primo
+			remove_title_law = single_heir_succession_law
+		}
 	}
 }
 
