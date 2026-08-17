@@ -9,6 +9,7 @@
 		state_faith = yes
 		use_as_base_on_landed = yes
 		use_as_base_on_rank_up = yes
+		allow_as_base_for_baronies = no
 		inherit_from_dynastic_government = no
 		sticky_government = yes
 		house_aspirations = yes
@@ -16,6 +17,7 @@
 		admin_allows_holding_multiple_primary_tier_titles = yes
 		treasury = yes
 		replace_gold_cost_by_treasury = yes
+		allow_accolades = yes
 	}
 	
 	royal_court = any
@@ -48,34 +50,29 @@
 	}
 	
 	character_modifier = {
-		levy_size = -0.75
+		levy_size = -0.66
 		feudal_government_tax_contribution_mult = -0.5
 		feudal_government_levy_contribution_mult = -0.5
 		clan_government_tax_contribution_mult = -0.5
 		clan_government_levy_contribution_mult = -0.5
-		men_at_arms_cap = -3
-		men_at_arms_limit = -3
-		#men_at_arms_title_cap = -2
-		#men_at_arms_title_limit = -1
+		men_at_arms_cap = -2
+		men_at_arms_limit = -2
 		knight_limit = -5
 		vassal_limit = 100
-		active_accolades = -1
+		accolades = -1
 		title_creation_cost_mult = -0.5
-		mercenary_hire_cost_mult = 2
-		#men_at_arms_maintenance = 0.5
-		#men_at_arms_recruitment_cost = 1.5
+		mercenary_hire_cost_mult = 2.5
+		men_at_arms_maintenance = 0.5
 		
-		# how much of a vassals taxes do they get back in the form of vassal development
-		# Vassal development = taxes paid * (theme tier percentage + monthly_treasury_from_liege_mult)
-		monthly_treasury_from_liege_mult = -0.55
-		# convert into treasury
-		monthly_treasury_from_vassals = 0.5
+		# Vassals get Treasury income that is this percentage less than their taxes to their liege
+		monthly_treasury_from_liege_mult = -0.15
 	}
 	
 	top_liege_character_modifier = {
-		monthly_treasury_from_vassals = 0.4
-		#men_at_arms_maintenance = 0.5
-		#men_at_arms_recruitment_cost = 1
+		# 85% of vassal income goes to the treasury
+		monthly_treasury_from_vassals = 0.85
+		men_at_arms_maintenance = 1.5
+		men_at_arms_recruitment_cost = 1
 	}
 	
 	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).

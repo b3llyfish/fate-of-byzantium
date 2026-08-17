@@ -4,6 +4,7 @@
 	flag = sultan_rum_bonuses_modifier
 	
 	men_at_arms_maintenance = -0.2
+	levy_size = 0.1
 	monthly_income = 1
 	monthly_prestige = 1
 	islam_religion_opinion = 5
@@ -25,6 +26,7 @@ sultan_rum = {
 	flag = sultan_rum_bonuses_modifier
 	
 	men_at_arms_maintenance = -0.33
+	levy_size = 0.33
 	archer_cavalry_damage_mult = 0.33
 	monthly_income = 2
 	tolerance_advantage_mod = 10
@@ -32,7 +34,7 @@ sultan_rum = {
 	men_at_arms_limit = 1 # how many maa per stack
 	monthly_prestige = 2
 	monthly_piety = 2
-	islam_religion_opinion = 10
+	islam_religion_opinion = 30
 	
 	# ai only stuff
 	ai_war_cooldown = -0.5
@@ -51,12 +53,13 @@ sultan_rum_major = {
 	flag = sultan_rum_bonuses_modifier
 	
 	men_at_arms_maintenance = -0.5
+	levy_size = 0.5
 	monthly_income = 5
 	tolerance_advantage_mod = 10
 	men_at_arms_cap = 2 # how many maa slots
 	men_at_arms_limit = 2 # how many maa per stack
 	monthly_prestige = 3
-	islam_religion_opinion = 20
+	islam_religion_opinion = 50
 	
 	# ai only stuff
 	ai_war_cooldown = -0.5
